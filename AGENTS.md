@@ -26,7 +26,9 @@
 
 - Use Python 3.12 and uv. The generic pre-event environment is outside this repo:
   /home/petterihallipelto/Documents/Codex/hackathon-tools/.venv/bin/python
-- After coding starts, record project dependencies in pyproject.toml and uv.lock.
+- Use this repository's .venv/bin/python for project notebooks and commands.
+  Run uv sync --locked to recreate it, and record project dependencies in
+  pyproject.toml and uv.lock.
   Keep notebooks runnable from a restarted kernel and document reproduction.
 - Choose validation splits before tuning. Use chronological or grouped splits
   where appropriate. Fit preprocessing only on training data.

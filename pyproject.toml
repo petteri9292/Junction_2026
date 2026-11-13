@@ -1,0 +1,28 @@
+[project]
+name = "junction-2026"
+version = "0.1.0"
+description = "Junction 2026 ML and data analysis project"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "duckdb",
+    "huggingface-hub",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "requests",
+    "scikit-learn",
+    "scipy",
+    "tensorboard",
+    "tensorboardx",
+]
+
+[dependency-groups]
+dev = ["ipykernel", "pytest", "ruff"]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+target-version = "py312"
+

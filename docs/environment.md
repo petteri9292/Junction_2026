@@ -19,6 +19,18 @@
 
 ## Local commands
 
+The project now has its own environment. From the repository, run
+`uv sync --locked`, then open the folder in VS Code with `code .`.
+Create a notebook through **Create: New Jupyter Notebook** in the Command Palette.
+In **Select Kernel**, choose **Python Environments** and the repository's
+`.venv/bin/python`. Change an existing notebook's kernel explicitly if it still
+points to the generic preparation environment. Run cells with Shift+Enter.
+
+Check `import sys; print(sys.executable)` in a notebook: it should point to this
+repository's `.venv/bin/python`. Explore data in notebooks, then move reusable
+logic into Python modules. No browser-based Jupyter server is needed for this
+local VS Code workflow.
+
 Launch JupyterLab from a terminal with `junction-lab`. It keeps authentication
 enabled and displays the local login URL in the terminal.
 
@@ -26,8 +38,9 @@ Use `junction-tensorboard` to view the saved generic check logs at
 http://127.0.0.1:6006/. For project logs after coding begins, use
 `junction-tensorboard --logdir "$PWD/runs"` from the repository.
 
-The Python interpreter is `../hackathon-tools/.venv/bin/python`. Add project
-dependencies and a project-specific environment after hacking begins.
+`junction-lab` uses the generic preparation interpreter. For project dependencies,
+use the repository's `.venv/bin/python`. Add packages with `uv add PACKAGE` (or
+`uv add --dev PACKAGE` for development tools), and commit both dependency files.
 
 ## Cloud observation
 
