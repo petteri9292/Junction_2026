@@ -35,6 +35,8 @@ The GPU, vLLM server, embedding model, reranker and MariaDB database stay reside
 - [Presentation deck](reports/wikilens-pipeline-pitch.pptx) · [PDF](reports/wikilens-pipeline-pitch.pdf) · [spoken script](pipeline-pitch-script.txt) · [video brief](demo-brief.md)
 - [Submission description](docs/submission.md)
 
+Citation badges show each source once per paragraph. Click one to see all its quoted excerpts for that paragraph.
+
 Click **Admin** in the live UI to set the score cutoff, optional relative gap, retrieved article count, maximum selected passages and article output token budget. Changes apply to the next question. The document inspector shows retrieved articles, original text, passage scores, rejected passages and passages selected for generation. These are raw reranker scores, not probabilities. This is a local operator panel, not a production authentication system.
 
 ## Source layout
@@ -49,7 +51,7 @@ Click **Admin** in the live UI to set the score cutoff, optional relative gap, r
 | `tests/` | Mocked inference, provenance, settings and local HTTP checks |
 | `reports/` | Selected measurements, screenshots and presentation deliverables |
 
-Install developer dependencies with `uv sync --locked --group dev`; run `.venv/bin/python -m pytest -q`. Tests do not start paid GPU jobs or train models. The optional Gradio interface uses `uv sync --locked --group demo` and `scripts/run-gradio-demo.py`.
+Install developer dependencies with `uv sync --locked --group dev`; run `.venv/bin/python -m pytest -q`. Tests do not start paid GPU jobs or train models. With Node.js installed, run `node tests/test_citation_groups.cjs` for the citation grouping checks. The optional Gradio interface uses `uv sync --locked --group demo` and `scripts/run-gradio-demo.py`.
 
 ## What the evidence does and does not establish
 

@@ -73,6 +73,7 @@ $('#citation-panel').addEventListener('keydown', event => {
   if (event.key === 'Escape') { event.preventDefault(); closeCitations(true); }
 });
 function render(fixture) {
+  const display = groupParagraphCitations(fixture);
   document.body.classList.add('has-result');
   const theme = $('#theme');
   if (theme) theme.textContent = fixture.theme;
@@ -83,7 +84,7 @@ function render(fixture) {
   if (recordingNote) recordingNote.textContent = `${resultLabel} · ${datasetLabel}`;
   $('#answer').replaceChildren();
   let section = null;
-  fixture.answer.forEach(claim => {
+  display.answer.forEach(claim => {
     if (claim.section && claim.section !== section) {
       section = claim.section; $('#answer').append(el('h3', '', section));
     }
@@ -91,12 +92,12 @@ function render(fixture) {
     const p = el('p', '', claim.text.slice(0, lastSpace + 1));
     const ending = el('span', 'claim-ending', claim.text.slice(lastSpace + 1));
     claim.citations.forEach(id => {
-      const index = fixture.evidence.findIndex(e => e.id === id);
+      const index = display.evidence.findIndex(e => e.id === id);
       if (index < 0) throw new Error('Unmapped fixture citation');
-      const source = fixture.evidence[index];
-      const button = el('button', 'citation', String(index + 1));
+      const source = display.evidence[index];
+      const button = el('button', 'citation', String(source.number));
       button.type = 'button'; button.dataset.evidence = id;
-      button.setAttribute('aria-label', `Citation ${index + 1}: ${source.title}, ${source.language_label}`);
+      button.setAttribute('aria-label', `Citation ${source.number}: ${source.title}, ${source.language_label}, paragraph ${source.paragraph_number}`);
       button.setAttribute('aria-controls', `evidence-${id}`); button.setAttribute('aria-pressed', 'false');
       button.addEventListener('click', () => toggleCitation(id, button)); ending.append(button);
     });
@@ -104,11 +105,11 @@ function render(fixture) {
     $('#answer').append(p);
   });
   $('#evidence').replaceChildren();
-  fixture.evidence.forEach((source, index) => {
+  display.evidence.forEach(source => {
     const card = el('article', 'evidence-card'); card.id = `evidence-${source.id}`; card.dataset.language = source.lang; card.dataset.evidence = source.id; card.tabIndex = -1;
     const top = el('div', 'source-top');
-    const number = el('button', 'source-number', String(index + 1)); number.type = 'button';
-    number.setAttribute('aria-label', `Close citation ${index + 1}: ${source.title}`);
+    const number = el('button', 'source-number', String(source.number)); number.type = 'button';
+    number.setAttribute('aria-label', `Close citation ${source.number}: ${source.title}, paragraph ${source.paragraph_number}`);
     number.addEventListener('click', () => {
       const trigger = [...document.querySelectorAll('.citation')].find(button => button.dataset.evidence === source.id);
       toggleCitation(source.id, trigger);
@@ -117,8 +118,14 @@ function render(fixture) {
     top.append(number, el('span', 'source-lang', sourceLabel));
     const link = el('a', 'source-link', '↗'); link.href = source.revision_url; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.title = 'Open stored Wikipedia revision (requires internet)'; link.setAttribute('aria-label', `Open ${source.title}, revision ${source.rev_id} (requires internet)`); top.append(link);
     const title = el('h3', 'source-title', source.title); title.id = `title-${source.id}`; card.setAttribute('aria-labelledby', title.id);
-    const quote = el('blockquote', '', source.passage); quote.lang = source.lang;
-    card.append(top, title, quote);
+    card.append(top, title, el('p', 'source-context', `Paragraph ${source.paragraph_number} · ${source.quotes.length} ${source.quotes.length === 1 ? 'excerpt' : 'excerpts'}`));
+    const quotations = el('ol', 'source-quotes');
+    source.quotes.forEach(reference => {
+      const item = el('li');
+      const quote = el('blockquote', '', reference.passage); quote.lang = source.lang;
+      item.append(quote); quotations.append(item);
+    });
+    card.append(quotations);
     if (source.reading_aid) {
       const details = el('details'); details.append(el('summary', '', '↳ English reading aid'));
       details.append(el('p', '', source.reading_aid + ' — Manual summary, not a verbatim translation.')); card.append(details);

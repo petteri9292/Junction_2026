@@ -46,3 +46,14 @@ The local server accepts submissions from localhost and checks origins; it is no
 ## Limits
 
 Quotation existence is mechanically checked; semantic support is not independently certified. The review runs before citations are attached, and can leave mistakes unchanged. A lack of matching passages is not evidence that the answer does not exist elsewhere. HyDE and language detection can be wrong. The corpus is a fixed Finnish dataset release, not live Wikipedia. Retrieved language and answer language are different concepts.
+
+## Citation display
+
+The Paper interface groups references by Wikipedia revision within each paragraph.
+Each distinct source gets one badge per paragraph, with stable source numbering
+across the article. Opening a badge lists every distinct exact quotation linked
+to that source in that paragraph. Identical quotations are shown once; original
+reference IDs and source-passage IDs are retained in the display model. Quotations
+from other paragraphs are kept separate, and different revisions are not merged.
+This is a presentation transform over the unchanged raw evidence; it adds no
+model call and does not restart inference services.

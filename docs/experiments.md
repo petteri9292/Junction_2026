@@ -73,3 +73,12 @@ The LLM reviews the draft before citation attachment. There is no final review o
 ## Repository preparation
 
 The public source tree retains working pipeline variants, experiment runners, notebooks, tests, selected measurements and pitch materials. Development recovery scripts, exploratory UI layouts, superseded notebooks, verbose logs and historical reports were moved into `_local_archive/`, which Git ignores. Original versions of rewritten files are preserved there with a SHA-256 manifest. Existing ignored data, credentials, environments and compute ledgers remain in their working locations. See `docs/verification.md` for the final presentation checks.
+
+## Paragraph citation display
+
+The interface now groups exact quotations by Wikipedia revision within each
+paragraph. Live browser verification showed one source badge per paragraph and
+all linked excerpts in its source card; the recorded first paragraph retained
+all three excerpts. Six JavaScript grouping checks and two fixture integrity
+tests passed. Raw citation output and quotations are preserved, with no model
+or prompt changes and no H200 restart.

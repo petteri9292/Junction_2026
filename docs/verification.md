@@ -37,3 +37,15 @@ The Git-eligible tree was scanned for common Hugging Face, GitHub and API creden
 Every pre-cleanup public candidate was copied into the ignored `_local_archive/` directory before editing. Its manifest records 359 original files with SHA-256 checksums; all reopened checksums matched. Retired files remain there, and original versions of rewritten documents/source are retained. Existing ignored `data/`, `artifacts/`, `.venv/` and environment files remain in place so active services and evidence are preserved. Git ignore checks confirm the archive, active job record, environment, credentials and build artifacts are excluded.
 
 The resulting source still includes the supported pipeline variants and the notebooks required by reproduction scripts. Exploratory layouts, session recovery tools, historical reports and verbose operational logs are outside the public tree. No GitHub push or event submission is implied by these checks.
+
+## Paragraph source grouping
+
+The browser now shows one badge per Wikipedia revision within a paragraph, using
+stable source numbers across the article. In a fresh live H200 result the Talvisota
+paragraphs each showed one source badge; paragraph 3 opened both of its exact
+quotations. The recorded first paragraph opened all three original quotations
+under one source. Six JavaScript regression checks passed, covering paragraph
+isolation, first-use numbering, different revisions, duplicate quotation removal,
+raw-data preservation and the recorded examples. Two fixture integrity tests also
+passed. This interface-only change leaves the model, prompts, raw evidence and
+running H200 services unchanged.
