@@ -39,7 +39,7 @@ The older citation-aware and structured-claim variants remain as reproducible so
 
 The current demo uses one H200 with Qwen3-4B-Instruct-2507-FP8, BGE-M3 and BGE-reranker-v2-m3. Earlier measurements used one H100 80 GB. The six-hour H200 profile preserves the same prompts, pinned model and vLLM settings. The current default context budget is 12,288 tokens. The two locked Python environments deliberately separate legacy Transformers experiments from vLLM inference.
 
-Defaults exposed in Admin: absolute reranker cutoff −3, relative gap disabled, 60 retrieved articles, up to 25 selected passages, and 6,000 article output tokens. The review budget remains fixed. Invalid settings are rejected before queuing. Diagnostics survive an empty selection so rejected documents remain inspectable. The inspector distinguishes retrieved, cutoff-passing and actually selected passages.
+Defaults exposed in Admin: absolute reranker cutoff −4, relative gap disabled, 60 retrieved articles, up to 25 selected passages, and 6,000 article output tokens. The review budget remains fixed. Invalid settings are rejected before queuing. Diagnostics survive an empty selection so rejected documents remain inspectable. The inspector distinguishes retrieved, cutoff-passing and actually selected passages.
 
 The local server accepts submissions from localhost and checks origins; it is not a public multi-user deployment. The browser cannot allocate a GPU. Each paid session has an explicit reservation, timeout and one attempt. Loading another question reuses the resident models and database.
 

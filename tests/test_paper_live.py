@@ -90,7 +90,7 @@ def test_submit_is_idempotent_and_does_not_restart_or_duplicate_compute():
     assert service.submit(data) == service.submit(data)
     assert len(service.sent) == 1
     assert service.sent[0]["context"] == "videopeli"
-    assert service.sent[0]["settings"]["score_cutoff"] == -3
+    assert service.sent[0]["settings"]["score_cutoff"] == -4
     assert service.sent[0]["settings"]["retrieval_top_k"] == 60
     assert service.sent[0]["settings"]["article_tokens"] == 6000
     with pytest.raises(ValueError, match="different inputs"):

@@ -115,3 +115,11 @@ defaults are therefore cutoff −3, top-k 60 and 6000 article tokens. Normalized
 requests carry these settings explicitly to the already warm controller; no
 second controller or model restart was needed for the change back to 60. The
 30-article live check above remains recorded as a historical observation.
+
+## Section labels and cutoff update
+
+Removed the decorative 01/02 prefixes from the Question and Answer labels.
+The user changed the final default cutoff to −4; 60 retrieved articles and 6000
+article output tokens remain selected. The API normalizes these settings before
+queueing them, so the warm H200 worker receives the new cutoff explicitly.
+This requires only reloading the local web server; no GPU or model restart.

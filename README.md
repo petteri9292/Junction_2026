@@ -37,7 +37,7 @@ The GPU, vLLM server, embedding model, reranker and MariaDB database stay reside
 
 Citation badges show each source once per paragraph. The source number stays consistent, with paragraph labels such as `1.1p` and `1.2p`. Click a badge to see all its quoted excerpts. Answers render Markdown formatting, including bold text and lists.
 
-Click **Admin** in the live UI to set the score cutoff, optional relative gap, retrieved article count, maximum selected passages and article output token budget. Changes apply to the next question. The document inspector shows retrieved articles, original text, passage scores, rejected passages and passages selected for generation. Defaults are cutoff −3, 60 retrieved articles and a 6,000-token article budget. These are raw reranker scores, not probabilities. This is a local operator panel, not a production authentication system.
+Click **Admin** in the live UI to set the score cutoff, optional relative gap, retrieved article count, maximum selected passages and article output token budget. Changes apply to the next question. The document inspector shows retrieved articles, original text, passage scores, rejected passages and passages selected for generation. Defaults are cutoff −4, 60 retrieved articles and a 6,000-token article budget. These are raw reranker scores, not probabilities. This is a local operator panel, not a production authentication system.
 
 ## Source layout
 

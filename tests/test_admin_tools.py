@@ -126,7 +126,7 @@ def test_document_api_checks_identifiers_and_keeps_requests_isolated():
 
 def test_requested_live_defaults_and_6000_token_budget():
     settings = PaperSettings().model_dump()
-    assert settings["score_cutoff"] == -3
+    assert settings["score_cutoff"] == -4
     assert settings["retrieval_top_k"] == 60
     assert settings["article_tokens"] == 6000
     assert PaperSettings(article_tokens=6000).article_tokens == 6000

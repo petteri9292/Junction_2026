@@ -78,3 +78,11 @@ back from 30 to 60 articles is covered by request-normalization checks. Existing
 answer and document links survive controller handoffs via read-only lookup of
 prior sessions. The original vLLM process remains PID 45 with the same start time,
 and the original session deadline remains in force.
+
+## Section labels and cutoff update
+
+Removed the decorative 01/02 prefixes from the Question and Answer labels.
+The user changed the final default cutoff to −4; 60 retrieved articles and 6000
+article output tokens remain selected. The API normalizes these settings before
+queueing them, so the warm H200 worker receives the new cutoff explicitly.
+This requires only reloading the local web server; no GPU or model restart.

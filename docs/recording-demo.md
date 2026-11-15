@@ -47,7 +47,7 @@ Before presenting, check the session deadline and remaining time. A two-hour ses
 4. Add context `videopeli`, repeat the search and explain how source selection changes.
 5. Optionally ask `What was the Winter War?` to demonstrate English output from Finnish sources. HyDE and answer-language detection share one model response.
 
-Admin settings affect the next search only. Defaults: cutoff −3, relative gap blank, top-k 60, passages 25, output tokens 6000. Restore defaults after a tuning demonstration. Increasing the cutoff too far can correctly yield no answer; the rejected retrieval diagnostics remain available.
+Admin settings affect the next search only. Defaults: cutoff −4, relative gap blank, top-k 60, passages 25, output tokens 6000. Restore defaults after a tuning demonstration. Increasing the cutoff too far can correctly yield no answer; the rejected retrieval diagnostics remain available.
 
 ## Starting another paid session
 
