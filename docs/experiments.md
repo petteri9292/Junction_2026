@@ -82,3 +82,13 @@ all linked excerpts in its source card; the recorded first paragraph retained
 all three excerpts. Six JavaScript grouping checks and two fixture integrity
 tests passed. Raw citation output and quotations are preserved, with no model
 or prompt changes and no H200 restart.
+
+## Rendering correction
+
+The viewer now renders Markdown rather than exposing emphasis/list syntax.
+Paragraph/source groups receive distinct sequential citation numbers, including
+when the same Wikipedia revision is used in different paragraphs. The exact
+reported answer is reused for browser verification through a read-only result
+link; no generation is required for that check. Five Markdown and six grouping
+checks pass, alongside two fixture integrity checks. This changes presentation
+only and does not alter model prompts or stored generated prose.

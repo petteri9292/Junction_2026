@@ -44,7 +44,7 @@ build-backend = "setuptools.build_meta"
 include = ["wikilens*"]
 
 [tool.setuptools.package-data]
-wikilens = ["schema.sql", "templates/*.html", "static/*.json", "recording_ui/*.html", "recording_ui/*.css", "recording_ui/*.js", "recording_ui/fixtures/*.json"]
+wikilens = ["schema.sql", "templates/*.html", "static/*.json", "recording_ui/*.html", "recording_ui/*.css", "recording_ui/*.js", "recording_ui/fixtures/*.json", "recording_ui/vendor/*"]
 
 [tool.ruff]
 target-version = "py312"

@@ -328,3 +328,16 @@ body.design-thumbnail *{animation:none!important;transition:none!important}
 .source-quotes li:last-child{margin-bottom:0}
 .source-quotes li::marker{font-size:11px;color:var(--muted)}
 .source-quotes blockquote{margin:0}
+
+/* Render Markdown blocks without losing their citation-unit boundary. */
+.answer-unit{margin:0 0 24px}
+.answer-unit>:last-child{margin-bottom:0}
+.answer-unit ul,.answer-unit ol{margin:12px 0 20px;padding-left:1.5em}
+.answer-unit li{margin:8px 0;padding-left:.2em}
+.answer-unit li>p{margin:0 0 8px}
+.answer-unit strong{font-weight:700}
+.citation-badges{white-space:nowrap}
+.answer-unit pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:14px;background:var(--raised)}
+.answer-unit table{border-collapse:collapse;display:block;overflow-x:auto;max-width:100%;font-size:.85em}
+.answer-unit th,.answer-unit td{padding:8px 12px;border:1px solid var(--line);text-align:left}
+.answer-unit a{color:var(--accent);text-decoration:underline}

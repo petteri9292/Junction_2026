@@ -49,3 +49,18 @@ isolation, first-use numbering, different revisions, duplicate quotation removal
 raw-data preservation and the recorded examples. Two fixture integrity tests also
 passed. This interface-only change leaves the model, prompts, raw evidence and
 running H200 services unchanged.
+
+## Markdown and distinct paragraph citation numbers
+
+This supersedes the earlier source-number reuse: every paragraph/source group
+now has its own sequential badge number. Repeated excerpts from the same source
+within one paragraph still share a single badge. The displayed article uses
+local Markdown rendering for emphasis, lists and other block structure. Raw HTML
+remains escaped, unsafe links are rejected, and generated images cannot load
+external resources. Leading Finnish dates are kept as prose.
+
+Five Markdown tests, six citation-grouping tests and two fixture tests pass.
+The exact reported answer can be reopened through a read-only result link;
+this fetches the stored result without another generation call. Completed live
+answers retain that result ID in the URL so a reload can display them again.
+Raw source data, generated wording, prompts and the H200 session remain unchanged.

@@ -88,9 +88,9 @@ function render(fixture) {
     if (claim.section && claim.section !== section) {
       section = claim.section; $('#answer').append(el('h3', '', section));
     }
-    const lastSpace = claim.text.lastIndexOf(' ');
-    const p = el('p', '', claim.text.slice(0, lastSpace + 1));
-    const ending = el('span', 'claim-ending', claim.text.slice(lastSpace + 1));
+    const unit = el('div', 'answer-unit');
+    appendAnswerContent(unit, claim.text);
+    const ending = el('span', 'citation-badges');
     claim.citations.forEach(id => {
       const index = display.evidence.findIndex(e => e.id === id);
       if (index < 0) throw new Error('Unmapped fixture citation');
@@ -101,8 +101,8 @@ function render(fixture) {
       button.setAttribute('aria-controls', `evidence-${id}`); button.setAttribute('aria-pressed', 'false');
       button.addEventListener('click', () => toggleCitation(id, button)); ending.append(button);
     });
-    p.append(ending);
-    $('#answer').append(p);
+    if (claim.citations.length) answerCitationTarget(unit).append(ending);
+    $('#answer').append(unit);
   });
   $('#evidence').replaceChildren();
   display.evidence.forEach(source => {
@@ -158,6 +158,7 @@ async function play(fixture) {
   if (timing) timing.textContent = 'Saved H100 run · ' + fixture.timings.total_seconds.toFixed(1) + ' s recorded · not a live search';
 }
 function reset(clearOptions = true) {
+  const url = new URL(location.href); url.searchParams.delete('result'); history.replaceState(null, '', url);
   if (clearOptions) resetOptions();
   document.body.classList.remove('has-result');
   const timing = $('#result-timing'); if (timing) timing.textContent = '';
@@ -228,6 +229,7 @@ async function searchLive() {
         render(result.result);
         const timing = $('#result-timing');
         if (timing) timing.textContent = result.seconds.toFixed(1) + ' s · LLM reviewed';
+        const url = new URL(location.href); url.searchParams.set('result', request_id); history.replaceState(null, '', url);
         return;
       }
       $('#progress-text').textContent = result.stage || 'Researching Wikipedia…';
@@ -241,6 +243,25 @@ async function searchLive() {
     if (generation === state.generation) { $('#progress').hidden = true; setBusy(false); }
   }
 }
+async function restoreSavedResult() {
+  const id = new URLSearchParams(location.search).get('result');
+  if (!id) return;
+  if (!/^[a-f0-9]{32}$/.test(id)) { announce('Invalid saved result link.'); return; }
+  const generation = state.generation;
+  try {
+    const result = await getJSON('/api/questions/' + id);
+    if (generation !== state.generation || state.busy) return;
+    if (result.status !== 'complete') { announce('This saved result is not available in the current session.'); return; }
+    state.lastRequest = id; state.current = result.result;
+    $('#question').value = result.question || result.result.question;
+    $('#research-context').value = result.context || '';
+    setContextExpanded(Boolean(result.context));
+    $('#welcome').hidden = true;
+    render(result.result);
+    $('#result-timing').textContent = 'Previous run · ' + result.seconds.toFixed(1) + ' s · LLM reviewed';
+    document.dispatchEvent(new CustomEvent('wikilens:request', {detail:{request_id:id}}));
+  } catch (error) { if (generation === state.generation) announce('Could not reopen the saved result: ' + error.message); }
+}
 async function init() {
   try {
     const config = await getJSON('/api/status');
@@ -252,6 +273,7 @@ async function init() {
       $('#context-disclosure').textContent = 'Your question and context are sent to the research session.';
       $('#replay').textContent = 'Run again ↻';
       await refreshSession();
+      await restoreSavedResult();
       setInterval(() => refreshSession().catch(() => {
         const status = $('#connection-status'); if (status) status.textContent = 'Connection unavailable';
       }), 10000);

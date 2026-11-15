@@ -62,3 +62,11 @@ The live pipeline also downloads these pinned checkpoints from their publishers:
 Weights are not bundled with this repository. Consult each publisher's model
 card and licence for the terms that apply to the checkpoint. Exact revisions
 used in the measurements are recorded in `docs/full-l-embeddings.md`.
+
+## Markdown rendering
+
+The browser interface bundles markdown-it 15.0.3 under the MIT licence.
+Upstream: https://github.com/markdown-it/markdown-it
+The full notice is retained at
+`wikilens/recording_ui/vendor/markdown-it.LICENSE.txt`; package provenance and
+the verified npm integrity hash are recorded alongside it.

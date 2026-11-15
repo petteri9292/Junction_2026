@@ -50,10 +50,17 @@ Quotation existence is mechanically checked; semantic support is not independent
 ## Citation display
 
 The Paper interface groups references by Wikipedia revision within each paragraph.
-Each distinct source gets one badge per paragraph, with stable source numbering
+Each distinct source gets one badge per paragraph, with a distinct number for each paragraph/source group
 across the article. Opening a badge lists every distinct exact quotation linked
 to that source in that paragraph. Identical quotations are shown once; original
 reference IDs and source-passage IDs are retained in the display model. Quotations
 from other paragraphs are kept separate, and different revisions are not merged.
 This is a presentation transform over the unchanged raw evidence; it adds no
 model call and does not restart inference services.
+
+Markdown formatting is rendered locally with pinned markdown-it 15.0.3. Raw HTML
+is disabled, unsafe link protocols remain blocked, and image syntax displays
+only its alt text. Bullets, emphasis and other block structure remain within
+the original citation unit; citations are attached after the rendered content.
+Source quotations are always displayed as literal text. The bundled renderer
+works without a CDN and its npm integrity hash is recorded beside the asset.

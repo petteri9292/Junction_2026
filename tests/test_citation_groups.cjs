@@ -17,9 +17,9 @@ test('one badge contains all excerpts from a source within its paragraph', () =>
   assert.equal(JSON.stringify(raw), original, 'Raw model evidence must remain unchanged');
 });
 
-test('the same source keeps its number but never mixes paragraphs', () => {
+test('the same source gets distinct numbers in different paragraphs', () => {
   const view = groupParagraphCitations({answer:[paragraph('Q1'),paragraph('Q2')], evidence:[source('Q1','Earlier paragraph quote.'),source('Q2','Later paragraph quote.')]});
-  assert.deepEqual(view.evidence.map(s => s.number), [1,1]);
+  assert.deepEqual(view.evidence.map(s => s.number), [1,2]);
   assert.notEqual(view.answer[0].citations[0], view.answer[1].citations[0]);
   assert.deepEqual(view.evidence[1].quotes.map(q => q.passage), ['Later paragraph quote.']);
 });
@@ -27,7 +27,7 @@ test('the same source keeps its number but never mixes paragraphs', () => {
 test('distinct sources or revisions keep distinct badges and first-use numbering', () => {
   const view = groupParagraphCitations({answer:[paragraph('Q2','Q1'),paragraph('Q1')], evidence:[source('Q1','One.',1),source('Q2','Two.',2)]});
   assert.equal(view.answer[0].citations.length, 2);
-  assert.deepEqual(view.evidence.map(s => s.number), [1,2,2]);
+  assert.deepEqual(view.evidence.map(s => s.number), [1,2,3]);
 });
 
 test('duplicate quotations appear once while preserving original reference identities', () => {

@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-15",
+  "markdown_tests_passed": 5,
+  "citation_grouping_tests_passed": 6,
+  "fixture_tests_passed": 2,
+  "reported_answer_browser_checked": true,
+  "markdown_bullets_and_bold_verified": true,
+  "finnish_leading_date_preserved_as_prose": true,
+  "same_source_different_paragraphs": {
+    "paragraph_1_badge": 1,
+    "paragraph_12_badge": 18
+  },
+  "stored_answer_and_evidence_unchanged": true,
+  "verification_used_existing_result_without_generation": true,
+  "same_h200_container": true,
+  "renderer": "markdown-it 15.0.3",
+  "renderer_npm_integrity_verified": true,
+  "screenshots": [
+    "reports/markdown-rendering.png",
+    "reports/distinct-paragraph-citations.png"
+  ]
+}
