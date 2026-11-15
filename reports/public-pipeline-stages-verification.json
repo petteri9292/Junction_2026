@@ -1,0 +1,17 @@
+{
+  "request_id": "2b9af946775349a5a43670e9a1db12c5",
+  "observed_stages": [
+    "Writing HyDE retrieval aid",
+    "Searching Wikipedia articles in MariaDB",
+    "Chunking headings and ranking passages",
+    "Selecting evidence for your requested context",
+    "Writing the article with Qwen",
+    "Reviewing language and source support",
+    "Selecting exact quotations",
+    "Ready"
+  ],
+  "seconds": 18.26883288199997,
+  "h200_identity_and_deadline_unchanged": true,
+  "admin_routes_denied": true,
+  "tests_passed": 31
+}

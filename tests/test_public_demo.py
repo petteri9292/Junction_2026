@@ -7,7 +7,13 @@ from types import SimpleNamespace
 
 import pytest
 
-from wikilens.public_demo import PublicBridge, PublicHandler, public_html
+from wikilens.public_demo import (
+    PIPELINE_STAGES,
+    PublicBridge,
+    PublicHandler,
+    public_html,
+    public_stage,
+)
 
 
 @pytest.fixture
@@ -181,3 +187,37 @@ def test_backend_errors_are_not_public(site):
     status, body = request("/api/status")
     assert status == 502
     assert b"database-password" not in body
+
+
+@pytest.mark.parametrize("stage", sorted(PIPELINE_STAGES))
+def test_public_result_exposes_actual_pipeline_stage(stage):
+    rid = "a" * 32
+    backend = SimpleNamespace(
+        session_id="test",
+        result=lambda _: {
+            "status": "running",
+            "stage": stage,
+            "settings": {"private": True},
+            "worker_pid": 123,
+        },
+    )
+    bridge = PublicBridge(backend, {"test:" + rid: True})
+    assert bridge.result(rid) == {"status": "running", "stage": stage}
+
+
+@pytest.mark.parametrize(
+    "stage",
+    ["/private/path", "Writing the article with Qwen: secret", None, ["secret"]],
+)
+def test_unknown_worker_messages_stay_private(stage):
+    assert (
+        public_stage({"status": "running", "stage": stage})
+        == "Processing your question"
+    )
+
+
+def test_failed_worker_stage_stays_private():
+    assert (
+        public_stage({"status": "failed", "stage": "/private/error"})
+        == "Research could not be completed"
+    )

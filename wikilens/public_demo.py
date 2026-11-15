@@ -19,6 +19,40 @@ STATIC = {
 }
 ROOT = Path(__file__).with_name("recording_ui")
 RID = r"[a-f0-9]{32}"
+# Only fixed pipeline labels may cross the public boundary. Never forward
+# arbitrary worker messages, errors, prompts or diagnostic fields.
+PIPELINE_STAGES = frozenset(
+    {
+        "Writing HyDE retrieval aid",
+        "Searching Wikipedia articles in MariaDB",
+        "Chunking headings and ranking passages",
+        "Selecting evidence for your requested context",
+        "Deep search: reviewing whether the evidence is sufficient",
+        "Deep search: running one follow-up query",
+        "Deep search: ranking the combined evidence",
+        "Writing the article with Qwen",
+        "Reviewing language and source support",
+        "Finding references for paragraphs",
+        "Selecting exact quotations",
+    }
+)
+
+
+def public_stage(value):
+    status = value.get("status")
+    if status == "running":
+        stage = value.get("stage")
+        return (
+            stage
+            if isinstance(stage, str) and stage in PIPELINE_STAGES
+            else "Processing your question"
+        )
+    return {
+        "queued": "Waiting for the warm model",
+        "complete": "Ready",
+        "failed": "Research could not be completed",
+        "missing": "Question not found",
+    }.get(status, "Processing your question")
 
 
 def public_html():
@@ -56,7 +90,7 @@ class PublicBridge:
         result["live"] = True
         result["stage"] = {
             "ready": "Ready for your question",
-            "answering": "Researching Wikipedia",
+            "answering": "Research in progress",
             "starting": "Preparing the research model",
             "closed": "The demo session has ended",
         }.get(value.get("status"), "Research service unavailable")
@@ -105,11 +139,7 @@ class PublicBridge:
         value = self.bridge.result(rid)
         allowed = ("status", "question", "context", "deep_search", "seconds")
         result = {key: value[key] for key in allowed if key in value}
-        result["stage"] = (
-            "Researching Wikipedia"
-            if value.get("status") not in {"complete", "failed"}
-            else value["status"]
-        )
+        result["stage"] = public_stage(value)
         if value.get("status") == "failed":
             result["error"] = (
                 "Research could not be completed. Please try a new question."

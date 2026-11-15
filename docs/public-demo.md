@@ -29,7 +29,10 @@ on port 8041 continues to use its original session.
 The public HTML excludes the admin button, dialog and script. The HTTP server
 serves an explicit static/API allowlist; admin scripts, diagnostics, document
 inspection, fixtures, filesystem paths and arbitrary settings are denied. Public
-responses strip internal allocation metadata and raw errors. Only request IDs
+responses strip internal allocation metadata and raw errors. Progress forwards
+only known pipeline labels: HyDE, MariaDB retrieval, passage ranking and context
+selection, optional Deep search, article generation, review, reference selection
+and exact quotation selection. Unknown worker messages stay private. Only request IDs
 admitted through the public endpoint can be read publicly. A durable admission
 record also limits public work to one running question across frontend restarts.
 Public results are accessible to anyone holding their unguessable result URL;

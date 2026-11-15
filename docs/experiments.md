@@ -174,3 +174,18 @@ privacy and frontend-restart admission checks.
 
 The warm session ends at 15:22 Helsinki time; new work is accepted until 15:07.
 See `reports/public-demo-verification.json` and `docs/public-demo.md`.
+
+## Public pipeline progress labels
+
+Replaced the public frontend's generic progress text with an exact allowlist of
+pipeline stage labels, including optional Deep search stages. Arbitrary worker
+messages, raw errors, settings and diagnostics remain filtered. Only the CPU
+frontend was redeployed; the H200 job record, container identity, worker PID,
+startup time and absolute deadline were verified unchanged.
+
+All 31 public frontend tests passed. A live request completed in 18.269 seconds
+and exposed HyDE, MariaDB retrieval, ranking, context selection, generation,
+review and quotation selection through the public API. Polling can skip short
+stages; the reference-selection label is also supported. Admin and document
+inspection routes still returned 404. See
+`reports/public-pipeline-stages-verification.json`.
