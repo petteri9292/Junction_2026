@@ -1,5 +1,14 @@
 # Presentation verification — 15 November 2026
 
+## H200 session update
+
+The replacement six-hour H200 session is connected at port 8041 and was verified
+with both Talvisota contexts, citations and retrieved documents. It uses the
+same model and prompts. The current deadline is **13:18:19 Helsinki** on
+15 November, with new requests closing at 13:03:19. It supersedes the expired
+overnight H100 session described below. Focused checks passed 32 tests. See
+`reports/h200-live-verification.json`.
+
 ## Working source
 
 - **244 tests passed** in the working checkout, including mocked inference, settings, quotation provenance, admin diagnostics and the localhost HTTP API.

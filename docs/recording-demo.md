@@ -1,3 +1,22 @@
+# H200 six-hour presentation session — 15 November update
+
+The user authorized one H200 session with the same pinned model, prompts,
+corpus and vLLM settings. The `h200-6h` profile reserves USD32 and uses a
+21,600-second execution timeout, one attempt and one maximum container.
+The absolute deadline is **13:18:19 Helsinki on 15 November**; new questions
+close at 13:03:19 to allow in-flight work to finish. Startup is included.
+This replaces the expired overnight H100 session below.
+
+To reproduce this profile with a new unique job file:
+
+```bash
+.venv/bin/python scripts/paper-live-control.py reserve --profile h200-6h --job data/NEW-h200-session.json
+.venv/bin/modal deploy scripts/modal-paper-h200.py
+.venv/bin/python scripts/paper-live-control.py start --job data/NEW-h200-session.json
+```
+
+Inspect existing sessions and budgets before these paid actions.
+
 # Presentation runbook
 
 ## Reliable offline fallback

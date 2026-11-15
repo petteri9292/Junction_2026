@@ -22,6 +22,12 @@ def main():
     parser.add_argument("--question")
     parser.add_argument("--context", default="")
     parser.add_argument(
+        "--profile",
+        choices=["h100-2h", "h200-6h"],
+        default="h100-2h",
+        help="Resource profile used only when reserving a new session",
+    )
+    parser.add_argument(
         "--job", type=Path, default=ROOT / "data/modal-paper-live-job.json"
     )
     args = parser.parse_args()
@@ -38,7 +44,8 @@ def main():
             == modal_ledger["authorized_combined_project_cap_usd"]
             == combined["approved_combined_cap_usd"]
         )
-        reserve = 10.0
+        h200 = args.profile == "h200-6h"
+        reserve = 32.0 if h200 else 10.0
         if (
             combined["current_combined_reserved_usd"] + reserve
             > combined["approved_combined_cap_usd"]
@@ -47,13 +54,13 @@ def main():
         now = datetime.datetime.now(datetime.UTC)
         job = {
             "run_id": "paper-live-" + now.strftime("%Y%m%dT%H%M%SZ"),
-            "app": "wikilens-paper-live",
+            "app": "wikilens-paper-live-h200" if h200 else "wikilens-paper-live",
             "source_run_id": "l-search-20261114T185620Z",
             "reserved_upper_bound_usd": reserve,
-            "gpu": "H100!",
+            "gpu": "H200" if h200 else "H100!",
             "cpu_physical": 8,
             "memory_gib": 32,
-            "timeout_seconds": 7200,
+            "timeout_seconds": 21600 if h200 else 7200,
             "attempts": 1,
             "status": "reserved",
             "created_at_utc": now.isoformat(),
@@ -81,7 +88,7 @@ def main():
     if args.action == "start":
         if job.get("call_id") or job["status"] != "reserved":
             raise SystemExit("Session already started; no automatic retry")
-        job["deadline_unix"] = time.time() + 7170
+        job["deadline_unix"] = time.time() + job["timeout_seconds"] - 30
         # Save intent before spawning, so an ambiguous network failure is not retried.
         job["status"] = "starting_once"
         save(args.job, job)

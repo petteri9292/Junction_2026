@@ -25,7 +25,7 @@ scripts/record-wikilens.sh --port 8041
 
 The live command connects to an **already running** private Modal session described by ignored `data/modal-paper-live-job.json`. It requires Modal authentication and the prepared Dataset L database snapshot on the operator's Volume. It does not start paid compute. Follow [the demo runbook](docs/recording-demo.md) for session startup, status, collection and shutdown.
 
-The H100, vLLM server, embedding model, reranker and MariaDB database stay resident between questions. The bounded session has a hard deadline; closing a browser does not stop it. Answer language comes from the same Pydantic-structured response that produces HyDE, without another detection call. The retrieval corpus remains Finnish.
+The GPU, vLLM server, embedding model, reranker and MariaDB database stay resident between questions. The current six-hour H200 session has a hard deadline; closing a browser does not stop it. Answer language comes from the same Pydantic-structured response that produces HyDE, without another detection call. The retrieval corpus remains Finnish.
 
 ## Inspect the work
 

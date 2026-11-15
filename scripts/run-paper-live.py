@@ -28,6 +28,7 @@ def main():
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--source-run", required=True)
     p.add_argument("--deadline", type=float, required=True)
+    p.add_argument("--gpu", choices=["H100", "H200"], default="H100")
     p.add_argument("--reuse-services", action="store_true")
     p.add_argument("--parent-session")
     args = p.parse_args()
@@ -73,8 +74,8 @@ def main():
             ["nvidia-smi", "--query-gpu=name,memory.total", "--format=csv,noheader"],
             text=True,
         ).strip()
-        if "H100" not in hardware or len(hardware.splitlines()) != 1:
-            raise RuntimeError("Expected exactly one H100: " + hardware)
+        if args.gpu not in hardware or len(hardware.splitlines()) != 1:
+            raise RuntimeError(f"Expected exactly one {args.gpu}: " + hardware)
         save(
             out / "provenance.json",
             {
@@ -133,7 +134,7 @@ def main():
             ):
                 c.execute("SET GLOBAL innodb_buffer_pool_size=4294967296")
                 c.execute("SET GLOBAL mhnsw_max_cache_size=8589934592")
-            status(stage="Loading and warming the H100 model")
+            status(stage=f"Loading and warming the {args.gpu} model")
             command = [
                 str(Path(sys.executable).parent / "vllm"),
                 "serve",

@@ -37,7 +37,7 @@ for name,data in p['files'].items():(root/name).write_bytes(base64.b64decode(dat
 out=Path('/data/paper-live')/p['run_id'];out.mkdir(parents=True,exist_ok=True)
 (out/'controller-attempt.json').write_text(json.dumps({'parent_session':p['parent_session'],'deadline_unix':p['deadline_unix'],'attempts':1})+'\\n')
 with (out/'worker.log').open('a') as log:
- process=subprocess.Popen([str(root/'inference/vllm/.venv/bin/python'),'-u',str(root/'scripts/run-paper-live.py'),'--output',str(out),'--source-run',p['source_run_id'],'--deadline',str(p['deadline_unix']),'--reuse-services','--parent-session',p['parent_session']],cwd=root,env=dict(os.environ,PYTHONPATH=str(root),HF_HOME='/data/hf'),stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+ process=subprocess.Popen([str(root/'inference/vllm/.venv/bin/python'),'-u',str(root/'scripts/run-paper-live.py'),'--output',str(out),'--source-run',p['source_run_id'],'--deadline',str(p['deadline_unix']),'--gpu',p['gpu'],'--reuse-services','--parent-session',p['parent_session']],cwd=root,env=dict(os.environ,PYTHONPATH=str(root),HF_HOME='/data/hf'),stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
 print(json.dumps({'pid':process.pid,'run_id':p['run_id']}))
 """
 
@@ -64,6 +64,7 @@ def main():
         "parent_session": old.get("parent_session_id", old["run_id"]),
         "source_run_id": old["source_run_id"],
         "deadline_unix": old["deadline_unix"],
+        "gpu": "H200" if old["gpu"] == "H200" else "H100",
         "previous_session": old["run_id"],
         "stop_worker_pid": session["worker_pid"]
         if old.get("parent_session_id")
@@ -152,6 +153,7 @@ def main():
                 "container_id": value["container_id"],
                 "startup_seconds": value["startup_seconds"],
                 "deadline_unix": old["deadline_unix"],
+                "gpu": "H200" if old["gpu"] == "H200" else "H100",
             }
         )
     )

@@ -2,6 +2,25 @@
 
 These are measured development observations, not a held-out answer-quality benchmark. Machine-readable values are in `reports/metrics.json`. Raw prompts, outputs, source passages, code hashes and operational logs remain preserved locally in ignored data and the pre-cleanup archive.
 
+## H200 six-hour live session
+
+On 15 November the user authorized one H200 session for six hours, with a
+USD32 reservation. Physical hardware was verified as NVIDIA H200, 143771 MiB.
+The same pinned Qwen checkpoint, prompt files, corpus and vLLM lock were reused;
+no model training or prompt changes were made. Startup took 410.271 seconds.
+
+Fresh requests through the demo HTTP API completed in **23.645 seconds** for
+`talvisota` without context and **14.576 seconds** with context `videopeli`.
+Both retrieved 60 articles, displayed source quotations (15 and 11 respectively),
+and passed a full retrieved-document inspection on the same resident container.
+These are smoke checks with fresh retrieval, not a controlled H100/H200 speed
+comparison. See `reports/h200-live-verification.json`.
+
+The demo at port 8041 was switched to this session. It remains warm until
+13:18:19 Helsinki, with new questions accepted until 13:03:19. Six hours includes
+startup. Combined conservative reservations are USD93.4725 against the
+user-approved USD100 cap; these are not reconciled provider charges.
+
 ## Corpus
 
 The completed Dataset L import contains 568,416 Finnish Wikipedia articles and 1024-dimensional BGE-M3 vectors. All 57 embedding shards were independently reopened and checked for alignment, hashes, norms and finite values. 2,441 inputs exceeded the 8192-token embedding limit and were marked truncated. Embedding GPU batches took 24.44 minutes across the completed checkpointed run; this excludes CPU preparation, orchestration and verification. This is pretrained inference, not training.
