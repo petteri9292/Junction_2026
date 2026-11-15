@@ -148,3 +148,29 @@ See `reports/deep-search-verification.json` and `docs/deep-search.md`.
 The multi-part final answer rejected the Finlandia component rather than
 answering it. This remains a recorded failure example: the implementation proves
 the bounded control flow, not reliable completeness or factual correctness.
+
+## Public Modal presentation deployment — 15 November
+
+The user approved a USD150 combined HF/Modal cap. Reserved USD32 for a separate,
+one-attempt H200 session with a 21600-second timeout, and USD1 for its small public
+CPU frontend. Combined conservative reservations are USD126.4725; these are not
+reconciled provider charges. The original H200 remained ready and unchanged.
+
+Published https://petteri-hallipelto--wikilens.us-east.modal.run/ with strict
+public routes and a separate localhost-only operator page on port 8043. No public
+admin controls, settings overrides, raw retrieval diagnostics or allocation
+metadata are exposed. Live checks confirmed denied admin routes and cross-origin
+submissions; the private operator endpoint returned all 60 retrieved documents.
+
+The new H200 took 488.996 seconds to initialize, including model/kernel warm-up.
+Browser-run `talvisota` without context completed in 33.896 seconds; with
+`videopeli` context it completed in 22.4 seconds. Both used the same resident
+allocation and unchanged model/prompts. They selected the historical and game
+articles respectively. Citation expansion showed the grouped paragraph excerpts
+and stored Wikipedia revision links. These are individual observations, not a
+controlled performance comparison. Finnish language and factual errors remain;
+output was retained unchanged. All 274 tests passed, including public HTTP
+privacy and frontend-restart admission checks.
+
+The warm session ends at 15:22 Helsinki time; new work is accepted until 15:07.
+See `reports/public-demo-verification.json` and `docs/public-demo.md`.

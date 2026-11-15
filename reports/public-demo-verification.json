@@ -1,0 +1,43 @@
+{
+  "verified_at_utc": "2026-11-15T07:33:56.359420+00:00",
+  "public_url": "https://petteri-hallipelto--wikilens.us-east.modal.run/",
+  "gpu": "H200",
+  "timeout_seconds": 21600,
+  "startup_seconds": 488.996433893,
+  "deadline_utc": "2026-11-15T13:22:15.778598+00:00",
+  "accepts_requests_until_utc": "2026-11-15T13:07:15.778598+00:00",
+  "tests_passed": 274,
+  "live_route_checks": {
+    "/": 200,
+    "/admin.js": 404,
+    "/admin": 404,
+    "/.env": 404,
+    "/api/questions/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/diagnostics": 404,
+    "/api/questions/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/documents/D1": 404,
+    "/api/questions/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa": 404,
+    "settings_override": 400,
+    "cross_origin": 403
+  },
+  "runs": [
+    {
+      "question": "talvisota",
+      "context": "",
+      "seconds": 33.895930366000016,
+      "result_url": "https://petteri-hallipelto--wikilens.us-east.modal.run/?result=7559fe13261149f5977411c9e850bb3c",
+      "evidence_count": 18
+    },
+    {
+      "question": "talvisota",
+      "context": "videopeli",
+      "seconds": 22.36754142199993,
+      "result_url": "https://petteri-hallipelto--wikilens.us-east.modal.run/?result=f3f3c9b67a2b4f58a4c9059c61ac16a8",
+      "evidence_count": 11
+    }
+  ],
+  "limitations": [
+    "Individual requests, not a controlled latency benchmark.",
+    "Model output retained unchanged; Finnish language and factual errors remain.",
+    "Literal quotations verify provenance, not semantic correctness."
+  ],
+  "private_operator_diagnostics_verified": true
+}

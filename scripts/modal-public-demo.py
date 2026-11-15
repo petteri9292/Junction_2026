@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 app = modal.App("wikilens-public-demo")
 image = (
     modal.Image.debian_slim(python_version="3.12")
-    .pip_install("modal==1.6.4", "pydantic==2.12.4")
+    .pip_install("modal==1.6.4", "pydantic==2.14.3")
     .add_local_dir(
         ROOT / "wikilens", remote_path="/app/wikilens", ignore=["__pycache__", "*.pyc"]
     )
