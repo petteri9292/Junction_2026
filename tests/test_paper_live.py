@@ -90,7 +90,9 @@ def test_submit_is_idempotent_and_does_not_restart_or_duplicate_compute():
     assert service.submit(data) == service.submit(data)
     assert len(service.sent) == 1
     assert service.sent[0]["context"] == "videopeli"
-    assert service.sent[0]["settings"]["score_cutoff"] == -2
+    assert service.sent[0]["settings"]["score_cutoff"] == -3
+    assert service.sent[0]["settings"]["retrieval_top_k"] == 60
+    assert service.sent[0]["settings"]["article_tokens"] == 6000
     with pytest.raises(ValueError, match="different inputs"):
         service.submit({**data, "settings": {"score_cutoff": 0}})
     with pytest.raises(ValueError, match="different inputs"):
@@ -190,3 +192,19 @@ def test_local_http_live_api_and_cross_origin_rejection(tmp_path):
         server.shutdown()
         server.server_close()
         thread.join()
+
+
+def test_saved_results_and_documents_remain_readable_after_controller_handoff():
+    service = bridge()
+    service.job["previous_session_ids"] = ["previous-controller"]
+    rid = "d" * 32
+    saved = {"status": "complete", "result": {"question": "Saved question"}}
+    diagnostics = {"stage": "selection", "documents": [{"id": "D1"}]}
+    document = {"id": "D1", "text": "Original source text"}
+    service.results["previous-controller:" + rid] = saved
+    service.results["previous-controller:" + rid + ":diagnostics"] = diagnostics
+    service.results["previous-controller:" + rid + ":document:D1"] = document
+    assert service.result(rid) == saved
+    assert service.diagnostics(rid) == diagnostics
+    assert service.diagnostics(rid, "D1") == document
+    assert service.sent == []

@@ -1,6 +1,6 @@
 'use strict';
 if (document.querySelector('#admin-dialog')) {
-  const adminDefaults = {score_cutoff:-2, relative_gap:null, retrieval_top_k:60, max_nodes:25, article_tokens:4000};
+  const adminDefaults = {score_cutoff:-3, relative_gap:null, retrieval_top_k:60, max_nodes:25, article_tokens:6000};
   state.settings = {...adminDefaults};
   const dialog = $('#admin-dialog');
   let snapshot = null;
@@ -8,7 +8,7 @@ if (document.querySelector('#admin-dialog')) {
   let loadVersion = 0;
   const number = value => value === null || value === undefined ? '—' : Number(value).toFixed(3);
   function fillSettings(settings) {
-    $('#admin-cutoff').value = settings.score_cutoff ?? -2;
+    $('#admin-cutoff').value = settings.score_cutoff ?? -3;
     $('#admin-no-cutoff').checked = settings.score_cutoff === null;
     $('#admin-cutoff').disabled = settings.score_cutoff === null;
     $('#admin-gap').value = settings.relative_gap ?? '';

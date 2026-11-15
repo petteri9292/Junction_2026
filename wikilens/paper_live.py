@@ -147,13 +147,23 @@ class ModalPaperBridge:
             self.queue.put(request, partition=self.session_id)
             return {"request_id": request_id}
 
+    def _read_result(self, request_id, suffix=""):
+        sessions = [self.session_id, *self.job.get("previous_session_ids", [])]
+        if self.job.get("parent_session_id"):
+            sessions.append(self.job["parent_session_id"])
+        for session in dict.fromkeys(sessions):
+            value = self.results.get(session + ":" + request_id + suffix)
+            if value is not None:
+                return value
+        return None
+
     def result(self, request_id):
         if not re.fullmatch("[a-f0-9]{32}", request_id):
             raise ValueError("Invalid request ID")
-        return self.results.get(
-            self.session_id + ":" + request_id,
-            {"status": "missing", "stage": "Question not found"},
-        )
+        return self._read_result(request_id) or {
+            "status": "missing",
+            "stage": "Question not found",
+        }
 
     def diagnostics(self, request_id, document_id=None):
         if not re.fullmatch("[a-f0-9]{32}", request_id):
@@ -163,11 +173,8 @@ class ModalPaperBridge:
         ):
             raise ValueError("Invalid document ID")
         suffix = ":document:" + document_id if document_id else ":diagnostics"
-        return self.results.get(
-            self.session_id + ":" + request_id + suffix,
-            {
-                "stage": "pending",
-                "documents": [],
-                "error": "Diagnostics are not available yet",
-            },
-        )
+        return self._read_result(request_id, suffix) or {
+            "stage": "pending",
+            "documents": [],
+            "error": "Diagnostics are not available yet",
+        }

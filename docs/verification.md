@@ -64,3 +64,17 @@ The exact reported answer can be reopened through a read-only result link;
 this fetches the stored result without another generation call. Completed live
 answers retain that result ID in the URL so a reload can display them again.
 Raw source data, generated wording, prompts and the H200 session remain unchanged.
+
+## Final source/paragraph labels and defaults
+
+The latest requested labels keep source numbers stable and append the original
+paragraph index: `1.1p`, `1.2p`, and `1.12p`. Multiple excerpts from one source
+within a paragraph remain grouped. Final live defaults are cutoff −3, 60 retrieved
+articles and 6000 article tokens. The review budget and prompts remain unchanged.
+
+Twenty-six focused Python checks and six citation-grouping checks passed. The
+6000-token limit was exercised in a real query on the same H200; the later change
+back from 30 to 60 articles is covered by request-normalization checks. Existing
+answer and document links survive controller handoffs via read-only lookup of
+prior sessions. The original vLLM process remains PID 45 with the same start time,
+and the original session deadline remains in force.

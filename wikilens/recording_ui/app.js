@@ -95,9 +95,9 @@ function render(fixture) {
       const index = display.evidence.findIndex(e => e.id === id);
       if (index < 0) throw new Error('Unmapped fixture citation');
       const source = display.evidence[index];
-      const button = el('button', 'citation', String(source.number));
+      const button = el('button', 'citation', source.label);
       button.type = 'button'; button.dataset.evidence = id;
-      button.setAttribute('aria-label', `Citation ${source.number}: ${source.title}, ${source.language_label}, paragraph ${source.paragraph_number}`);
+      button.setAttribute('aria-label', `Citation ${source.label}: ${source.title}, ${source.language_label}, paragraph ${source.paragraph_number}`);
       button.setAttribute('aria-controls', `evidence-${id}`); button.setAttribute('aria-pressed', 'false');
       button.addEventListener('click', () => toggleCitation(id, button)); ending.append(button);
     });
@@ -108,8 +108,8 @@ function render(fixture) {
   display.evidence.forEach(source => {
     const card = el('article', 'evidence-card'); card.id = `evidence-${source.id}`; card.dataset.language = source.lang; card.dataset.evidence = source.id; card.tabIndex = -1;
     const top = el('div', 'source-top');
-    const number = el('button', 'source-number', String(source.number)); number.type = 'button';
-    number.setAttribute('aria-label', `Close citation ${source.number}: ${source.title}, paragraph ${source.paragraph_number}`);
+    const number = el('button', 'source-number', source.label); number.type = 'button';
+    number.setAttribute('aria-label', `Close citation ${source.label}: ${source.title}, paragraph ${source.paragraph_number}`);
     number.addEventListener('click', () => {
       const trigger = [...document.querySelectorAll('.citation')].find(button => button.dataset.evidence === source.id);
       toggleCitation(source.id, trigger);

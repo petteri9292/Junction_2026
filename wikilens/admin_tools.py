@@ -7,11 +7,11 @@ from pydantic import BaseModel, ConfigDict, Field
 
 class PaperSettings(BaseModel):
     model_config = ConfigDict(extra="forbid", strict=True, allow_inf_nan=False)
-    score_cutoff: float | None = Field(default=-2.0, ge=-20, le=20)
+    score_cutoff: float | None = Field(default=-3.0, ge=-20, le=20)
     relative_gap: float | None = Field(default=None, ge=0, le=20)
     retrieval_top_k: int = Field(default=60, ge=1, le=100)
     max_nodes: int = Field(default=25, ge=1, le=40)
-    article_tokens: int = Field(default=4000, ge=256, le=4000)
+    article_tokens: int = Field(default=6000, ge=256, le=6000)
 
 
 def document_key(item):

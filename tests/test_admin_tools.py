@@ -113,6 +113,7 @@ def test_no_surviving_passages_still_has_all_retrieved_documents():
 
 def test_document_api_checks_identifiers_and_keeps_requests_isolated():
     bridge = ModalPaperBridge.__new__(ModalPaperBridge)
+    bridge.job = {}
     bridge.session_id = "session"
     bridge.results = {"session:" + "a" * 32 + ":document:D1": {"title": "A"}}
     assert bridge.diagnostics("a" * 32, "D1")["title"] == "A"
@@ -121,3 +122,13 @@ def test_document_api_checks_identifiers_and_keeps_requests_isolated():
         bridge.diagnostics("a" * 32, "../D1")
     with pytest.raises(ValueError):
         bridge.diagnostics("../request")
+
+
+def test_requested_live_defaults_and_6000_token_budget():
+    settings = PaperSettings().model_dump()
+    assert settings["score_cutoff"] == -3
+    assert settings["retrieval_top_k"] == 60
+    assert settings["article_tokens"] == 6000
+    assert PaperSettings(article_tokens=6000).article_tokens == 6000
+    with pytest.raises(ValidationError):
+        PaperSettings(article_tokens=6001)

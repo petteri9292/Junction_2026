@@ -124,13 +124,16 @@ def main():
         **old,
         "run_id": run_id,
         "parent_session_id": old.get("parent_session_id", old["run_id"]),
+        "previous_session_ids": list(
+            dict.fromkeys([old["run_id"], *old.get("previous_session_ids", [])])
+        ),
         "billing_run_id": billing_run,
         "reserved_upper_bound_usd": 0,
         "status": "ready_left_warm_at_user_request",
         "startup_seconds": value["startup_seconds"],
         "worker_pid": value["worker_pid"],
         "language_mode": "auto_from_structured_hyde",
-        "reason": "Controller-only update reusing the same H100/vLLM/DB and original bounded allocation",
+        "reason": "Controller-only update reusing the same warm GPU/vLLM/DB and original bounded allocation",
     }
     job_path.write_text(json.dumps(new, indent=2) + "\n")
     ledger_path = ROOT / "data/modal-compute-budget.json"

@@ -7,6 +7,7 @@ function groupParagraphCitations(fixture) {
     if (references.has(source.id)) throw new Error('Duplicate evidence identifier');
     references.set(source.id, source);
   }
+  const numbers = new Map();
   const evidence = [];
   const answer = fixture.answer.map((paragraph, paragraphIndex) => {
     const groups = new Map();
@@ -15,10 +16,11 @@ function groupParagraphCitations(fixture) {
       if (!reference) throw new Error('Unmapped paragraph citation');
       // Passage IDs can differ while referring to the same Wikipedia revision.
       const key = JSON.stringify([reference.lang, reference.revision_url]);
+      if (!numbers.has(key)) numbers.set(key, numbers.size + 1);
       if (!groups.has(key)) {
-        const number = evidence.length + 1;
+        const number = numbers.get(key);
         const group = {...reference, id:`P${paragraphIndex + 1}-R${number}`,
-          number, paragraph_number:paragraphIndex + 1, quotes:[]};
+          number, label:`${number}.${paragraphIndex + 1}p`, paragraph_number:paragraphIndex + 1, quotes:[]};
         groups.set(key, group);
         evidence.push(group);
       }

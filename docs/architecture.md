@@ -39,7 +39,7 @@ The older citation-aware and structured-claim variants remain as reproducible so
 
 The current demo uses one H200 with Qwen3-4B-Instruct-2507-FP8, BGE-M3 and BGE-reranker-v2-m3. Earlier measurements used one H100 80 GB. The six-hour H200 profile preserves the same prompts, pinned model and vLLM settings. The current default context budget is 12,288 tokens. The two locked Python environments deliberately separate legacy Transformers experiments from vLLM inference.
 
-Defaults exposed in Admin: absolute reranker cutoff −2, relative gap disabled, 60 retrieved articles, up to 25 selected passages, and 4,000 article output tokens. The review budget remains fixed. Invalid settings are rejected before queuing. Diagnostics survive an empty selection so rejected documents remain inspectable. The inspector distinguishes retrieved, cutoff-passing and actually selected passages.
+Defaults exposed in Admin: absolute reranker cutoff −3, relative gap disabled, 60 retrieved articles, up to 25 selected passages, and 6,000 article output tokens. The review budget remains fixed. Invalid settings are rejected before queuing. Diagnostics survive an empty selection so rejected documents remain inspectable. The inspector distinguishes retrieved, cutoff-passing and actually selected passages.
 
 The local server accepts submissions from localhost and checks origins; it is not a public multi-user deployment. The browser cannot allocate a GPU. Each paid session has an explicit reservation, timeout and one attempt. Loading another question reuses the resident models and database.
 
@@ -50,8 +50,9 @@ Quotation existence is mechanically checked; semantic support is not independent
 ## Citation display
 
 The Paper interface groups references by Wikipedia revision within each paragraph.
-Each distinct source gets one badge per paragraph, with a distinct number for each paragraph/source group
-across the article. Opening a badge lists every distinct exact quotation linked
+Each distinct source gets one badge per paragraph. Its source number stays
+consistent across the article; labels combine it with the paragraph index,
+for example `1.1p` and `1.2p`. Opening a badge lists every distinct exact quotation linked
 to that source in that paragraph. Identical quotations are shown once; original
 reference IDs and source-passage IDs are retained in the display model. Quotations
 from other paragraphs are kept separate, and different revisions are not merged.

@@ -92,3 +92,26 @@ reported answer is reused for browser verification through a read-only result
 link; no generation is required for that check. Five Markdown and six grouping
 checks pass, alongside two fixture integrity checks. This changes presentation
 only and does not alter model prompts or stored generated prose.
+
+## Source/paragraph labels and revised demo defaults
+
+Citation labels now retain the source number and add the original paragraph
+index: `1.1p`, `1.2p`, and so on. Each source still appears once per paragraph
+and opens all associated exact excerpts. The requested live defaults are cutoff
+−3, 30 retrieved articles and 6000 article output tokens; relative gap remains
+disabled and the passage cap remains 25. Review settings and prompts are unchanged.
+
+The request controller was replaced inside the existing H200 allocation, keeping
+vLLM PID 45 and MariaDB resident and preserving the original 13:18:19 deadline.
+Saved results and document inspection fall back through prior controller sessions
+so existing result URLs remain readable. A real request with no settings overrides
+completed in 13.164 seconds, retrieved 30 articles and confirmed all three requested
+settings. See `reports/paragraph-defaults-verification.json`. No new GPU job was
+created. The existing token-aware packing keeps source evidence and review input
+within the unchanged 12,288-token model context.
+
+The user subsequently restored the retrieved-article default to 60. The final
+defaults are therefore cutoff −3, top-k 60 and 6000 article tokens. Normalized
+requests carry these settings explicitly to the already warm controller; no
+second controller or model restart was needed for the change back to 60. The
+30-article live check above remains recorded as a historical observation.
