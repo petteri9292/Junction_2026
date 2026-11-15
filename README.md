@@ -30,6 +30,7 @@ The GPU, vLLM server, embedding model, reranker and MariaDB database stay reside
 ## Inspect the work
 
 - [Pipeline and citation implementation](docs/architecture.md)
+- [Optional one-query deep search and rollback](docs/deep-search.md)
 - [Measured results and limitations](docs/experiments.md) · [machine-readable measurements](reports/metrics.json)
 - [Dataset preparation and reproduction](docs/full-l-embeddings.md)
 - [Presentation deck](reports/wikilens-pipeline-pitch.pptx) · [PDF](reports/wikilens-pipeline-pitch.pdf) · [spoken script](pipeline-pitch-script.txt) · [video brief](demo-brief.md)

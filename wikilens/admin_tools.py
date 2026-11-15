@@ -37,7 +37,20 @@ class RetrievalInspector:
 
     def capture(self, stage, data):
         self.snapshot["stage"] = stage
-        if stage == "hyde":
+        if stage == "deep_search":
+            self.snapshot["deep_search"] = {
+                k: data.get(k)
+                for k in (
+                    "enabled",
+                    "status",
+                    "decision",
+                    "query",
+                    "extra_queries",
+                    "new_articles",
+                    "error",
+                )
+            }
+        elif stage == "hyde":
             self.snapshot["hyde"] = {
                 "text": data.get("text"),
                 "detected_language": data.get("detected_language"),

@@ -295,6 +295,7 @@ class ProductEngine:
         relative_gap=None,
         retrieval_mode="hyde",
         diagnostics=None,
+        deep_search=False,
     ):
         from .hyde_search import (
             generate_focused_hyde,
@@ -354,7 +355,7 @@ class ProductEngine:
         )
         if diagnostics:
             diagnostics("retrieval", retrieval)
-        if not retrieval["articles"]:
+        if not retrieval["articles"] and not deep_search:
             raise RuntimeError("No articles found for this language filter.")
         progress(0.36, desc="Chunking headings and ranking passages")
         t = time.perf_counter()
@@ -383,7 +384,7 @@ class ProductEngine:
         )
         if diagnostics:
             diagnostics("reranking", post)
-        if not post["nodes"]:
+        if not post["nodes"] and not deep_search:
             raise RuntimeError(
                 "No passages passed the score cutoff. Lower it or try a broader question."
             )
@@ -394,7 +395,7 @@ class ProductEngine:
         nodes, focus_filter = filter_focused_nodes(
             self.models, question, focus, before_focus
         )
-        if not nodes:
+        if not nodes and not deep_search:
             raise RuntimeError(
                 "No retrieved passages matched the question in this context. Try a more explicit question, another source edition or a broader context."
             )
@@ -413,7 +414,7 @@ class ProductEngine:
         nodes, context_packing = pack_generation_nodes(
             focused_nodes, question, focus, settings, self.models.tokenizer
         )
-        if not nodes:
+        if not nodes and not deep_search:
             raise RuntimeError(
                 "No source passage fits the requested output/context budget. Reduce maximum output tokens."
             )
@@ -427,6 +428,112 @@ class ProductEngine:
         )
         if diagnostics:
             diagnostics("selection", post)
+        deep_report = {"enabled": False, "status": "disabled", "extra_queries": 0}
+        if deep_search:
+            from .deepsearch_once import review_and_search_once, merge_articles
+
+            progress(
+                0.49, desc="Deep search: reviewing whether the evidence is sufficient"
+            )
+            extra_articles, deep_report = review_and_search_once(
+                self.models,
+                question,
+                focus,
+                nodes,
+                lambda query: retrieve_direct(
+                    self, query, focus, top_k=int(top_k), language=language_code
+                ),
+                progress=lambda query: progress(
+                    0.50, desc="Deep search: running one follow-up query"
+                ),
+            )
+            try:
+                merged = merge_articles(retrieval["articles"], extra_articles)
+            except Exception as error:
+                deep_report.update(
+                    status="fallback", error=f"{type(error).__name__}: {error}"
+                )
+                merged = retrieval["articles"]
+            deep_report["new_articles"] = len(merged) - len(retrieval["articles"])
+            if deep_report["new_articles"]:
+                original_state = retrieval, post, nodes, focus_filter, chunk_seconds
+                try:
+                    progress(0.51, desc="Deep search: ranking the combined evidence")
+                    before = time.perf_counter()
+                    combined_chunks = prepare_chunks(
+                        merged,
+                        chunk_tokens=256,
+                        overlap_tokens=32,
+                        max_tokens=512,
+                        skip_reference_sections=True,
+                    )
+                    extra_chunk_seconds = time.perf_counter() - before
+                    combined_post = self.rank(
+                        ranking_question,
+                        focus,
+                        combined_chunks,
+                        min_score=min_score,
+                        relative_gap=relative_gap,
+                        max_nodes=max_nodes,
+                    )
+                    candidates, combined_focus = filter_focused_nodes(
+                        self.models, question, focus, combined_post["nodes"]
+                    )
+                    combined_nodes, combined_packing = pack_generation_nodes(
+                        candidates, question, focus, settings, self.models.tokenizer
+                    )
+                    if not combined_nodes:
+                        raise ValueError(
+                            "Combined evidence did not fit the original focus and context budget"
+                        )
+                    combined_post.update(
+                        pre_focus_nodes=combined_post["nodes"],
+                        focused_nodes=candidates,
+                        nodes=combined_nodes,
+                        focus_filter=combined_focus,
+                        context_packing=combined_packing,
+                        context_chars=sum(len(n["text"]) for n in combined_nodes),
+                        ranking_question=ranking_question,
+                        ranking_hint_role=post["ranking_hint_role"],
+                    )
+                    combined_post["seconds"] += post["seconds"]
+                    combined_focus["seconds"] += focus_filter["seconds"]
+                    followup_seconds = deep_report.get("retrieval", {}).get(
+                        "seconds", 0
+                    )
+                    retrieval = {
+                        **retrieval,
+                        "articles": merged,
+                        "seconds": retrieval["seconds"] + followup_seconds,
+                    }
+                    post, nodes, focus_filter = (
+                        combined_post,
+                        combined_nodes,
+                        combined_focus,
+                    )
+                    chunk_seconds += extra_chunk_seconds
+                    deep_report["status"] = "expanded"
+                    if diagnostics:
+                        diagnostics("retrieval", retrieval)
+                        diagnostics("reranking", post)
+                        diagnostics("selection", post)
+                except Exception as error:
+                    retrieval, post, nodes, focus_filter, chunk_seconds = original_state
+                    deep_report.update(
+                        status="fallback", error=f"{type(error).__name__}: {error}"
+                    )
+            elif deep_report["extra_queries"]:
+                deep_report["status"] = (
+                    "no_new_evidence"
+                    if deep_report["status"] != "fallback"
+                    else "fallback"
+                )
+            if diagnostics:
+                diagnostics("deep_search", deep_report)
+        if not nodes:
+            raise RuntimeError(
+                "No supporting passage was available after the bounded deep search"
+            )
         source = {
             "question": question,
             "search_focus": focus,
@@ -467,6 +574,8 @@ class ProductEngine:
                 },
             },
         }
+        if deep_search:
+            source["stages"]["deep_search"] = deep_report
         progress(0.55, desc="Writing the article with Qwen")
 
         def stage(message, **unused):
@@ -496,7 +605,12 @@ class ProductEngine:
             **result["stages"],
             "total_seconds": time.perf_counter() - started,
         }
+        if deep_search:
+            result["interactive_timings"]["deep_search_review_seconds"] = (
+                deep_report.get("review_seconds", deep_report["seconds"])
+            )
         result["input_capture"] = source
+        result["deep_search"] = deep_report
         result["answer_language"] = answer_language
         result["language_detection"] = {
             "automatic": automatic_language,

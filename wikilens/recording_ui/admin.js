@@ -73,6 +73,10 @@ if (document.querySelector('#admin-dialog')) {
       const settings = data.settings || {};
       const filter = data.score_filter;
       $('#admin-run-summary').textContent = `${data.question || 'Current question'}${data.context ? ' · '+data.context : ''} · Stage: ${data.stage}. Retrieved ${(data.documents || []).length} articles. Recorded cutoff: ${settings.score_cutoff === null ? 'disabled' : settings.score_cutoff ?? 'pending'}. Top-k: ${settings.retrieval_top_k ?? 'pending'}.${filter ? ' Passages kept: '+filter.counts.kept+'/'+filter.counts.input+'. Effective cutoff: '+number(filter.effective_min_score)+'.' : ''}${data.error ? ' '+data.error : ''}`;
+      if (data.deep_search) {
+        const deep = data.deep_search;
+        $('#admin-run-summary').textContent += ` Deep search: ${deep.status}; extra queries: ${deep.extra_queries}. ${deep.query || ''} ${deep.decision?.reason || ''}`;
+      }
       $('#admin-hyde').replaceChildren();
       if (data.hyde) {
         const aid=el('details');aid.append(el('summary', '', 'HyDE retrieval aid · detected language: '+(data.hyde.detected_language || 'unknown')));

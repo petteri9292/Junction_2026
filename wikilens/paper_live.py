@@ -64,6 +64,25 @@ def result_for_paper(result):
         "support_verified": False,
         "answer_language": result.get("answer_language", "Finnish"),
         "language_detection": result.get("language_detection"),
+        "deep_search": deep_search_summary(result.get("deep_search")),
+    }
+
+
+def deep_search_summary(report):
+    if not report:
+        return None
+    return {
+        key: report.get(key)
+        for key in (
+            "enabled",
+            "status",
+            "extra_queries",
+            "query",
+            "decision",
+            "new_articles",
+            "error",
+            "seconds",
+        )
     }
 
 
@@ -91,7 +110,9 @@ class ModalPaperBridge:
                 "status": "unavailable",
                 "stage": "Worker heartbeat is stale; inspect session logs",
             }
-        return value
+        from .deepsearch_once import feature_available
+
+        return {**value, "deep_search_available": feature_available()}
 
     def submit(self, data):
         from .admin_tools import PaperSettings
@@ -107,8 +128,15 @@ class ModalPaperBridge:
             "[a-f0-9]{32}", request_id
         ):
             raise ValueError("Invalid request ID")
-        if data.get("deep_search"):
-            raise ValueError("Deep search is not enabled in this demo")
+        from .deepsearch_once import feature_available
+
+        deep_search = data.get("deep_search", False)
+        if type(deep_search) is not bool:
+            raise ValueError("Deep search must be true or false")
+        if deep_search and not feature_available():
+            raise ValueError(
+                "Deep search is disabled; switch it off to use normal search"
+            )
         with self.lock:
             key = self.session_id + ":" + request_id
             existing = self.results.get(key)
@@ -118,6 +146,7 @@ class ModalPaperBridge:
                     or existing.get("context", "") != context.strip()
                     or existing.get("settings", PaperSettings().model_dump())
                     != settings
+                    or existing.get("deep_search", False) != deep_search
                 ):
                     raise ValueError("Request ID already used for different inputs")
                 return {"request_id": request_id}
@@ -137,6 +166,7 @@ class ModalPaperBridge:
                 "question": question.strip(),
                 "context": context.strip(),
                 "settings": settings,
+                "deep_search": deep_search,
             }
             self.results[key] = {
                 **request,
@@ -160,10 +190,18 @@ class ModalPaperBridge:
     def result(self, request_id):
         if not re.fullmatch("[a-f0-9]{32}", request_id):
             raise ValueError("Invalid request ID")
-        return self._read_result(request_id) or {
-            "status": "missing",
-            "stage": "Question not found",
-        }
+        value = self._read_result(request_id)
+        if value is None:
+            return {"status": "missing", "stage": "Question not found"}
+        if value.get("result", {}).get("deep_search"):
+            return {
+                **value,
+                "result": {
+                    **value["result"],
+                    "deep_search": deep_search_summary(value["result"]["deep_search"]),
+                },
+            }
+        return value
 
     def diagnostics(self, request_id, document_id=None):
         if not re.fullmatch("[a-f0-9]{32}", request_id):

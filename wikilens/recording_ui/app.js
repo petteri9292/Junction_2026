@@ -72,6 +72,12 @@ $('#close-citations').addEventListener('click', () => closeCitations(true));
 $('#citation-panel').addEventListener('keydown', event => {
   if (event.key === 'Escape') { event.preventDefault(); closeCitations(true); }
 });
+function deepSearchNote(result) {
+  const deep = result.deep_search;
+  if (!deep?.enabled) return '';
+  if (deep.status === 'fallback') return ' · Deep search unavailable: used original evidence';
+  return deep.extra_queries ? ' · Deep search: 1 extra query' : ' · Deep search: no extra query';
+}
 function render(fixture) {
   const display = groupParagraphCitations(fixture);
   document.body.classList.add('has-result');
@@ -190,6 +196,8 @@ async function getJSON(url, options) {
 async function refreshSession() {
   const session = await getJSON('/api/status');
   state.session = session;
+  const deep = $('#deep-search'); deep.hidden = session.deep_search_available !== true;
+  if (deep.hidden) {deep.setAttribute('aria-pressed', 'false'); $('#deep-search-preview').hidden = true;}
   document.dispatchEvent(new CustomEvent('wikilens:session', {detail:session}));
   setBusy(state.busy);
   const status = $('#connection-status');
@@ -216,7 +224,7 @@ async function searchLive() {
     $('#progress-text').textContent = 'Sending question to the warm model…';
     const request_id = crypto.randomUUID().replaceAll('-', '');
     await getJSON('/api/questions', {method: 'POST', headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({request_id, question, context: $('#research-context').value.trim(), settings: state.settings})});
+      body: JSON.stringify({request_id, question, context: $('#research-context').value.trim(), deep_search: !$('#deep-search').hidden && $('#deep-search').getAttribute('aria-pressed') === 'true', settings: state.settings})});
     state.lastRequest = request_id;
     document.dispatchEvent(new CustomEvent('wikilens:request', {detail:{request_id}}));
     while (generation === state.generation) {
@@ -228,7 +236,7 @@ async function searchLive() {
         document.dispatchEvent(new CustomEvent('wikilens:request-finished'));
         render(result.result);
         const timing = $('#result-timing');
-        if (timing) timing.textContent = result.seconds.toFixed(1) + ' s · LLM reviewed';
+        if (timing) timing.textContent = result.seconds.toFixed(1) + ' s · LLM reviewed' + deepSearchNote(result.result);
         const url = new URL(location.href); url.searchParams.set('result', request_id); history.replaceState(null, '', url);
         return;
       }
@@ -255,10 +263,13 @@ async function restoreSavedResult() {
     state.lastRequest = id; state.current = result.result;
     $('#question').value = result.question || result.result.question;
     $('#research-context').value = result.context || '';
+    const deepEnabled = result.deep_search === true && state.session?.deep_search_available === true;
+    $('#deep-search').setAttribute('aria-pressed', String(deepEnabled));
+    $('#deep-search-preview').hidden = !deepEnabled;
     setContextExpanded(Boolean(result.context));
     $('#welcome').hidden = true;
     render(result.result);
-    $('#result-timing').textContent = 'Previous run · ' + result.seconds.toFixed(1) + ' s · LLM reviewed';
+    $('#result-timing').textContent = 'Previous run · ' + result.seconds.toFixed(1) + ' s · LLM reviewed' + deepSearchNote(result.result);
     document.dispatchEvent(new CustomEvent('wikilens:request', {detail:{request_id:id}}));
   } catch (error) { if (generation === state.generation) announce('Could not reopen the saved result: ' + error.message); }
 }
@@ -268,7 +279,7 @@ async function init() {
     if (!config.live) { const status = $('#connection-status'); if (status) status.textContent = 'Offline preview'; }
     if (config.live) {
       state.live = true;
-      const deep = $('#deep-search'); deep.hidden = true;
+      const deep = $('#deep-search'); deep.hidden = !config.deep_search_available;
       $('#deep-search-preview').hidden = true;
       $('#context-disclosure').textContent = 'Your question and context are sent to the research session.';
       $('#replay').textContent = 'Run again ↻';

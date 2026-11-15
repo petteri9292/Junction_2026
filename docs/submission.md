@@ -10,6 +10,8 @@ WikiLens is a working retrieval-augmented generation system over the challenge's
 
 A question and optional context become a Pydantic-structured HyDE response containing a hypothetical search passage and detected answer language. BGE-M3 embeds only the search passage. MariaDB native vector search retrieves articles; heading-aware passage extraction and a multilingual cross-encoder then select the evidence for generation.
 
+An optional Deep search mode reviews evidence sufficiency and can perform one supplementary vector search before drafting. It is off by default and has a feature flag for reverting to normal search.
+
 Qwen3-4B-Instruct-2507-FP8 drafts an article from the selected passages. A second LLM call reviews the draft, followed by post-hoc citation selection and Python checks that each displayed quotation occurs in the stored source. Readers can inspect the quotations and open the original Wikipedia revision. The admin panel exposes retrieval controls and the actual retrieved documents, scores and selected passages.
 
 The live demo keeps MariaDB and the models resident on one Modal H100 using vLLM. Observed warm end-to-end requests took 16.8 seconds in English and 20.6 seconds in Finnish, excluding startup. These are individual measurements, not latency guarantees. A separate frozen-input comparison records the combined change from L40S/Transformers to H100/vLLM.

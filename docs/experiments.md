@@ -123,3 +123,28 @@ The user changed the final default cutoff to −4; 60 retrieved articles and 600
 article output tokens remain selected. The API normalizes these settings before
 queueing them, so the warm H200 worker receives the new cutoff explicitly.
 This requires only reloading the local web server; no GPU or model restart.
+
+## Optional one-query deep search
+
+Added an off-by-default evidence-sufficiency review before drafting. A useful
+gap can trigger one extra direct vector retrieval, followed by the standard
+ranking, context packing, article, review and citation stages. No iterative
+loop or change to the normal generation/review prompts is introduced.
+
+Live checks on the existing H200: the start-date question completed in 16.408 s
+with no extra query; the trade question in 20.695 s with no extra query; a three-part
+question in 30.362 s with exactly one extra query and 58 additional article revisions.
+Normal search with Deep search off completed in 14.889 s with no extra reviewer
+or retrieval. These are individual observations with different outputs, not
+a controlled speed or answer-quality comparison. The multi-part reviewer
+omitted an explicit assessment of one component, so its judgment remains
+unverified. Raw reviewer output is retained unchanged.
+
+All 259 local tests passed. A temporary HTTP server with the feature flag disabled
+reported the capability unavailable and rejected deep requests before queueing.
+The original H200 allocation, vLLM process and absolute deadline remain in use.
+See `reports/deep-search-verification.json` and `docs/deep-search.md`.
+
+The multi-part final answer rejected the Finlandia component rather than
+answering it. This remains a recorded failure example: the implementation proves
+the bounded control flow, not reliable completeness or factual correctness.

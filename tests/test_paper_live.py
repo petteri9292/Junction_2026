@@ -208,3 +208,45 @@ def test_saved_results_and_documents_remain_readable_after_controller_handoff():
     assert service.diagnostics(rid) == diagnostics
     assert service.diagnostics(rid, "D1") == document
     assert service.sent == []
+
+
+def test_deep_search_is_optional_validated_idempotent_and_can_be_disabled(monkeypatch):
+    service = bridge()
+    base = {"request_id": "e" * 32, "question": "Question"}
+    service.submit({**base, "deep_search": True})
+    assert service.sent[0]["deep_search"] is True
+    with pytest.raises(ValueError, match="different inputs"):
+        service.submit({**base, "deep_search": False})
+    with pytest.raises(ValueError, match="true or false"):
+        service.submit({**base, "request_id": "f" * 32, "deep_search": "true"})
+    monkeypatch.setenv("WIKILENS_DEEP_SEARCH_ENABLED", "0")
+    assert service.status()["deep_search_available"] is False
+    with pytest.raises(ValueError, match="disabled"):
+        service.submit({**base, "request_id": "f" * 32, "deep_search": True})
+    baseline = bridge()
+    baseline.submit(base)
+    assert baseline.sent[0]["deep_search"] is False
+
+
+def test_deep_search_api_summary_keeps_raw_review_private_and_unchanged():
+    service = bridge()
+    rid = "1" * 32
+    raw = {
+        "status": "complete",
+        "result": {
+            "deep_search": {
+                "enabled": True,
+                "status": "expanded",
+                "extra_queries": 1,
+                "query": "Query",
+                "messages": [{"content": "Raw reviewer prompt"}],
+                "retrieval": {"articles": [{"text": "Full source"}]},
+            }
+        },
+    }
+    service.results["session:" + rid] = raw
+    displayed = service.result(rid)
+    assert displayed["result"]["deep_search"]["extra_queries"] == 1
+    assert "messages" not in displayed["result"]["deep_search"]
+    assert "retrieval" not in displayed["result"]["deep_search"]
+    assert "messages" in raw["result"]["deep_search"]

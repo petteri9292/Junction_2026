@@ -341,3 +341,7 @@ body.design-thumbnail *{animation:none!important;transition:none!important}
 .answer-unit table{border-collapse:collapse;display:block;overflow-x:auto;max-width:100%;font-size:.85em}
 .answer-unit th,.answer-unit td{padding:8px 12px;border:1px solid var(--line);text-align:left}
 .answer-unit a{color:var(--accent);text-decoration:underline}
+
+/* Optional deep search sits beside the context control. */
+.paper .research-options{flex-direction:row;align-items:center;gap:14px;flex-wrap:wrap}
+.paper .research-options .option-button{flex:1 1 auto}

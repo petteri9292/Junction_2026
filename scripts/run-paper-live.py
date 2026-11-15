@@ -309,6 +309,7 @@ def main():
                     relative_gap=controls["relative_gap"],
                     max_nodes=controls["max_nodes"],
                     diagnostics=inspect_retrieval,
+                    deep_search=request.get("deep_search", False),
                 )
                 save(destination, result)
                 results[key] = {

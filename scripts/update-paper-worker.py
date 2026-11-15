@@ -17,6 +17,7 @@ import modal
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = [
+    "wikilens/deepsearch_once.py",
     "wikilens/admin_tools.py",
     "wikilens/hyde_search.py",
     "wikilens/finnish_prompts.py",

@@ -75,3 +75,11 @@ Collect preserves raw outputs, prompts, source identities, settings, diagnostics
 ## Pitch materials
 
 Use `reports/wikilens-pipeline-pitch.pptx` or its PDF and `pipeline-pitch-script.txt`. The main story is the MariaDB retrieval–generation pipeline; disambiguation is a short demonstration of it. Use `demo-brief.md` for the video. Avoid claiming factual verification, a guaranteed latency, live English Wikipedia retrieval, model training, or system-versioned time travel.
+
+## Optional deep search
+
+The Deep search toggle beside Add context is off by default. When enabled,
+an evidence reviewer can request at most one extra vector search before the
+normal article, review and citations pipeline. See `docs/deep-search.md` for
+the bounded behavior and the local feature flag that disables it immediately
+without restarting the model. It may take longer than normal search.

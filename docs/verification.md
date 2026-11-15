@@ -86,3 +86,13 @@ The user changed the final default cutoff to −4; 60 retrieved articles and 600
 article output tokens remain selected. The API normalizes these settings before
 queueing them, so the warm H200 worker receives the new cutoff explicitly.
 This requires only reloading the local web server; no GPU or model restart.
+
+## Optional deep search verification
+
+259 tests passed, covering the disabled baseline, sufficient evidence, one-query
+expansion, malformed review fallback, failed retrieval fallback, deduplication,
+request idempotency and feature-flag rejection. Three live deep-search checks
+completed: two skipped supplementary retrieval and one executed exactly one
+query. The normal path was also checked live with the toggle omitted. A real
+HTTP check confirmed the server-wide flag rejects deep requests before queuing.
+See `reports/deep-search-verification.json`.
