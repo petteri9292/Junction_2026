@@ -61,3 +61,5 @@ Observed warm end-to-end runs took **16.8 seconds in English** and **20.6 second
 The LLM reviews the draft **before** citation attachment. Citation selection is followed by Python checks that the selected quotation exists in the stored source passage. There is no final LLM audit of the fully cited article. Literal quotation provenance does not prove that the surrounding claim is supported. Generated articles can still contain factual and Finnish-language errors; the saved examples preserve those errors.
 
 Source code is [MIT licensed](LICENSE). Wikipedia content and derived vectors retain their own attribution and CC BY-SA 4.0 terms; see [third-party notices](THIRD_PARTY_NOTICES.md). Dataset files, model weights, credentials, compute ledgers, raw logs and the pre-cleanup archive are excluded from Git. Public recorded examples contain attributed Wikipedia excerpts, not the full corpus.
+
+Public presentation demo: https://petteri-hallipelto--wikilens.us-east.modal.run/ (time-limited warm session). [Deployment and private operator access](docs/public-demo.md).

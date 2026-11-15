@@ -23,7 +23,7 @@ def main():
     parser.add_argument("--context", default="")
     parser.add_argument(
         "--profile",
-        choices=["h100-2h", "h200-6h"],
+        choices=["h100-2h", "h200-6h", "h200-public-6h"],
         default="h100-2h",
         help="Resource profile used only when reserving a new session",
     )
@@ -44,7 +44,7 @@ def main():
             == modal_ledger["authorized_combined_project_cap_usd"]
             == combined["approved_combined_cap_usd"]
         )
-        h200 = args.profile == "h200-6h"
+        h200 = args.profile in {"h200-6h", "h200-public-6h"}
         reserve = 32.0 if h200 else 10.0
         if (
             combined["current_combined_reserved_usd"] + reserve
@@ -54,7 +54,13 @@ def main():
         now = datetime.datetime.now(datetime.UTC)
         job = {
             "run_id": "paper-live-" + now.strftime("%Y%m%dT%H%M%SZ"),
-            "app": "wikilens-paper-live-h200" if h200 else "wikilens-paper-live",
+            "app": (
+                "wikilens-public-h200"
+                if args.profile == "h200-public-6h"
+                else "wikilens-paper-live-h200"
+                if h200
+                else "wikilens-paper-live"
+            ),
             "source_run_id": "l-search-20261114T185620Z",
             "reserved_upper_bound_usd": reserve,
             "gpu": "H200" if h200 else "H100!",

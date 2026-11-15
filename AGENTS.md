@@ -41,7 +41,7 @@
 - GitHub is the source of truth for code and documentation. Preserve existing work.
 - Use short feature branches for implementation; keep main usable for the demo.
 - Use Hugging Face Jobs for heavier runs and permitted Hub storage for artifacts.
-- Petteri raised the combined Hugging Face and Modal compute ceiling to USD 100
+- Petteri raised the combined Hugging Face and Modal compute ceiling to USD 150
   on 15 November 2026 (superseding USD 50 on 14 November and the original USD 10 allowance). Modal promotional
   credits are tracked separately as funding; check both ledgers and the combined
   ledger before spending. Track cumulative costs, including readiness jobs. Specify

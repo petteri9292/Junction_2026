@@ -12,9 +12,9 @@ A question and optional context become a Pydantic-structured HyDE response conta
 
 An optional Deep search mode reviews evidence sufficiency and can perform one supplementary vector search before drafting. It is off by default and has a feature flag for reverting to normal search.
 
-Qwen3-4B-Instruct-2507-FP8 drafts an article from the selected passages. A second LLM call reviews the draft, followed by post-hoc citation selection and Python checks that each displayed quotation occurs in the stored source. Readers can inspect the quotations and open the original Wikipedia revision. The admin panel exposes retrieval controls and the actual retrieved documents, scores and selected passages.
+Qwen3-4B-Instruct-2507-FP8 drafts an article from the selected passages. A second LLM call reviews the draft, followed by post-hoc citation selection and Python checks that each displayed quotation occurs in the stored source. Readers can inspect the quotations and open the original Wikipedia revision. A private local admin panel exposes retrieval controls and the actual retrieved documents, scores and selected passages.
 
-The live demo keeps MariaDB and the models resident on one Modal H100 using vLLM. Observed warm end-to-end requests took 16.8 seconds in English and 20.6 seconds in Finnish, excluding startup. These are individual measurements, not latency guarantees. A separate frozen-input comparison records the combined change from L40S/Transformers to H100/vLLM.
+The public live demo keeps MariaDB and the models resident on a Modal H200 using vLLM. Earlier H100 measurements follow. Observed warm end-to-end requests took 16.8 seconds in English and 20.6 seconds in Finnish, excluding startup. These are individual measurements, not latency guarantees. A separate frozen-input comparison records the combined change from L40S/Transformers to H100/vLLM.
 
 Context is one practical demonstration: `talvisota` without context retrieves the historical Winter War, while context `videopeli` directs the pipeline toward the video game. The retrieval corpus remains Finnish even when the generated answer is English.
 
@@ -33,4 +33,4 @@ MariaDB RAG track. MariaDB's native indexed vector search is a central pipeline 
 
 ## Entry status
 
-This file contains submission copy and local deliverables. It does not establish that the event entry has been submitted, its links are publicly accessible, a video has been uploaded, or the entry is set to FINAL. Those actions must be verified on the event platform. The current demonstration endpoint is local; the labelled recorded fallback is included in the source repository.
+This file contains submission copy and local deliverables. It does not establish that the event entry has been submitted, its links are publicly accessible, a video has been uploaded, or the entry is set to FINAL. Those actions must be verified on the event platform. The public demo is https://petteri-hallipelto--wikilens.us-east.modal.run/ and has a time-limited warm H200 session. Its deadline is shown in the live status API. The labelled recorded fallback is included in the source repository. See `docs/public-demo.md` for operator access and deployment details.
