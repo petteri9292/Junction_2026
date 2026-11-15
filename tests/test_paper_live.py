@@ -1,0 +1,252 @@
+"""Live boundary checks: evidence integrity, duplicate jobs and local HTTP API."""
+
+import copy
+import json
+import threading
+import time
+from functools import partial
+from http.server import ThreadingHTTPServer
+from types import SimpleNamespace
+from urllib.error import HTTPError
+from urllib.request import Request, urlopen
+
+import pytest
+
+from wikilens.paper_live import ModalPaperBridge, result_for_paper
+from wikilens.recording import RecordingHandler
+
+
+def capture():
+    text = "This is a literal source sentence."
+    return {
+        "question": "talvisota",
+        "nodes": [
+            {
+                "id": "S1",
+                "title": "Talvisota",
+                "text": text,
+                "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=1",
+                "rev_id": 1,
+            }
+        ],
+        "sentences": [
+            {
+                "text": "Generated paragraph.",
+                "section": "Overview",
+                "citations": [
+                    {
+                        "source_id": "S1",
+                        "quote_located": True,
+                        "literal_quote": text,
+                        "quote_start_char": 0,
+                        "quote_end_char": len(text),
+                    }
+                ],
+            }
+        ],
+        "input_capture": {"corpus": {"dataset": "l-2026-10"}},
+        "interactive_timings": {"total_seconds": 2},
+    }
+
+
+def test_preserves_generated_paragraph_and_exact_source_quote():
+    result = result_for_paper(capture())
+    assert result["answer"][0]["text"] == "Generated paragraph."
+    assert result["answer"][0]["citations"] == ["Q1"]
+    assert result["evidence"][0]["passage"] == capture()["nodes"][0]["text"]
+    assert result["status"] == "live" and result["support_verified"] is False
+    damaged = capture()
+    damaged["sentences"][0]["citations"][0]["quote_end_char"] -= 1
+    with pytest.raises(ValueError, match="offsets"):
+        result_for_paper(damaged)
+    damaged = capture()
+    damaged["nodes"][0]["revision_url"] = "javascript:alert(1)"
+    with pytest.raises(ValueError, match="revision link"):
+        result_for_paper(damaged)
+
+
+def bridge():
+    result = ModalPaperBridge.__new__(ModalPaperBridge)
+    result.session_id = "session"
+    result.job = {"deadline_unix": time.time() + 3600}
+    result.results = {
+        "session": {
+            "status": "ready",
+            "accepts_requests_until_unix": time.time() + 1800,
+        }
+    }
+    result.lock = threading.Lock()
+    result.active = None
+    result.sent = []
+    result.queue = SimpleNamespace(
+        put=lambda request, **kwargs: result.sent.append(copy.deepcopy(request))
+    )
+    return result
+
+
+def test_submit_is_idempotent_and_does_not_restart_or_duplicate_compute():
+    service = bridge()
+    data = {"request_id": "a" * 32, "question": "talvisota", "context": "videopeli"}
+    assert service.submit(data) == service.submit(data)
+    assert len(service.sent) == 1
+    assert service.sent[0]["context"] == "videopeli"
+    assert service.sent[0]["settings"]["score_cutoff"] == -4
+    assert service.sent[0]["settings"]["retrieval_top_k"] == 60
+    assert service.sent[0]["settings"]["article_tokens"] == 6000
+    with pytest.raises(ValueError, match="different inputs"):
+        service.submit({**data, "settings": {"score_cutoff": 0}})
+    with pytest.raises(ValueError, match="different inputs"):
+        service.submit({**data, "question": "Another question"})
+    with pytest.raises(ValueError, match="still running"):
+        service.submit({**data, "request_id": "b" * 32})
+    service.results["session:" + data["request_id"]]["status"] = "complete"
+    service.submit({**data, "request_id": "b" * 32})
+    assert len(service.sent) == 2
+
+
+def test_custom_admin_settings_reach_the_queued_request():
+    service = bridge()
+    service.submit(
+        {
+            "request_id": "c" * 32,
+            "question": "talvisota",
+            "settings": {
+                "score_cutoff": -4.5,
+                "retrieval_top_k": 12,
+                "max_nodes": 8,
+                "article_tokens": 1000,
+            },
+        }
+    )
+    settings = service.sent[0]["settings"]
+    assert settings["score_cutoff"] == -4.5 and settings["retrieval_top_k"] == 12
+    assert settings["max_nodes"] == 8 and settings["article_tokens"] == 1000
+    assert settings["relative_gap"] is None
+
+
+def test_closed_or_stale_worker_cannot_accept_paid_requests():
+    service = bridge()
+    service.results["session"]["heartbeat_unix"] = time.time() - 100
+    with pytest.raises(ValueError, match="heartbeat"):
+        service.submit({"request_id": "a" * 32, "question": "talvisota"})
+    service.results["session"]["heartbeat_unix"] = time.time()
+    service.results["session"]["accepts_requests_until_unix"] = time.time() - 1
+    with pytest.raises(ValueError, match="ending"):
+        service.submit({"request_id": "a" * 32, "question": "talvisota"})
+    service.job["deadline_unix"] = time.time() - 1
+    assert service.status()["status"] == "closed"
+
+
+def test_local_http_live_api_and_cross_origin_rejection(tmp_path):
+    service = bridge()
+    (tmp_path / "paper.html").write_text("PAPER")
+    server = ThreadingHTTPServer(
+        ("127.0.0.1", 0),
+        partial(RecordingHandler, directory=str(tmp_path), bridge=service),
+    )
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    base = "http://127.0.0.1:" + str(server.server_port)
+    try:
+        with urlopen(base + "/") as response:
+            assert response.read() == b"PAPER"
+        with urlopen(base + "/api/status") as response:
+            assert json.load(response)["live"] is True
+        data = json.dumps(
+            {"request_id": "a" * 32, "question": "talvisota", "context": "videopeli"}
+        ).encode()
+        request = Request(
+            base + "/api/questions",
+            data=data,
+            headers={"Content-Type": "application/json", "Origin": base},
+        )
+        with urlopen(request) as response:
+            assert response.status == 202
+        with urlopen(base + "/api/questions/" + "a" * 32) as response:
+            assert json.load(response)["status"] == "queued"
+        service.results["session:" + "a" * 32 + ":diagnostics"] = {
+            "stage": "retrieval",
+            "documents": [{"id": "D1"}],
+        }
+        service.results["session:" + "a" * 32 + ":document:D1"] = {
+            "title": "Original document",
+            "text": "Literal source",
+        }
+        with urlopen(base + "/api/questions/" + "a" * 32 + "/diagnostics") as response:
+            assert json.load(response)["documents"][0]["id"] == "D1"
+        with urlopen(base + "/api/questions/" + "a" * 32 + "/documents/D1") as response:
+            assert json.load(response)["text"] == "Literal source"
+        request = Request(
+            base + "/api/questions",
+            data=data,
+            headers={
+                "Content-Type": "application/json",
+                "Origin": "https://other.example",
+            },
+        )
+        with pytest.raises(HTTPError) as error:
+            urlopen(request)
+        assert error.value.code == 403
+        assert len(service.sent) == 1
+    finally:
+        server.shutdown()
+        server.server_close()
+        thread.join()
+
+
+def test_saved_results_and_documents_remain_readable_after_controller_handoff():
+    service = bridge()
+    service.job["previous_session_ids"] = ["previous-controller"]
+    rid = "d" * 32
+    saved = {"status": "complete", "result": {"question": "Saved question"}}
+    diagnostics = {"stage": "selection", "documents": [{"id": "D1"}]}
+    document = {"id": "D1", "text": "Original source text"}
+    service.results["previous-controller:" + rid] = saved
+    service.results["previous-controller:" + rid + ":diagnostics"] = diagnostics
+    service.results["previous-controller:" + rid + ":document:D1"] = document
+    assert service.result(rid) == saved
+    assert service.diagnostics(rid) == diagnostics
+    assert service.diagnostics(rid, "D1") == document
+    assert service.sent == []
+
+
+def test_deep_search_is_optional_validated_idempotent_and_can_be_disabled(monkeypatch):
+    service = bridge()
+    base = {"request_id": "e" * 32, "question": "Question"}
+    service.submit({**base, "deep_search": True})
+    assert service.sent[0]["deep_search"] is True
+    with pytest.raises(ValueError, match="different inputs"):
+        service.submit({**base, "deep_search": False})
+    with pytest.raises(ValueError, match="true or false"):
+        service.submit({**base, "request_id": "f" * 32, "deep_search": "true"})
+    monkeypatch.setenv("WIKILENS_DEEP_SEARCH_ENABLED", "0")
+    assert service.status()["deep_search_available"] is False
+    with pytest.raises(ValueError, match="disabled"):
+        service.submit({**base, "request_id": "f" * 32, "deep_search": True})
+    baseline = bridge()
+    baseline.submit(base)
+    assert baseline.sent[0]["deep_search"] is False
+
+
+def test_deep_search_api_summary_keeps_raw_review_private_and_unchanged():
+    service = bridge()
+    rid = "1" * 32
+    raw = {
+        "status": "complete",
+        "result": {
+            "deep_search": {
+                "enabled": True,
+                "status": "expanded",
+                "extra_queries": 1,
+                "query": "Query",
+                "messages": [{"content": "Raw reviewer prompt"}],
+                "retrieval": {"articles": [{"text": "Full source"}]},
+            }
+        },
+    }
+    service.results["session:" + rid] = raw
+    displayed = service.result(rid)
+    assert displayed["result"]["deep_search"]["extra_queries"] == 1
+    assert "messages" not in displayed["result"]["deep_search"]
+    assert "retrieval" not in displayed["result"]["deep_search"]
+    assert "messages" in raw["result"]["deep_search"]

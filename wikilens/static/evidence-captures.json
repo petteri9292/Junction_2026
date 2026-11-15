@@ -1,0 +1,1680 @@
+{
+  "schema_version": 1,
+  "kind": "measured_retrieval_capture",
+  "captured_at": "2026-11-14T00:45:28.664534+00:00",
+  "embedding_provenance": "Cached BGE-M3 query vectors from the earlier Ollama baseline; no generation or new embedding inference was performed.",
+  "answer_generated": false,
+  "examples": [
+    {
+      "id": "winter-peace",
+      "question": "Which peace treaty ended the Winter War?",
+      "dataset_release": "s-2026-10",
+      "languages": [
+        "fi",
+        "en",
+        "sv"
+      ],
+      "per_language": 3,
+      "retrieval_rankings": {
+        "fi": {
+          "direct": [
+            {
+              "lang": "fi",
+              "page_id": 1778499,
+              "wikidata_id": "Q703763",
+              "title": "Stettinin rauha",
+              "url": "https://fi.wikipedia.org/wiki/Stettinin_rauha",
+              "distance": 0.453423436965935,
+              "characters": 291,
+              "sections": 1,
+              "external_links": 0
+            },
+            {
+              "lang": "fi",
+              "page_id": 1154488,
+              "wikidata_id": "Q740724",
+              "title": "Pariisin rauha (1814)",
+              "url": "https://fi.wikipedia.org/wiki/Pariisin_rauha_(1814)",
+              "distance": 0.4576190947579506,
+              "characters": 2522,
+              "sections": 1,
+              "external_links": 0
+            },
+            {
+              "lang": "fi",
+              "page_id": 110810,
+              "wikidata_id": "Q319260",
+              "title": "Pariisin rauha (1856)",
+              "url": "https://fi.wikipedia.org/wiki/Pariisin_rauha_(1856)",
+              "distance": 0.4633485957833723,
+              "characters": 1693,
+              "sections": 1,
+              "external_links": 0
+            }
+          ]
+        },
+        "en": {
+          "direct": [
+            {
+              "lang": "en",
+              "page_id": 288706,
+              "wikidata_id": "Q695285",
+              "title": "Moscow Peace Treaty",
+              "url": "https://en.wikipedia.org/wiki/Moscow_Peace_Treaty",
+              "distance": 0.4328458358495231,
+              "characters": 4867,
+              "sections": 4,
+              "external_links": 0
+            },
+            {
+              "lang": "en",
+              "page_id": 1665534,
+              "wikidata_id": "Q699753",
+              "title": "Treaty of Frederiksborg",
+              "url": "https://en.wikipedia.org/wiki/Treaty_of_Frederiksborg",
+              "distance": 0.43365028973531683,
+              "characters": 1040,
+              "sections": 3,
+              "external_links": 0
+            },
+            {
+              "lang": "en",
+              "page_id": 603769,
+              "wikidata_id": "Q2138526",
+              "title": "Treaty of Knäred",
+              "url": "https://en.wikipedia.org/wiki/Treaty_of_Kn%C3%A4red",
+              "distance": 0.45389101914977836,
+              "characters": 976,
+              "sections": 1,
+              "external_links": 0
+            }
+          ]
+        },
+        "sv": {
+          "direct": [
+            {
+              "lang": "sv",
+              "page_id": 463937,
+              "wikidata_id": "Q319260",
+              "title": "Parisfreden (1856)",
+              "url": "https://sv.wikipedia.org/wiki/Parisfreden_(1856)",
+              "distance": 0.4437945927685958,
+              "characters": 2361,
+              "sections": 2,
+              "external_links": 1
+            },
+            {
+              "lang": "sv",
+              "page_id": 7740,
+              "wikidata_id": "Q1130792",
+              "title": "Freden i Fredrikshamn",
+              "url": "https://sv.wikipedia.org/wiki/Freden_i_Fredrikshamn",
+              "distance": 0.4522846814126086,
+              "characters": 1965,
+              "sections": 2,
+              "external_links": 3
+            },
+            {
+              "lang": "sv",
+              "page_id": 1887416,
+              "wikidata_id": "Q740724",
+              "title": "Parisfreden (1814)",
+              "url": "https://sv.wikipedia.org/wiki/Parisfreden_(1814)",
+              "distance": 0.45240841278115507,
+              "characters": 1796,
+              "sections": 4,
+              "external_links": 0
+            }
+          ]
+        }
+      },
+      "candidates": [
+        {
+          "fusion_score": 0.01639344262295082,
+          "lang": "fi",
+          "page_id": 1778499,
+          "wikidata_id": "Q703763",
+          "title": "Stettinin rauha",
+          "url": "https://fi.wikipedia.org/wiki/Stettinin_rauha",
+          "distance": 0.453423436965935,
+          "characters": 291,
+          "sections": 1,
+          "external_links": 0,
+          "language_rank": 1
+        },
+        {
+          "fusion_score": 0.016129032258064516,
+          "lang": "fi",
+          "page_id": 1154488,
+          "wikidata_id": "Q740724",
+          "title": "Pariisin rauha (1814)",
+          "url": "https://fi.wikipedia.org/wiki/Pariisin_rauha_(1814)",
+          "distance": 0.4576190947579506,
+          "characters": 2522,
+          "sections": 1,
+          "external_links": 0,
+          "language_rank": 2
+        },
+        {
+          "fusion_score": 0.015873015873015872,
+          "lang": "fi",
+          "page_id": 110810,
+          "wikidata_id": "Q319260",
+          "title": "Pariisin rauha (1856)",
+          "url": "https://fi.wikipedia.org/wiki/Pariisin_rauha_(1856)",
+          "distance": 0.4633485957833723,
+          "characters": 1693,
+          "sections": 1,
+          "external_links": 0,
+          "language_rank": 3
+        },
+        {
+          "fusion_score": 0.01639344262295082,
+          "lang": "en",
+          "page_id": 288706,
+          "wikidata_id": "Q695285",
+          "title": "Moscow Peace Treaty",
+          "url": "https://en.wikipedia.org/wiki/Moscow_Peace_Treaty",
+          "distance": 0.4328458358495231,
+          "characters": 4867,
+          "sections": 4,
+          "external_links": 0,
+          "language_rank": 1
+        },
+        {
+          "fusion_score": 0.016129032258064516,
+          "lang": "en",
+          "page_id": 1665534,
+          "wikidata_id": "Q699753",
+          "title": "Treaty of Frederiksborg",
+          "url": "https://en.wikipedia.org/wiki/Treaty_of_Frederiksborg",
+          "distance": 0.43365028973531683,
+          "characters": 1040,
+          "sections": 3,
+          "external_links": 0,
+          "language_rank": 2
+        },
+        {
+          "fusion_score": 0.015873015873015872,
+          "lang": "en",
+          "page_id": 603769,
+          "wikidata_id": "Q2138526",
+          "title": "Treaty of Knäred",
+          "url": "https://en.wikipedia.org/wiki/Treaty_of_Kn%C3%A4red",
+          "distance": 0.45389101914977836,
+          "characters": 976,
+          "sections": 1,
+          "external_links": 0,
+          "language_rank": 3
+        },
+        {
+          "fusion_score": 0.01639344262295082,
+          "lang": "sv",
+          "page_id": 463937,
+          "wikidata_id": "Q319260",
+          "title": "Parisfreden (1856)",
+          "url": "https://sv.wikipedia.org/wiki/Parisfreden_(1856)",
+          "distance": 0.4437945927685958,
+          "characters": 2361,
+          "sections": 2,
+          "external_links": 1,
+          "language_rank": 1
+        },
+        {
+          "fusion_score": 0.016129032258064516,
+          "lang": "sv",
+          "page_id": 7740,
+          "wikidata_id": "Q1130792",
+          "title": "Freden i Fredrikshamn",
+          "url": "https://sv.wikipedia.org/wiki/Freden_i_Fredrikshamn",
+          "distance": 0.4522846814126086,
+          "characters": 1965,
+          "sections": 2,
+          "external_links": 3,
+          "language_rank": 2
+        },
+        {
+          "fusion_score": 0.015873015873015872,
+          "lang": "sv",
+          "page_id": 1887416,
+          "wikidata_id": "Q740724",
+          "title": "Parisfreden (1814)",
+          "url": "https://sv.wikipedia.org/wiki/Parisfreden_(1814)",
+          "distance": 0.45240841278115507,
+          "characters": 1796,
+          "sections": 4,
+          "external_links": 0,
+          "language_rank": 3
+        }
+      ],
+      "aligned_topics": [
+        "Q319260",
+        "Q740724",
+        "Q695285"
+      ],
+      "explain_vector_queries": {
+        "fi": {
+          "direct": [
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "<derived2>",
+              "type": "ALL",
+              "possible_keys": null,
+              "key": null,
+              "key_len": null,
+              "ref": null,
+              "rows": "3",
+              "Extra": "Using temporary; Using filesort"
+            },
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "a",
+              "type": "eq_ref",
+              "possible_keys": "PRIMARY",
+              "key": "PRIMARY",
+              "key_len": "12",
+              "ref": "v.lang,v.page_id",
+              "rows": "1",
+              "Extra": ""
+            },
+            {
+              "id": 2,
+              "select_type": "DERIVED",
+              "table": "article_vector",
+              "type": "index",
+              "possible_keys": "PRIMARY",
+              "key": "article_semantics",
+              "key_len": "4098",
+              "ref": "const",
+              "rows": "18161",
+              "Extra": "Using where"
+            }
+          ]
+        },
+        "en": {
+          "direct": [
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "<derived2>",
+              "type": "ALL",
+              "possible_keys": null,
+              "key": null,
+              "key_len": null,
+              "ref": null,
+              "rows": "3",
+              "Extra": "Using temporary; Using filesort"
+            },
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "a",
+              "type": "eq_ref",
+              "possible_keys": "PRIMARY",
+              "key": "PRIMARY",
+              "key_len": "12",
+              "ref": "v.lang,v.page_id",
+              "rows": "1",
+              "Extra": ""
+            },
+            {
+              "id": 2,
+              "select_type": "DERIVED",
+              "table": "article_vector",
+              "type": "index",
+              "possible_keys": "PRIMARY",
+              "key": "article_semantics",
+              "key_len": "4098",
+              "ref": "const",
+              "rows": "18161",
+              "Extra": "Using where"
+            }
+          ]
+        },
+        "sv": {
+          "direct": [
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "<derived2>",
+              "type": "ALL",
+              "possible_keys": null,
+              "key": null,
+              "key_len": null,
+              "ref": null,
+              "rows": "3",
+              "Extra": "Using temporary; Using filesort"
+            },
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "a",
+              "type": "eq_ref",
+              "possible_keys": "PRIMARY",
+              "key": "PRIMARY",
+              "key_len": "12",
+              "ref": "v.lang,v.page_id",
+              "rows": "1",
+              "Extra": ""
+            },
+            {
+              "id": 2,
+              "select_type": "DERIVED",
+              "table": "article_vector",
+              "type": "index",
+              "possible_keys": "PRIMARY",
+              "key": "article_semantics",
+              "key_len": "4098",
+              "ref": "const",
+              "rows": "18161",
+              "Extra": "Using where"
+            }
+          ]
+        }
+      },
+      "retrieval_seconds": 0.14236805999826174,
+      "limitation": "Language-balanced candidates and Wikidata counterparts are source discovery, not proof of relevance, agreement, or claim support.",
+      "dossiers": [
+        {
+          "wikidata_id": "Q319260",
+          "editions": [
+            {
+              "lang": "fi",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "fi",
+                  "page_id": 110810,
+                  "rev_id": 23485342,
+                  "wikidata_id": "Q319260",
+                  "title": "Pariisin rauha (1856)",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23485342",
+                  "truncated": 0,
+                  "text": "# Pariisin rauha (1856)\nPariisin rauha allekirjoittiin 30. maaliskuuta 1856. Se päätti Krimin sodan Venäjän keisarikunnan ja Osmanien valtakunnan sekä sen liittolaisten Ranskan ja Ison-Britannian välillä. Rauhansopimuksen 23. artikla velvoitti kaikki valtiot ennen sotatoimiin ryhtymistä käyttämään ystävällismielisten valtioiden välitystä, mitä on pidetty ensimmäisenä rauhanaatteen saavutuksena kansainvälisessä diplomatiassa.\nSopimuksen nojalla Sevastopol palautettiin Venäjälle, joka luopui vaatimuksista että Osmanien valtakunnan tulisi tunnustaa Venäjän keisari kaikkien kristittyjen suojelijaksi Osmanien valtakunnassa, Moldova ja Valakia jäivät autonomisina osmanien alaisiksi valtioiksi, Mustameri ja Ahvenanmaa demilitarisoitiin. Käytännössä tämä tarkoitti kieltoa korvata brittilaivaston tykeillään hajottama Bomarsundin linnoitus uudella linnoituksella. Venäjä kuitenkin rikkoi sopimusta rakentamalla saarille 17 uutta linnoitetta vuoteen 1918 mennessä.\nVenäjä ilmoitti jo vuonna 1870, ettei Mustanmeren demilitarisoiminen sitonut enää Venäjää. Suomi noudattaa kuitenkin edelleen kansainvälistä sopimusta Ahvenanmaan demilitarisoinnista. Demilitarisoitu asema perustuu Suomen tasavallan solmimiin myöhempiin valtiosopimuksiin.\nKokonaisuudessaan rauha ei ratkaissut alueen kohtaloa ja parhaimmillaankin onnistui vain vahvistamaan Venäjällä vallinnutta panslavistista liikettä. Venäjän keisari Aleksanteri II vakuuttui kuitenkin siitä että sota oli paljastanut perusheikkouksia Venäjän valtiossa, mitkä osaltaan johtivat uudistuksiin Venäjällä. Ennen kuin 20 vuotta oli kulunut Pariisin rauhasta, kävi kaikille kuitenkin selväksi, ettei Krimin sota ollut ratkaissut alueen ongelmia.\n",
+                  "start_char": 0,
+                  "end_char": 1693,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "en",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "en",
+                  "page_id": 191966,
+                  "rev_id": 1304797346,
+                  "wikidata_id": "Q319260",
+                  "title": "Treaty of Paris (1856)",
+                  "origin": "wikidata_counterpart",
+                  "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1304797346",
+                  "truncated": 0,
+                  "text": "# Treaty of Paris (1856)\nThe Treaty of Paris of 1856, signed on 30 March 1856 at the Congress of Paris, brought an end to the Crimean War (1853–1856) between the Russian Empire and an alliance of the Ottoman Empire, the United Kingdom, the Second French Empire and the Kingdom of Sardinia.\nThe treaty diminished Russian influence in the region. It returned Sevastopol and other towns and cities in the south of Crimea to Russia, but prohibited Russia to establish naval or military arsenal on the coast of the Black Sea, that was made neutral territory, closing it to all warships and prohibiting fortifications and the presence of armaments on its shores.\nThe treaty also had Russia return to Moldavia part of its territory it had annexed in 1812 (to the mouth of the Danube, in southern Bessarabia). Russia lost any claim to influence the Danubian principalities and the Principality of Serbia, or to protect Christians in the Ottoman Empire.\n\n## Summary\nThe Treaty of Paris was signed on 30 March 1856 at the Congress of Paris with Russia on one side of the negotiating table and France, Britain, the Ottoman Empire and the Kingdom of Sardinia on the other side. The treaty came about to resolve the Crimean War, which had begun on 23 October 1853, when the Ottoman Empire formally declared war on Russia after Russian troops occupied the Danubian Principalities.\nThe Treaty of Paris was seen as an achievement of the Tanzimat policy of reform. The Western European alliance powers pledged to maintain the integrity of the Ottoman Empire and restored the respective territories of the Russian and the Ottoman Empires to their pre-war boundaries. They also demilitarised the Black Sea to improve trade, which greatly weakened Russia's influence in the region. Moldavia and Wallachia were recognized",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "sv",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "sv",
+                  "page_id": 463937,
+                  "rev_id": 56591036,
+                  "wikidata_id": "Q319260",
+                  "title": "Parisfreden (1856)",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://sv.wikipedia.org/w/index.php?oldid=56591036",
+                  "truncated": 0,
+                  "text": "# Parisfreden (1856)\nParisfreden som avslutade Krimkriget skrevs under den 30 mars 1856. Fredsfördraget undertecknades av Ryssland å den förlorande sidan och Osmanska riket och dess allierade Frankrike, Storbritannien och Piemonte-Sardinien å den andra.\nFördraget fastslog:\n- Sevastopol (som intagits av de allierade i belägringen av Sevastopol) återbördades till Ryssland.\n- Ryssland gav upp sitt krav på att osmanerna skulle erkänna den ryske tsaren som beskyddare för alla ortodoxt kristna i Osmanska riket. I gengäld fick Frankrike ge upp sitt protektorat över de katolskt kristna i riket, som varat sedan ett fördrag 1740.\n- Moldavien och Valakiet (och därtill Serbien) förblev autonoma furstendömen, med egna konsitutioner och nationalförsamlingar, inom den osmanska staten.\n- Ryska Budjak, området mellan Donaus och Dnjestrs mynningar, gavs till Moldavien.\n- Svarta havet demilitariserades. Varken Osmanska riket eller Ryssland fick ha flottor där, och kustbefästningar begränsades (Sevastopols befästningsverk skulle inte återuppbyggas).\n- Åland demilitariserades[1], vilket i praktiken innebar ett förbud mot att återuppbygga Bomarsunds fästning som förstörts av engelsmännen och fransmännen.\n- Dardanellerna stängdes för alla krigsskepp men skulle vara öppna för handelsskepp.\n- Donau skulle vara fri flod och övervakas av Europeiska Donaukommissionen.\n\nFinland efterföljer ännu i dag det internationella fördraget om Ålands demilitarisering trots att Ryssland så tidigt som 1870 (i samband med att Frankrike var upptaget i fransk-tyska kriget) förklarade att Svarta havets demilitarisering inte längre gällde. Ålands demilitariserade situation baserar sig på den finska finländska senare statsförbindelser, som baserar sig på de Parisfredsvillkor som Ryssland var tvunget att erkänna 1856.",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            }
+          ],
+          "limitation": "Introductions shown verbatim. Presence is not claim support; absence is only absence from dataset S."
+        },
+        {
+          "wikidata_id": "Q740724",
+          "editions": [
+            {
+              "lang": "fi",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "fi",
+                  "page_id": 1154488,
+                  "rev_id": 22255546,
+                  "wikidata_id": "Q740724",
+                  "title": "Pariisin rauha (1814)",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22255546",
+                  "truncated": 0,
+                  "text": "# Pariisin rauha (1814)\nPariisin rauhansopimus oli 30. toukokuuta 1814 allekirjoitettu rauhansopimus, joka päätti Napoleonin sotiin kuuluneen kuudennen liittokunnan sodan. Sopimuksen osapuolina olivat sodan hävinnyt Ranska sekä voittajavaltiot Iso-Britannia, Itävalta, Preussi, Venäjä, Ruotsi ja Portugali. Espanja solmi heinäkuussa 1814 Ranskan kanssa erillisen rauhansopimuksen, jossa oli sama sisältö.\nLiittokunnan joukot olivat vallanneet Pariisiin 30.–31. maaliskuuta, ja 6. huhtikuuta keisari Napoleon oli luopunut vallasta Fontainebleaussa. Jo neljä päivää ennen sitä Charles Maurice de Talleyrandin johtama väliaikainen hallitus oli kutsunut Bourbon-suvun kruununperijän Ludvig XVIII:n Ranskan valtaistuimelle. Napoleon lähti maanpakoon 28. huhtikuuta. Tässä tilanteessa voittoisat liittoutuneet olivat valmiit antamaan kukistetulle Ranskalle edulliset rauhanehdot, jotta kuningaskunnan palauttamiselle saataisiin suotuisat edellytykset. Toukokuussa solmittu rauhansopimus käsitti kaikkiaan 33 kohtaa. Keskeiset rauhanehdot olivat seuraavat:\n- Ranska sai takaisin vuoden 1792 alussa voimassa olleet rajansa ja säilytti siten vallankumouksen alkuaikoina hankkimansa aluelaajennukset.[1] Ranskalle jäivät edelleen raja- ja erillisalueet Savoijissa, Elsassissa ja Saarin alueella sekä ennen vallankumousta paavin alaisuuteen kuulunut Avignon.[2]\n- Iso-Britannia palautti Ranskalle pääosan sen merentakaisista siirtomaista.[2] Tobago ja Saint Lucia Karibianmerellä sekä Mauritius Intian valtamerellä jäivät kuitenkin briteille.[1]\n- Iso-Britannia sai takaisin Maltan saaren Välimerellä.[2]\n- Vapaa purjehdusoikeus Reinillä taattiin kansainvälisesti.[2]\n- Allekirjoittajavaltiot luopuvat kaikista Ranskan vallankumoussotiin ja Napoleonin valtakauteen liittyneistä korvausvaatimuksistaan.[2]\n\nPreus",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "en",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "en",
+                  "page_id": 191927,
+                  "rev_id": 1301040130,
+                  "wikidata_id": "Q740724",
+                  "title": "Treaty of Paris (1814)",
+                  "origin": "wikidata_counterpart",
+                  "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1301040130",
+                  "truncated": 0,
+                  "text": "# Treaty of Paris (1814)\nThe Treaty of Paris, signed on 30 May 1814, ended the war between France and the Sixth Coalition, part of the Napoleonic Wars, following an armistice signed on 23 April between Charles, Count of Artois, and the allies. The treaty set the borders for France under the House of Bourbon and restored territories to other nations. It is sometimes called the First Peace of Paris, as another one followed in 1815.\n\n## Parties to the treaty\nThis treaty was signed on 30 May 1814, following an armistice signed on 23 April 1814 between Charles of Bourbon, Count of Artois, as Lieutenant General of the Realm, and the allies. Napoleon had abdicated as Emperor on 6 April, as a result of negotiations at Fontainebleau.\nPeace talks had started on 9 May between Talleyrand, who negotiated with the allies of Chaumont on behalf of the exiled Bourbon king Louis XVIII of France, and the allies. The Treaty of Paris established peace between France and Great Britain, Russia, Austria, and Prussia, who in March had defined their common war aim in Chaumont. Signatories were:\n- Talleyrand, for France\n- Lords Castlereagh, Aberdeen and Cathcart for Great Britain\n- Counts Razumovsky and Nesselrode for Russia\n- Prince Metternich and Count Stadion for Austria\n- Baron Hardenberg and Wilhelm von Humboldt for Prussia.[3]\n\nThe Treaty was also signed by Portugal and Sweden while Spain ratified shortly after in July. The allied parties did not sign a common document, but instead concluded separate treaties with France allowing for specific amendments.\n\n## New borders of France\nThe allies had agreed to reduce France to her 1792 borders and restore the independence of her neighbors after Napoleon Bonaparte's defeat.\n\n## Plan for Congress of Vienna\nIn addition to the cessation of hostilitie",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "sv",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "sv",
+                  "page_id": 1887416,
+                  "rev_id": 54085955,
+                  "wikidata_id": "Q740724",
+                  "title": "Parisfreden (1814)",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://sv.wikipedia.org/w/index.php?oldid=54085955",
+                  "truncated": 0,
+                  "text": "# Parisfreden (1814)\nFör andra parisfreder, se Parisfreden.\nParisfreden 1814, som undertecknades den 30 maj 1814, avslutade sjätte koalitionskriget mellan å ena sidan Frankrike och å andra sidan Sverige, Storbritannien, Ryssland, Preussen och Österrike. Koalitionen vann kriget, vilket ledde till att Napoleon abdikerade den 11 april 1814 och landsförvisades till ön Elba. Freden kom därmed att slutas i den nye franske kungen Ludvig XVIII:s namn. Den slutliga regleringen av Frankrikes gränser och fredsfördraget i sin slutliga form hänsköts till Wienkongressen som inleddes i september samma år.\n\n## Bestämmelser\n\n### Inom Europa\nFrankrike återgavs under den bourbonska restaurationen sina gränser enligt gränserna 1 januari 1792 och behöll dessutom en del av det tidigare sardinska hertigdömet Savojen, de tidigare påvliga besittningarna Avignon och Venaissin samt flera tidigare tyska och belgiska gränsområden inklusive enklaverna Mulhouse och Montbéliard.\nNederländerna skulle ställas under huset Oraniens regering och utökas. \nDe tyska staterna skulle bevara sitt oberoende och förenas genom en konfederation, Tyska förbundet. På samma sätt behöll Schweiz sitt oberoende och självbestämmande.\nDäremot skulle Italien, förutom de provinser som tillföll kejsardömet Österrike, indelas i suveräna stater.\nFlodtrafiken på Rhen till havet förklarades fri, samt trafiken på floden Schelde. \nFrankrike erkände Norges förening med Sverige.\n\n### Utomeuropeiska territorier\nStorbritannien behöll Malta, Tobago, Saint Lucia och Mauritius, men återlämnade alla andra ockuperade franska kolonier, samt återlämnade den tidigare spanska delen av Hispaniola (nuvarande Dominikanska republiken) till Spanien.\nÖn Guadeloupe, som till Sverige tidigare överlåtits av Storbritannien, återfördes till Frankrike.\n",
+                  "start_char": 0,
+                  "end_char": 1796,
+                  "selection": "article_introduction"
+                }
+              ]
+            }
+          ],
+          "limitation": "Introductions shown verbatim. Presence is not claim support; absence is only absence from dataset S."
+        },
+        {
+          "wikidata_id": "Q695285",
+          "editions": [
+            {
+              "lang": "fi",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "fi",
+                  "page_id": 52097,
+                  "rev_id": 23352891,
+                  "wikidata_id": "Q695285",
+                  "title": "Moskovan rauhansopimus (1940)",
+                  "origin": "wikidata_counterpart",
+                  "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23352891",
+                  "truncated": 0,
+                  "text": "# Moskovan rauhansopimus (1940)\nMoskovan rauha oli Suomen ja Neuvostoliiton 12. maaliskuuta 1940 välillä solmittu rauhansopimus, joka päätti talvisodan. Rauha astui voimaan 13. maaliskuuta, kun Suomen joukot olivat murtumassa ja Neuvostoliiton joukot jo lähentelivät Viipuria. Neuvostoliiton halukkuutta rauhaan lisäsi Ranskan ja Ison-Britannian lupaama sotilaallinen apu Suomelle.\n\n## Rauhanehdot\nSuomen tasavallan presidentti Kyösti Kallio nimesi rauhanneuvotteluvaltuuskuntaan pääministeri Risto Rytin, ministeri ja valtioneuvos J. K. Paasikiven, kenraali Rudolf Waldenin sekä professori Väinö Voionmaan. Valtuuskunta lähti illalla 6. maaliskuuta 1940 Tukholmaan ja edelleen seuraavana päivänä Riian kautta Moskovaan. Neuvostoliiton neuvottelijoita johtivat ulkoministeri Vjatšeslav Molotov sekä Neuvostoliiton kommunistisen puolueen (NKP) Leningradin piirin pääsihteeri ja NKP:n politbyroon jäsen, kenraalieversti Andrei Ždanov. Neuvostoliiton johtaja Josif Stalin ei saapunut neuvottelupöytään suomalaisten toiveista huolimatta. Rauhasta ei varsinaisesti neuvoteltu, vaan Neuvostoliitto saneli ehdot. Suomalaisten kannalta ahdistavat neuvottelut kestivät kuitenkin viisi päivää. 11. maaliskuuta Suomen hallitus päätti hyväksyä Neuvostoliiton esittämät rauhanehdot. Rauhanehdot olivat Suomelle raskaat runsaine alueluovutuksineen. Suomi menetti 35 000 km² eli kahdeksan prosenttia alueestaan ja joutui uudelleensijoittamaan yli 400 000 luovutetuilta alueilta lähtemään joutunutta evakkoa. Suomen ulkoministeri Väinö Tanner julkisti rauhansopimuksen ehdot radiopuheessa 13. maaliskuuta kello 12, tunnin kuluttua sopimuksen voimaanastumisesta. Myös useat sanomalehdet julkaisivat päivän aikana rauhansopimusta käsitteleviä erikoistiedotteita. Puolustusvoimien ylipäällikkö marsalkka Mannerheim anto",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "en",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "en",
+                  "page_id": 288706,
+                  "rev_id": 1302012396,
+                  "wikidata_id": "Q695285",
+                  "title": "Moscow Peace Treaty",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1302012396",
+                  "truncated": 0,
+                  "text": "# Moscow Peace Treaty\nThe Moscow Peace Treaty was signed by Finland and the Soviet Union on 12 March 1940, and the ratifications were exchanged on 21 March. It marked the end of the 105-day Winter War, upon which Finland ceded border areas to the Soviet Union. The treaty was signed by Vyacheslav Molotov, Andrei Zhdanov and Aleksandr Vasilevsky for the Soviet Union, and Risto Ryti, Juho Kusti Paasikivi, Rudolf Walden and Väinö Voionmaa for Finland. The terms of the treaty were not reversed after the dissolution of the Soviet Union. The Karelian question refers to the debate within Finland over the possible reacquisition of this ceded territory.\n\n## Background\nThe Winter War began on 30 November 1939 with the Soviet invasion of Finland. On 29 January 1940, Soviet Minister of Foreign Affairs Vyacheslav Molotov put an end to the puppet Terijoki Government and recognized the Ryti–Tanner government as the legal government of Finland, informing it that the Soviet Union was willing to negotiate peace. The Finnish government received the first tentative peace conditions from the Soviet Union (through Stockholm) two days later. The Soviets made larger claims than they had before the war started. The demands were for Finland to cede the Karelian Isthmus, including the city of Viipuri, and Finland's shore of Lake Ladoga. The Hanko Peninsula was to be leased to the Soviet Union for 30 years.\nFinland rejected the demands and intensified its pleas to Sweden, France and the United Kingdom for military support by regular troops. The reports from the front still held out hope for Finland, anticipating a League of Nations intervention. Positive signals, however inconstant, from France and Britain and more realistic expectations of troops from Sweden, for which plans and preparations had b",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "sv",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "sv",
+                  "page_id": 426533,
+                  "rev_id": 55941070,
+                  "wikidata_id": "Q695285",
+                  "title": "Moskvafreden",
+                  "origin": "wikidata_counterpart",
+                  "revision_url": "https://sv.wikipedia.org/w/index.php?oldid=55941070",
+                  "truncated": 0,
+                  "text": "# Moskvafreden\nMoskvafreden (finska: Moskovan rauhansopimus (1940)) tecknades den 12 mars 1940 mellan Finland och Sovjetunionen. Freden trädde i kraft den 13 mars och avslutade vinterkriget. Fredsvillkoren var hårda för Finland, då den finska arméns resurser praktiskt taget var slut och ett sovjetiskt genombrott var mycket nära. Orsaken till att Sovjetunionen trots det var villigt att sluta fred, var att de inte ville riskera att hamna i krig med Storbritannien och Frankrike som övervägde att stödja Finland. Efter kriget har det visat sig att västmakternas största intressen låg i norra Sverige och Norge, då man ville förhindra Nazityskland - vid den tiden allierat med Sovjet - att behärska de svenska malmfälten vid Kiruna. Endast en bråkdel av de utlovade trupperna skulle ha skickats till Finland.\nMoskvafreden skall inte sammanblandas med mellanfreden i Moskva som undertecknades den 19 september 1944 och avslutade fortsättningskriget.\n\n## Fredsvillkoren\nVid fredsförhandlingarna befann sig Sovjetunionen i en situation där de kunde diktera villkoren relativt fritt, då Finlands resurser att föra krig nästan var uttömda. Finland förlorade sammanlagt cirka 35 000 km² av sin areal och man tvingades ta hand om över 400 000 karelare och andra som fick lämna sina hem i de områden som gick förlorade i freden.\nDe områden som Finland förlorade var:\n- Karelska näset (inklusive städerna Viborg och Kexholm)\n- Ladoga-karelen (inklusive staden Sordavala)\n- Delar av kommunerna Salla (6 003,39 km², varav 5 834,02 km² land och 169,37 km² vatten) och Kuusamo (1 795,40 km², varav 1 638,07 km² land och 157,33 km² vatten)[1]\n- Finlands del av Fiskarhalvön i Petsamo (370,21 km², varav 352,45 km² land och 17,76 km² vatten)[1]\n- Yttre öarna i Finska viken: Hogland, Tytterskär, Lövskär och Seitskä",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            }
+          ],
+          "limitation": "Introductions shown verbatim. Presence is not claim support; absence is only absence from dataset S."
+        }
+      ]
+    },
+    {
+      "id": "independence",
+      "question": "When did Finland declare its independence?",
+      "dataset_release": "s-2026-10",
+      "languages": [
+        "fi",
+        "en",
+        "sv"
+      ],
+      "per_language": 3,
+      "retrieval_rankings": {
+        "fi": {
+          "direct": [
+            {
+              "lang": "fi",
+              "page_id": 937468,
+              "wikidata_id": "Q11859603",
+              "title": "Finland (sanomalehti)",
+              "url": "https://fi.wikipedia.org/wiki/Finland_(sanomalehti)",
+              "distance": 0.43503092626232065,
+              "characters": 927,
+              "sections": 2,
+              "external_links": 0
+            },
+            {
+              "lang": "fi",
+              "page_id": 32957,
+              "wikidata_id": "Q27916528",
+              "title": "Suomen itsenäistyminen",
+              "url": "https://fi.wikipedia.org/wiki/Suomen_itsen%C3%A4istyminen",
+              "distance": 0.4360697906887242,
+              "characters": 30914,
+              "sections": 20,
+              "external_links": 0
+            },
+            {
+              "lang": "fi",
+              "page_id": 32885,
+              "wikidata_id": "Q419595",
+              "title": "Suomen itsenäisyyspäivä",
+              "url": "https://fi.wikipedia.org/wiki/Suomen_itsen%C3%A4isyysp%C3%A4iv%C3%A4",
+              "distance": 0.460165099317308,
+              "characters": 8890,
+              "sections": 15,
+              "external_links": 0
+            }
+          ]
+        },
+        "en": {
+          "direct": [
+            {
+              "lang": "en",
+              "page_id": 3336304,
+              "wikidata_id": "Q419595",
+              "title": "Independence Day (Finland)",
+              "url": "https://en.wikipedia.org/wiki/Independence_Day_(Finland)",
+              "distance": 0.28310019067260017,
+              "characters": 7636,
+              "sections": 7,
+              "external_links": 0
+            },
+            {
+              "lang": "en",
+              "page_id": 588577,
+              "wikidata_id": "Q1994771",
+              "title": "Finnish Declaration of Independence",
+              "url": "https://en.wikipedia.org/wiki/Finnish_Declaration_of_Independence",
+              "distance": 0.28507819274611457,
+              "characters": 12002,
+              "sections": 8,
+              "external_links": 0
+            },
+            {
+              "lang": "en",
+              "page_id": 1913964,
+              "wikidata_id": "Q27916528",
+              "title": "Independence of Finland",
+              "url": "https://en.wikipedia.org/wiki/Independence_of_Finland",
+              "distance": 0.2852669408202775,
+              "characters": 20144,
+              "sections": 14,
+              "external_links": 0
+            }
+          ]
+        },
+        "sv": {
+          "direct": [
+            {
+              "lang": "sv",
+              "page_id": 464743,
+              "wikidata_id": "Q27916528",
+              "title": "Finlands självständighet",
+              "url": "https://sv.wikipedia.org/wiki/Finlands_sj%C3%A4lvst%C3%A4ndighet",
+              "distance": 0.2643972473340195,
+              "characters": 7104,
+              "sections": 5,
+              "external_links": 0
+            },
+            {
+              "lang": "sv",
+              "page_id": 481102,
+              "wikidata_id": "Q419595",
+              "title": "Finlands självständighetsdag",
+              "url": "https://sv.wikipedia.org/wiki/Finlands_sj%C3%A4lvst%C3%A4ndighetsdag",
+              "distance": 0.31332928247425507,
+              "characters": 4235,
+              "sections": 7,
+              "external_links": 0
+            },
+            {
+              "lang": "sv",
+              "page_id": 6772,
+              "wikidata_id": "Q202808",
+              "title": "Finlands historia",
+              "url": "https://sv.wikipedia.org/wiki/Finlands_historia",
+              "distance": 0.3411116229222999,
+              "characters": 3761,
+              "sections": 3,
+              "external_links": 0
+            }
+          ]
+        }
+      },
+      "candidates": [
+        {
+          "fusion_score": 0.01639344262295082,
+          "lang": "fi",
+          "page_id": 937468,
+          "wikidata_id": "Q11859603",
+          "title": "Finland (sanomalehti)",
+          "url": "https://fi.wikipedia.org/wiki/Finland_(sanomalehti)",
+          "distance": 0.43503092626232065,
+          "characters": 927,
+          "sections": 2,
+          "external_links": 0,
+          "language_rank": 1
+        },
+        {
+          "fusion_score": 0.016129032258064516,
+          "lang": "fi",
+          "page_id": 32957,
+          "wikidata_id": "Q27916528",
+          "title": "Suomen itsenäistyminen",
+          "url": "https://fi.wikipedia.org/wiki/Suomen_itsen%C3%A4istyminen",
+          "distance": 0.4360697906887242,
+          "characters": 30914,
+          "sections": 20,
+          "external_links": 0,
+          "language_rank": 2
+        },
+        {
+          "fusion_score": 0.015873015873015872,
+          "lang": "fi",
+          "page_id": 32885,
+          "wikidata_id": "Q419595",
+          "title": "Suomen itsenäisyyspäivä",
+          "url": "https://fi.wikipedia.org/wiki/Suomen_itsen%C3%A4isyysp%C3%A4iv%C3%A4",
+          "distance": 0.460165099317308,
+          "characters": 8890,
+          "sections": 15,
+          "external_links": 0,
+          "language_rank": 3
+        },
+        {
+          "fusion_score": 0.01639344262295082,
+          "lang": "en",
+          "page_id": 3336304,
+          "wikidata_id": "Q419595",
+          "title": "Independence Day (Finland)",
+          "url": "https://en.wikipedia.org/wiki/Independence_Day_(Finland)",
+          "distance": 0.28310019067260017,
+          "characters": 7636,
+          "sections": 7,
+          "external_links": 0,
+          "language_rank": 1
+        },
+        {
+          "fusion_score": 0.016129032258064516,
+          "lang": "en",
+          "page_id": 588577,
+          "wikidata_id": "Q1994771",
+          "title": "Finnish Declaration of Independence",
+          "url": "https://en.wikipedia.org/wiki/Finnish_Declaration_of_Independence",
+          "distance": 0.28507819274611457,
+          "characters": 12002,
+          "sections": 8,
+          "external_links": 0,
+          "language_rank": 2
+        },
+        {
+          "fusion_score": 0.015873015873015872,
+          "lang": "en",
+          "page_id": 1913964,
+          "wikidata_id": "Q27916528",
+          "title": "Independence of Finland",
+          "url": "https://en.wikipedia.org/wiki/Independence_of_Finland",
+          "distance": 0.2852669408202775,
+          "characters": 20144,
+          "sections": 14,
+          "external_links": 0,
+          "language_rank": 3
+        },
+        {
+          "fusion_score": 0.01639344262295082,
+          "lang": "sv",
+          "page_id": 464743,
+          "wikidata_id": "Q27916528",
+          "title": "Finlands självständighet",
+          "url": "https://sv.wikipedia.org/wiki/Finlands_sj%C3%A4lvst%C3%A4ndighet",
+          "distance": 0.2643972473340195,
+          "characters": 7104,
+          "sections": 5,
+          "external_links": 0,
+          "language_rank": 1
+        },
+        {
+          "fusion_score": 0.016129032258064516,
+          "lang": "sv",
+          "page_id": 481102,
+          "wikidata_id": "Q419595",
+          "title": "Finlands självständighetsdag",
+          "url": "https://sv.wikipedia.org/wiki/Finlands_sj%C3%A4lvst%C3%A4ndighetsdag",
+          "distance": 0.31332928247425507,
+          "characters": 4235,
+          "sections": 7,
+          "external_links": 0,
+          "language_rank": 2
+        },
+        {
+          "fusion_score": 0.015873015873015872,
+          "lang": "sv",
+          "page_id": 6772,
+          "wikidata_id": "Q202808",
+          "title": "Finlands historia",
+          "url": "https://sv.wikipedia.org/wiki/Finlands_historia",
+          "distance": 0.3411116229222999,
+          "characters": 3761,
+          "sections": 3,
+          "external_links": 0,
+          "language_rank": 3
+        }
+      ],
+      "aligned_topics": [
+        "Q27916528",
+        "Q419595",
+        "Q11859603"
+      ],
+      "explain_vector_queries": {
+        "fi": {
+          "direct": [
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "<derived2>",
+              "type": "ALL",
+              "possible_keys": null,
+              "key": null,
+              "key_len": null,
+              "ref": null,
+              "rows": "3",
+              "Extra": "Using temporary; Using filesort"
+            },
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "a",
+              "type": "eq_ref",
+              "possible_keys": "PRIMARY",
+              "key": "PRIMARY",
+              "key_len": "12",
+              "ref": "v.lang,v.page_id",
+              "rows": "1",
+              "Extra": ""
+            },
+            {
+              "id": 2,
+              "select_type": "DERIVED",
+              "table": "article_vector",
+              "type": "index",
+              "possible_keys": "PRIMARY",
+              "key": "article_semantics",
+              "key_len": "4098",
+              "ref": "const",
+              "rows": "18161",
+              "Extra": "Using where"
+            }
+          ]
+        },
+        "en": {
+          "direct": [
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "<derived2>",
+              "type": "ALL",
+              "possible_keys": null,
+              "key": null,
+              "key_len": null,
+              "ref": null,
+              "rows": "3",
+              "Extra": "Using temporary; Using filesort"
+            },
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "a",
+              "type": "eq_ref",
+              "possible_keys": "PRIMARY",
+              "key": "PRIMARY",
+              "key_len": "12",
+              "ref": "v.lang,v.page_id",
+              "rows": "1",
+              "Extra": ""
+            },
+            {
+              "id": 2,
+              "select_type": "DERIVED",
+              "table": "article_vector",
+              "type": "index",
+              "possible_keys": "PRIMARY",
+              "key": "article_semantics",
+              "key_len": "4098",
+              "ref": "const",
+              "rows": "18161",
+              "Extra": "Using where"
+            }
+          ]
+        },
+        "sv": {
+          "direct": [
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "<derived2>",
+              "type": "ALL",
+              "possible_keys": null,
+              "key": null,
+              "key_len": null,
+              "ref": null,
+              "rows": "3",
+              "Extra": "Using temporary; Using filesort"
+            },
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "a",
+              "type": "eq_ref",
+              "possible_keys": "PRIMARY",
+              "key": "PRIMARY",
+              "key_len": "12",
+              "ref": "v.lang,v.page_id",
+              "rows": "1",
+              "Extra": ""
+            },
+            {
+              "id": 2,
+              "select_type": "DERIVED",
+              "table": "article_vector",
+              "type": "index",
+              "possible_keys": "PRIMARY",
+              "key": "article_semantics",
+              "key_len": "4098",
+              "ref": "const",
+              "rows": "18161",
+              "Extra": "Using where"
+            }
+          ]
+        }
+      },
+      "retrieval_seconds": 0.25362543600203935,
+      "limitation": "Language-balanced candidates and Wikidata counterparts are source discovery, not proof of relevance, agreement, or claim support.",
+      "dossiers": [
+        {
+          "wikidata_id": "Q27916528",
+          "editions": [
+            {
+              "lang": "fi",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "fi",
+                  "page_id": 32957,
+                  "rev_id": 23418289,
+                  "wikidata_id": "Q27916528",
+                  "title": "Suomen itsenäistyminen",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23418289",
+                  "truncated": 0,
+                  "text": "# Suomen itsenäistyminen\n\nSuomen itsenäistyminen oli tapahtumasarja, jonka tuloksena Venäjän keisarikuntaan vuodesta 1809 lähtien kuulunut autonominen suuriruhtinaskunta vuonna 1917 muuttui itsenäiseksi valtioksi. Itsenäistymismahdollisuuden käsittely Suomessa alkoi keväällä 1917. Itsenäisyysjulistus hyväksyttiin Suomen eduskunnassa 6. joulukuuta samana vuonna. Ennen Suomen itsenäistymistä maahan olivat vaikuttaneet sortovuodet, joiden aikana suomalaiset vähitellen menettivät luottamuksensa Venäjän keisariin Suomen erityisaseman turvaajana. Suomen itsenäistyminen liittyi Venäjällä ensimmäisen maailmansodan aikana tapahtuneeseen mullistukseen: Venäjän vallankumoukseen, jossa keisarivalta kaatui. Suomen itsenäisyyden tunnusti Venäjällä valtaan noussut bolševikkihallinto ja Neuvosto-Venäjän bolševikkijohtaja Vladimir Lenin, jolloin Suomen autonominen alue ei muodostunut osaksi Neuvosto-Venäjää ja myöhempää Neuvostoliittoa. Useimmat maat tunnustivat Suomen itsenäisyyden vuosina 1918–1919. Suomen itsenäiseksi julistamista edelsi sisäinen taistelu valtalaista ja sitä seurasi kansaa jakanut Suomen sisällissota kevättalvella 1918.\n\n## Varhaisemmat pyrkimykset\nMahdollisuus itsenäiseen Suomen kuningaskuntaan mainittiin jo vuonna 1742 Venäjän keisarinna Elisabetin hattujen sodan aikana allekirjoittamassa Elisabetin manifestissa. Suomalaisten tartuttua Elisabetin manifestin lupauksiin ja erinäisissä yhteyksissä todella pyrkivät valmistelemaan Holsteinin herttuan valintaa maan hallitsijaksi, venäläiset ja erityisesti Elisabet eivät enää olleet aiheesta kiinnostuneita.\n1780-luvulla upseeri Georg Magnus (Yrjö Maunu) Sprengtporten suunnitteli Suomen itsenäistymistä Ruotsin valtakunnasta. Sprengtporten laati muun muassa itsenäiselle Suomelle ensimmäisen perustuslakiehdotuksen, joka olis",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "en",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "en",
+                  "page_id": 1913964,
+                  "rev_id": 1295277224,
+                  "wikidata_id": "Q27916528",
+                  "title": "Independence of Finland",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1295277224",
+                  "truncated": 0,
+                  "text": "# Independence of Finland\nFinland declared its independence on 6 December 1917. The formal Declaration of Independence was only part of the long process leading to the independence of Finland.\n\n## History\n\n### Proclamation of Empress Elizabeth (1742)\nThe subject of an independent Finland was first mentioned in the 18th century, when present-day Finland was still ruled by Sweden. On 18 March 1742, during the Russian occupation in the Russo-Swedish War (1741–1743), Empress Elizabeth of Russia issued a proclamation in the Finnish language to the Finnish people asking them to create a Finland which would be independent from both Sweden and Russia. This led to preparations to create a Kingdom of Finland in 1742. Elizabeth's nephew Duke Peter of Holstein-Gottorp (who later became heir to the throne of Russia and Tsar as Peter III) was proclaimed King of Finland. However, the political situation outgrew the idea of a Finnish kingdom and the concept quickly evaporated.\n\n### Anjala conspiracy (1788)\nThe Anjala conspiracy was a scheme in 1788–1790 as a response to end Gustav III's Russian War, and it included the independence of Finland to some degree. Several people involved were linked to Walhalla-orden. Russian occupations and plundering of 1713–21 (the \"Greater Wrath\") (Finnish: Isoviha) and 1741–43 (the \"Lesser Wrath\") (Finnish: Pikkuviha) were still in vivid memory when Finns waged partisan warfare against the Russians.\nGeorg Magnus Sprengtporten, who took no direct part in the conspiracy, had written a proposal for a Finnish constitution in 1786. Sprengtporten later had a role in forming the autonomous Grand Duchy of Finland within the Russian Empire, as he became the first Governor-General of Finland after Sweden ceded the rest of Finland to Russia in 1809 at the conclusi",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "sv",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "sv",
+                  "page_id": 464743,
+                  "rev_id": 55870925,
+                  "wikidata_id": "Q27916528",
+                  "title": "Finlands självständighet",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://sv.wikipedia.org/w/index.php?oldid=55870925",
+                  "truncated": 0,
+                  "text": "# Finlands självständighet\nFinlands självständighetsförklaring antogs av Finlands lantdag den 6 december 1917. I den förklarades Finland vara en självständig nationalstat, Republiken Finland. Tidigare hade Finland lytt under rysk överhöghet som Storfurstendömet Finland. Detta datum blev Finlands nationaldag, självständighetsdagen.\n\n## Tillkomst\nFebruarirevolutionen 1917, och i ännu högre grad oktoberrevolutionen, hade tänt förhoppningar också i Storfurstendömet Finland. Efter storfursten Nikolaj II:s abdikation den 15 mars 1917, förlorade personalunionen mellan Ryssland och Finland sin legalitet – åtminstone var synsättet sådant i Helsingfors.\nDen 15 november förklarade det finländska parlamentet, lantdagen, följaktligen sig vara ”innehavare av den högsta statsmakten” i Finland, och stödde sig på Finlands konstitution, närmare bestämt § 38 i den gamla (svenska) regeringsformen från 1772, som riksdagen antagit efter kung Gustav III:s oblodiga kupp.\nDen 15 november 1917 påbjöd bolsjevikerna allmän självbestämmanderätt, innefattande rätten till fullständigt utträde, ”för Rysslands folk” (plural). Samma dag antog lantdagen en förklaring varigenom den temporärt tog på sig monarkens maktbefogenheter i Finland.\nDen gamla regeringsformen ansågs emellertid inte längre lämplig. Ledarskiktet hade länge ansett monarki och ärftliga adelsprivilegier som föråldrade och förespråkade en republikansk konstitution för Finland.\n\n### 6 december: Självständighetsförklaringen antas och erkänns\nFinlands senat, den regering lantdagen hade utsett i november, inkom till lantdagen med en proposition om en ny republikansk regeringsform den 4 december. Självständighetsförklaringen var tekniskt utformad som ett förord till propositionen och var tänkt att godkännas av lantdagen. Den 6 december besluta",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            }
+          ],
+          "limitation": "Introductions shown verbatim. Presence is not claim support; absence is only absence from dataset S."
+        },
+        {
+          "wikidata_id": "Q419595",
+          "editions": [
+            {
+              "lang": "fi",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "fi",
+                  "page_id": 32885,
+                  "rev_id": 23431494,
+                  "wikidata_id": "Q419595",
+                  "title": "Suomen itsenäisyyspäivä",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23431494",
+                  "truncated": 0,
+                  "text": "# Suomen itsenäisyyspäivä\nSuomen itsenäisyyspäivä on Suomen kansallispäivä, jota vietetään 6. joulukuuta 1917 tapahtuneen itsenäistymisen kunniaksi. Itsenäisyyspäivä on arvokas ja vakavamielinen juhla, johon liittyy sodan ja kaatuneiden muisteleminen. Päivään liittyy monia jokavuotisia perinteitä, kuten jo ensimmäisen presidentin ajoista vietetty tasavallan presidentin itsenäisyyspäivän vastaanotto, paraateja, soihtukulkueita ja uudempana perinteenä Tuntemattoman sotilaan televisioesitys.\nJoulukuun kuudetta päivää on vietetty itsenäisyyspäivänä vuodesta 1919 alkaen, jolloin siitä tuli kouluissa, tuomioistuimissa ja virastoissa yleinen vapaapäivä. Siitä tuli palkallinen vapaapäivä vuonna 1929 ja yleinen juhla- ja vapaapäivä vuonna 1937. Itsenäisyyspäivä on liputuspäivä.\n\n## Historia\nSuomen suuriruhtinaskunta itsenäistyi Venäjästä omaksi tasavallaksi 6. joulukuuta 1917. Bolševikit olivat kaapanneet Venäjällä vallan lokakuun vallankumouksessa 7.–8. marraskuuta 1917, ja joulukuun 4. päivänä 1917 P. E. Svinhufvudin johtama senaatti antoi Suomen itsenäisyysjulistuksen. Eduskunta hyväksyi itsenäisyysjulistuksen joulukuun 6. päivänä äänin 100–88.\nItsenäisyyden alkuvaiheessa itsenäisyyspäivästä oli eri mielipiteitä. Oikeisto ajatteli, että Suomi irrottautui Venäjästä kokonaan vasta sisällissodan päätyttyä, ja halusi juhlia itsenäisyyttä valkoisen armeijan voitonparaatin päivänä 16. toukokuuta. Vasemmisto puolestaan ajoi itsenäisyyspäiväksi marraskuun 15. päivää, koska kansanvaltaa edustanut Suomen eduskunta oli julistautunut korkeimman vallan käyttäjäksi 15. marraskuuta 1917. Kun itsenäisyysjulistuksen hyväksymisestä oli kulunut vuosi 6. joulukuuta 1918, akateemiset piirit juhlistivat vuosipäivää.\nValtioneuvosto päätti 20.11.1919, että Suomen itsenäisyyspäivä on  6. joulukuuta j",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "en",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "en",
+                  "page_id": 3336304,
+                  "rev_id": 1306467658,
+                  "wikidata_id": "Q419595",
+                  "title": "Independence Day (Finland)",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1306467658",
+                  "truncated": 0,
+                  "text": "# Independence Day (Finland)\nIndependence Day (Finnish: itsenäisyyspäivä [ˈitsenæi̯syːsˌpæi̯ʋæ]; Swedish: självständighetsdagen) is a national public holiday in Finland and a flag flying day held on 6 December to celebrate Finland's declaration of independence from Russia after the Bolsheviks took power in late 1917.\n\n## History\nThe movement for Finland's independence started after the revolutions in Russia, caused by disturbances inside Russia from hardships connected to the First World War. This gave Finland an opportunity to withdraw from Russian rule. After several disagreements between the non-socialists and the social-democrats over who should have power in Finland, on 4 December 1917, the Senate of Finland, led by Pehr Evind Svinhufvud, finally made a Declaration of Independence which was adopted by the Finnish parliament two days later.\nIndependence Day was first celebrated in 1917. However, during the first years of independence, 6 December in some parts of Finland was only a minor holiday compared to 16 May, the Whites' day of celebration for prevailing in the Finnish Civil War. The left parties would have wanted to celebrate 15 November, because the people of Finland (represented by parliament) took power 15 November 1917. When a year had passed since declaration of independence, 6 December 1918, the academic people celebrated the day.\n\n## Observance\nDuring the early decades of independence, occasion marked by patriotic speeches and special church services. From the 1970s onwards, however, Independence Day celebrations have taken livelier forms, with shops decorating their windows in the blue and white of the Finnish flag, and bakeries producing cakes with blue and white icing.\nIt is traditional for Finnish families to light two candles in each window of thei",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "sv",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "sv",
+                  "page_id": 481102,
+                  "rev_id": 56822684,
+                  "wikidata_id": "Q419595",
+                  "title": "Finlands självständighetsdag",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://sv.wikipedia.org/w/index.php?oldid=56822684",
+                  "truncated": 0,
+                  "text": "# Finlands självständighetsdag\nFinlands självständighetsdag (på finska Suomen itsenäisyyspäivä) firas den 6 december. Dagen räknas som landets nationaldag och är flaggdag. Detta datum år 1917 förklarade Finland sig självständigt från Ryssland efter en månadslång process.\nBland de återkommande festligheterna denna dag finns den ekumeniska festgudstjänsten i Helsingfors som direktsänds i TV och andra gudstjänster kring landet, militärparad, konserter, fester arrangerade av kommunerna, studentkårernas fantåg till hjältegravarna på kvällen samt presidentens mottagning på slottet, med ett par tusen inbjudna ämbetsmän, diplomater och andra gäster, framförallt sådana som under året har gjort något särskilt för Finland eller presidenten annars vill uppmärksamma. Många finländare tänder två levande ljus i sina fönster på kvällen.\n\n## Traditioner\nSjälvständighetsdagen har en prägel av högtidlighet och fosterländskhet. En gudstjänst där presidenten och regeringen närvarar hålls i domkyrkan i Helsingfors. Dagspolitiken läggs åt sidan och tacksamhet över självständigheten genomsyrar firandet.\n\n### Två ljus\nTraditionen med två ljus i fönstret överfördes från hur allmänheten uppmärksammande nationalskalden Johan Ludvig Runebergs födelsedag 5 februari. I slutet av 1800-talet hade tända ljus i fönstret börjat symbolisera protester mot tidens förryskningsseder. Fönsterilluminationen var en etablerad nationalsed som enkelt kunde överföras till den nya självständighetsdagen 6 december på initiativ av det högersinnade Itsenäsyyden Liitto (Självständighetsförbundet). Under vissa perioder har traditionen ansetts representera en borgerlig fosterländskhet. Idag är det mer en tradition och ett personligt ställningstagande att tända två ljus i fönstret. I berättartraditionen finns det många tolkn",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            }
+          ],
+          "limitation": "Introductions shown verbatim. Presence is not claim support; absence is only absence from dataset S."
+        },
+        {
+          "wikidata_id": "Q11859603",
+          "editions": [
+            {
+              "lang": "fi",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "fi",
+                  "page_id": 937468,
+                  "rev_id": 22775304,
+                  "wikidata_id": "Q11859603",
+                  "title": "Finland (sanomalehti)",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22775304",
+                  "truncated": 0,
+                  "text": "# Finland (sanomalehti)\nFinland oli Helsingissä vuosina 1884–1892 ilmestynyt ruotsinkielinen sanomalehti.\nSuomalaisen puolueen ruotsinkielisen äänenkannattajan perustivat kieliasiassa vapaamieliset fennomaanit kuten Zacharias Topelius, Agathon Meurman, Axel Fredrik Granfelt ja Herman Råbergh. Tässä mielessä sitä voi pitää Morgonbladetin seuraajana. Kristillisiä ja vapaamielisiä arvoja korostanut Finland esiintyi kielikysymyksessä sovinnollisena, mikä herätti ankaraa arvostelua oman puolueen ja varsinkin nuorsuomalaisten taholta. Taloudellisesti lehti osoittautui kannattamattomaksi.\nKuudesti viikossa ilmestyneen lehden levikki laski alkuvaiheen yli kahdesta tuhannesta tuhanteen viiteensataan kappaleeseen vuonna 1892. Painoksesta noin puolet levisi Helsingin ulkopuolelle.\n\n## Päätoimittajat\n- Ernst Albert Forssell (1885),\n- Agathon Meurman (1886–1888),\n- Gustaf Malmström (1889–1891)\n- Karl Widenius (1891–1892).[1]\n\n",
+                  "start_char": 0,
+                  "end_char": 927,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "en",
+              "status": "absent_from_dataset",
+              "sources": []
+            },
+            {
+              "lang": "sv",
+              "status": "absent_from_dataset",
+              "sources": []
+            }
+          ],
+          "limitation": "Introductions shown verbatim. Presence is not claim support; absence is only absence from dataset S."
+        }
+      ]
+    },
+    {
+      "id": "abo-fire",
+      "question": "Den stora branden i Åbo 1827",
+      "dataset_release": "s-2026-10",
+      "languages": [
+        "fi",
+        "en",
+        "sv"
+      ],
+      "per_language": 3,
+      "retrieval_rankings": {
+        "fi": {
+          "direct": [
+            {
+              "lang": "fi",
+              "page_id": 222126,
+              "wikidata_id": "Q5395044",
+              "title": "Oulun palo 1882",
+              "url": "https://fi.wikipedia.org/wiki/Oulun_palo_1882",
+              "distance": 0.4988452870616157,
+              "characters": 846,
+              "sections": 1,
+              "external_links": 0
+            },
+            {
+              "lang": "fi",
+              "page_id": 594683,
+              "wikidata_id": "Q18661194",
+              "title": "Oulun palo 1715",
+              "url": "https://fi.wikipedia.org/wiki/Oulun_palo_1715",
+              "distance": 0.5392979549811889,
+              "characters": 412,
+              "sections": 1,
+              "external_links": 0
+            },
+            {
+              "lang": "fi",
+              "page_id": 570062,
+              "wikidata_id": "Q18661195",
+              "title": "Oulun palo 1773",
+              "url": "https://fi.wikipedia.org/wiki/Oulun_palo_1773",
+              "distance": 0.5401507449083698,
+              "characters": 1159,
+              "sections": 1,
+              "external_links": 0
+            }
+          ]
+        },
+        "en": {
+          "direct": [
+            {
+              "lang": "en",
+              "page_id": 8312231,
+              "wikidata_id": "Q2989671",
+              "title": "Great Fire of Turku",
+              "url": "https://en.wikipedia.org/wiki/Great_Fire_of_Turku",
+              "distance": 0.44228843405134044,
+              "characters": 3747,
+              "sections": 4,
+              "external_links": 0
+            },
+            {
+              "lang": "en",
+              "page_id": 24932423,
+              "wikidata_id": "Q5395044",
+              "title": "Great Oulu fire of 1882",
+              "url": "https://en.wikipedia.org/wiki/Great_Oulu_fire_of_1882",
+              "distance": 0.5098796428409107,
+              "characters": 636,
+              "sections": 1,
+              "external_links": 0
+            },
+            {
+              "lang": "en",
+              "page_id": 74395572,
+              "wikidata_id": "Q11886114",
+              "title": "Great Oulu fire of 1705",
+              "url": "https://en.wikipedia.org/wiki/Great_Oulu_fire_of_1705",
+              "distance": 0.5226696000759565,
+              "characters": 1171,
+              "sections": 1,
+              "external_links": 0
+            }
+          ]
+        },
+        "sv": {
+          "direct": [
+            {
+              "lang": "sv",
+              "page_id": 100605,
+              "wikidata_id": "Q2989671",
+              "title": "Åbo brand",
+              "url": "https://sv.wikipedia.org/wiki/%C3%85bo_brand",
+              "distance": 0.40562252972886004,
+              "characters": 1594,
+              "sections": 1,
+              "external_links": 0
+            },
+            {
+              "lang": "sv",
+              "page_id": 9327,
+              "wikidata_id": "Q1187606",
+              "title": "Åbo domkyrka",
+              "url": "https://sv.wikipedia.org/wiki/%C3%85bo_domkyrka",
+              "distance": 0.5312078429420453,
+              "characters": 16489,
+              "sections": 13,
+              "external_links": 0
+            },
+            {
+              "lang": "sv",
+              "page_id": 8123063,
+              "wikidata_id": "Q49103383",
+              "title": "Vasa brand",
+              "url": "https://sv.wikipedia.org/wiki/Vasa_brand",
+              "distance": 0.5401257675403219,
+              "characters": 982,
+              "sections": 1,
+              "external_links": 0
+            }
+          ]
+        }
+      },
+      "candidates": [
+        {
+          "fusion_score": 0.01639344262295082,
+          "lang": "fi",
+          "page_id": 222126,
+          "wikidata_id": "Q5395044",
+          "title": "Oulun palo 1882",
+          "url": "https://fi.wikipedia.org/wiki/Oulun_palo_1882",
+          "distance": 0.4988452870616157,
+          "characters": 846,
+          "sections": 1,
+          "external_links": 0,
+          "language_rank": 1
+        },
+        {
+          "fusion_score": 0.016129032258064516,
+          "lang": "fi",
+          "page_id": 594683,
+          "wikidata_id": "Q18661194",
+          "title": "Oulun palo 1715",
+          "url": "https://fi.wikipedia.org/wiki/Oulun_palo_1715",
+          "distance": 0.5392979549811889,
+          "characters": 412,
+          "sections": 1,
+          "external_links": 0,
+          "language_rank": 2
+        },
+        {
+          "fusion_score": 0.015873015873015872,
+          "lang": "fi",
+          "page_id": 570062,
+          "wikidata_id": "Q18661195",
+          "title": "Oulun palo 1773",
+          "url": "https://fi.wikipedia.org/wiki/Oulun_palo_1773",
+          "distance": 0.5401507449083698,
+          "characters": 1159,
+          "sections": 1,
+          "external_links": 0,
+          "language_rank": 3
+        },
+        {
+          "fusion_score": 0.01639344262295082,
+          "lang": "en",
+          "page_id": 8312231,
+          "wikidata_id": "Q2989671",
+          "title": "Great Fire of Turku",
+          "url": "https://en.wikipedia.org/wiki/Great_Fire_of_Turku",
+          "distance": 0.44228843405134044,
+          "characters": 3747,
+          "sections": 4,
+          "external_links": 0,
+          "language_rank": 1
+        },
+        {
+          "fusion_score": 0.016129032258064516,
+          "lang": "en",
+          "page_id": 24932423,
+          "wikidata_id": "Q5395044",
+          "title": "Great Oulu fire of 1882",
+          "url": "https://en.wikipedia.org/wiki/Great_Oulu_fire_of_1882",
+          "distance": 0.5098796428409107,
+          "characters": 636,
+          "sections": 1,
+          "external_links": 0,
+          "language_rank": 2
+        },
+        {
+          "fusion_score": 0.015873015873015872,
+          "lang": "en",
+          "page_id": 74395572,
+          "wikidata_id": "Q11886114",
+          "title": "Great Oulu fire of 1705",
+          "url": "https://en.wikipedia.org/wiki/Great_Oulu_fire_of_1705",
+          "distance": 0.5226696000759565,
+          "characters": 1171,
+          "sections": 1,
+          "external_links": 0,
+          "language_rank": 3
+        },
+        {
+          "fusion_score": 0.01639344262295082,
+          "lang": "sv",
+          "page_id": 100605,
+          "wikidata_id": "Q2989671",
+          "title": "Åbo brand",
+          "url": "https://sv.wikipedia.org/wiki/%C3%85bo_brand",
+          "distance": 0.40562252972886004,
+          "characters": 1594,
+          "sections": 1,
+          "external_links": 0,
+          "language_rank": 1
+        },
+        {
+          "fusion_score": 0.016129032258064516,
+          "lang": "sv",
+          "page_id": 9327,
+          "wikidata_id": "Q1187606",
+          "title": "Åbo domkyrka",
+          "url": "https://sv.wikipedia.org/wiki/%C3%85bo_domkyrka",
+          "distance": 0.5312078429420453,
+          "characters": 16489,
+          "sections": 13,
+          "external_links": 0,
+          "language_rank": 2
+        },
+        {
+          "fusion_score": 0.015873015873015872,
+          "lang": "sv",
+          "page_id": 8123063,
+          "wikidata_id": "Q49103383",
+          "title": "Vasa brand",
+          "url": "https://sv.wikipedia.org/wiki/Vasa_brand",
+          "distance": 0.5401257675403219,
+          "characters": 982,
+          "sections": 1,
+          "external_links": 0,
+          "language_rank": 3
+        }
+      ],
+      "aligned_topics": [
+        "Q2989671",
+        "Q5395044",
+        "Q1187606"
+      ],
+      "explain_vector_queries": {
+        "fi": {
+          "direct": [
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "<derived2>",
+              "type": "ALL",
+              "possible_keys": null,
+              "key": null,
+              "key_len": null,
+              "ref": null,
+              "rows": "3",
+              "Extra": "Using temporary; Using filesort"
+            },
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "a",
+              "type": "eq_ref",
+              "possible_keys": "PRIMARY",
+              "key": "PRIMARY",
+              "key_len": "12",
+              "ref": "v.lang,v.page_id",
+              "rows": "1",
+              "Extra": ""
+            },
+            {
+              "id": 2,
+              "select_type": "DERIVED",
+              "table": "article_vector",
+              "type": "index",
+              "possible_keys": "PRIMARY",
+              "key": "article_semantics",
+              "key_len": "4098",
+              "ref": "const",
+              "rows": "18161",
+              "Extra": "Using where"
+            }
+          ]
+        },
+        "en": {
+          "direct": [
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "<derived2>",
+              "type": "ALL",
+              "possible_keys": null,
+              "key": null,
+              "key_len": null,
+              "ref": null,
+              "rows": "3",
+              "Extra": "Using temporary; Using filesort"
+            },
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "a",
+              "type": "eq_ref",
+              "possible_keys": "PRIMARY",
+              "key": "PRIMARY",
+              "key_len": "12",
+              "ref": "v.lang,v.page_id",
+              "rows": "1",
+              "Extra": ""
+            },
+            {
+              "id": 2,
+              "select_type": "DERIVED",
+              "table": "article_vector",
+              "type": "index",
+              "possible_keys": "PRIMARY",
+              "key": "article_semantics",
+              "key_len": "4098",
+              "ref": "const",
+              "rows": "18161",
+              "Extra": "Using where"
+            }
+          ]
+        },
+        "sv": {
+          "direct": [
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "<derived2>",
+              "type": "ALL",
+              "possible_keys": null,
+              "key": null,
+              "key_len": null,
+              "ref": null,
+              "rows": "3",
+              "Extra": "Using temporary; Using filesort"
+            },
+            {
+              "id": 1,
+              "select_type": "PRIMARY",
+              "table": "a",
+              "type": "eq_ref",
+              "possible_keys": "PRIMARY",
+              "key": "PRIMARY",
+              "key_len": "12",
+              "ref": "v.lang,v.page_id",
+              "rows": "1",
+              "Extra": ""
+            },
+            {
+              "id": 2,
+              "select_type": "DERIVED",
+              "table": "article_vector",
+              "type": "index",
+              "possible_keys": "PRIMARY",
+              "key": "article_semantics",
+              "key_len": "4098",
+              "ref": "const",
+              "rows": "18161",
+              "Extra": "Using where"
+            }
+          ]
+        }
+      },
+      "retrieval_seconds": 0.1232660409878008,
+      "limitation": "Language-balanced candidates and Wikidata counterparts are source discovery, not proof of relevance, agreement, or claim support.",
+      "dossiers": [
+        {
+          "wikidata_id": "Q2989671",
+          "editions": [
+            {
+              "lang": "fi",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "fi",
+                  "page_id": 88650,
+                  "rev_id": 23458930,
+                  "wikidata_id": "Q2989671",
+                  "title": "Turun palo",
+                  "origin": "wikidata_counterpart",
+                  "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23458930",
+                  "truncated": 0,
+                  "text": "# Turun palo\nTurun palo oli Turun kaupungin lähes kokonaan tuhonnut kaupunkipalo, joka tapahtui tiistaina 4. syyskuuta – keskiviikkona 5. syyskuuta 1827. Suomen ja Pohjoismaiden historian suurin kaupunkipalo tuhosi kolme neljäsosaa kaupungista ja jätti kodittomiksi 11 000 turkulaista. Palo tuhosi yhden Pohjoismaiden suurimmista keskiaikaisperäisistä kivikaupungeista.\nTurku oli palon sattuessa Suomen suurin kaupunki, ja tulipalo oli Suomessa suuri kansallinen katastrofi. Palo sai alkunsa porvari Hellmanin talosta Aninkaistenmäellä vähän ennen yhdeksää illalla. Palo eteni nopeasti Pohjoisessa korttelissa, levisi Eteläkortteliin ja ylitti Aurajoen sytyttäen Kirkkokorttelin ennen puoltayötä. Vain yksi neljäsosa kaupungista, lähinnä kaupungin länsi- ja etelälaidoilla säilyi tulipalolta. Palo tuhosi kaupungin historiallisen keskustan mukaan lukien Turun tuomiokirkon ja Turun akatemiatalon, jotka säilyivät vain osittain. Verrattuna suuriin aineellisiin menetyksiin henkilövahingot olivat pienemmät, mutta palossa kuoli ja loukkaantui kuitenkin useita ihmisiä.\nTurku on palanut historiansa aikana ainakin 31 kertaa, mutta vuoden 1827 palo on näistä tapahtumista tuhoisin ja vaikutuksiltaan pitkäaikaisin. Kolme pääsyytä Turun palon poikkeukselliselle tuhoisuudelle olivat syksyä edeltänyt kuiva kesä, joka kuivatti kaupungin puutalojen pärekatot, iltaan sattunut myrsky sekä se, että suuri osa kaupungin porvareista oli Tampereella markkinoilla, joten sammuttajia ei ollut tarpeeksi. Hannu Salmi on teoksessaan Tunteiden palo: Turku liekeissä 1827 (2022) esittänyt palon leviämisen syyksi kaupungin byrokratian. Zacharias Topelius syyllisti aikanaan Maamme kirjassa palvelustyttöä, mutta se on perätön tieto, muistuttaa Salmi.\nPalon jälkeisiä uudelleenrakentamistöitä johti kenraalikuvernööri A",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "en",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "en",
+                  "page_id": 8312231,
+                  "rev_id": 1292565333,
+                  "wikidata_id": "Q2989671",
+                  "title": "Great Fire of Turku",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1292565333",
+                  "truncated": 0,
+                  "text": "# Great Fire of Turku\nThe Great Fire of Turku (Finnish: Turun palo; Swedish: Åbo brand; Russian: Пожар Або, romanized: Pozhar Abo) was a conflagration in the city of Turku in 1827. It is still the largest urban fire in the history of Finland and the Nordic countries. The city had faced several large fires before, including an especially devastating one in 1681.\n\n## Description\nThe fires started on 4 September 1827 in burgher Carl Gustav Hellman's house on the Aninkaistenmäki hill slightly before 9 p.m. The house may have been lit on fire by sparks flying from the chimney of a neighboring building. The fire quickly swept through the city's northern quarter, spread to the southern quarter and jumped the Aura River, setting the Cathedral Quarter on fire before midnight. By the next day, the fire had destroyed 75% of the city. Only 25% of the city was spared, mainly the western and southern portions.\nThe fire destroyed the downtown area of Turku, including Turku Cathedral and the main building of the Imperial Academy of Turku, Akatemiatalo, which were badly damaged. The disaster was made possible by a dry summer preceding the event, a fire-spreading storm rising on the night of the fire, and a lack of people to extinguish the fire because a large number of the city's people happened to be visiting a market in Tampere that day. The damage was considerable and was felt for a long time in the aftermath of the event. 11,000 people were left homeless, and 27 deaths and hundreds of wounded were recorded.\nThe night of the fire, Friedrich Wilhelm Argelander, Observator at the Imperial Academy of Turku, was in the Vartiovuori Observatory on Vartiovuorenmäki. Due to the fire, he had to stop his work. In his observation log, he wrote: \"Today observation was interrupted by a horrible f",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "sv",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "sv",
+                  "page_id": 100605,
+                  "rev_id": 51098402,
+                  "wikidata_id": "Q2989671",
+                  "title": "Åbo brand",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://sv.wikipedia.org/w/index.php?oldid=51098402",
+                  "truncated": 0,
+                  "text": "# Åbo brand\nÅbo brand var den enorma brand som drabbade staden Åbo i Finland den 4 september 1827. Eldsvådan förstörde tre fjärdedelar av Åbo och har ansetts vara den största stadsbranden någonsin i Norden. Branden drabbade såväl de enskilda invånarna som samhället i gemen. Sjutton människor omkom och cirka 200 skadades, omkring 2 500 byggnader förstördes och lösegendom till betydande värde gick förlorad. Omkring 11 000 invånare blev hemlösa. Vid tiden för branden var Åbo Finlands största stad.\nBranden bröt ut i Hellmans gård i Norra kvarteret på västra sidan av Aura å. En minnesplatta utmärker platsen på Mariegatan vid Trätorget. Branden började vid niotiden på kvällen och spred sig redan före midnatt till åns östra sida. Efter 18 timmar fick man elden under kontroll, men eftersläckningen pågick i veckor.\nEnligt Nils-Erik Villstrand, professor emeritus i nordisk i historia vid Åbo Akademi, berodde branden till stor del på olyckliga sammanträffanden. Gatorna var trånga, det var tätt mellan husen och sommaren hade varit torr. En stor del av stadens invånare råkade dessutom vara på marknad i Tammerfors så möjligheterna att bekämpa branden var begränsade.\nBranden var ett hårt slag mot Åbo, som år 1812 hade förlorat sin status som Finlands huvudstad. En omedelbar följd av branden var att Kungliga Akademien som hade funnits i Åbo sedan 1640 flyttades till Helsingfors och fick namnet Kejserliga Alexanders universitetet i Finland. Ett alldeles nytt Åbo växte upp ur askan vid Aura å. Bland de få områden som skonades i Åbo brand var Klosterbacken, som idag är ett museiområde.\n",
+                  "start_char": 0,
+                  "end_char": 1594,
+                  "selection": "article_introduction"
+                }
+              ]
+            }
+          ],
+          "limitation": "Introductions shown verbatim. Presence is not claim support; absence is only absence from dataset S."
+        },
+        {
+          "wikidata_id": "Q5395044",
+          "editions": [
+            {
+              "lang": "fi",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "fi",
+                  "page_id": 222126,
+                  "rev_id": 20547465,
+                  "wikidata_id": "Q5395044",
+                  "title": "Oulun palo 1882",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=20547465",
+                  "truncated": 0,
+                  "text": "# Oulun palo 1882\nVuoden 1882 suurpalossa Oulussa tuhoutui keskustassa Hallituskadun ja Pakkahuoneenkadun varsilta 27 taloa. Tuhoutuneiden talojen joukossa oli muiden muassa kaupungin Seurahuone. Tuli pääsi irti illalla 2. marraskuuta Kirkkokadun ja Pakkahuoneenkadun kulmassa olleen apteekin kellarista. Kellarissa säilytettiin bensiiniä ja muita palonarkoja aineita, jotka saivat aikaan tulipalon räjähdysmäisen leviämisen. Tuli levisi rannan suuntaan ja poltti siellä suola- ja viljamakasiineja. Palo rajoittui pääasiassa Pakkahuoneenkadun ja Kaupunginojan väliselle alueelle. Palokunta sai kuitenkin estettyä tulipalon leviämisen pakkahuoneeseen, johon oli varastoitu kauppiaiden tavaroita talvea varten.\nTodennäköisimmin Hjalmar Sjöman, Oulussa tuolloin toiminut valokuvaaja, ikuisti torin ja Rantakadun savuavat rauniot heti palon jälkeen.\n",
+                  "start_char": 0,
+                  "end_char": 846,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "en",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "en",
+                  "page_id": 24932423,
+                  "rev_id": 1271191501,
+                  "wikidata_id": "Q5395044",
+                  "title": "Great Oulu fire of 1882",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1271191501",
+                  "truncated": 0,
+                  "text": "# Great Oulu fire of 1882\nThe great Oulu fire of 1882 was a conflagration that started in the basement of the pharmacy on the corner of Kirkkokatu and Pakkahuoneenkatu on the evening of 2 November, destroying 27 buildings along Hallituskatu and Pakkahuoneenkatu in downtown Oulu, Finland, amongst them the city-owned Seurahuone. The basement was used to store gasoline and other flammable materials, which led to the fire quickly raging out of control. It headed towards the Oulu River and destroyed the salt and grain warehouses along its shoreline. The fire brigade, however, managed to keep the fire from spreading to the packhouse.\n",
+                  "start_char": 0,
+                  "end_char": 636,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "sv",
+              "status": "absent_from_dataset",
+              "sources": []
+            }
+          ],
+          "limitation": "Introductions shown verbatim. Presence is not claim support; absence is only absence from dataset S."
+        },
+        {
+          "wikidata_id": "Q1187606",
+          "editions": [
+            {
+              "lang": "fi",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "fi",
+                  "page_id": 13993,
+                  "rev_id": 23497313,
+                  "wikidata_id": "Q1187606",
+                  "title": "Turun tuomiokirkko",
+                  "origin": "wikidata_counterpart",
+                  "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23497313",
+                  "truncated": 0,
+                  "text": "# Turun tuomiokirkko\nTurun tuomiokirkko (ruots. Åbo domkyrka) on Suomen Turussa I kaupunginosassa Aurajoen rannalla sijaitseva, monessa vaiheessa rakennettu kivikirkko, joka on suurimmaksi osaksi keskiajalta. Turun tuomiokirkkoa kutsutaan Suomen kansallispyhäköksi, vaikka nimitys ei olekaan virallinen. Turun tuomiokirkko kuuluu maan merkittävimpiin historiallisiin rakennuksiin ja on Suomen ainoa keskiaikainen basilika. Pitkän rakennusajan vuoksi tuomiokirkko edustaa useaa eri tyylisuuntaa,\nmuun muassa romaanista, goottilaista ja uusgoottilaista tyyliä.\nMuseovirasto on määritellyt Turun tuomiokirkon ja sitä ympäröivän Turun historiallisen ydinalueen yhdeksi Suomen valtakunnallisesti merkittävistä rakennetuista kulttuuriympäristöistä.\nTurun tuomiokirkko suljetaan laajamittaista peruskorjausta varten 9.2.2026–2.12.2028 väliseksi ajaksi.\n\n## Historia\nTurun tuomiokirkon alkuvaiheista on hyvin vähän tietoa. Todennäköisesti kirkko rakennettiin aivan 1200-luvun lopulla puusta. Sen vihkimisen ajankohdasta on epävarmuutta. Kirkko on saatettu vihkiä käyttöön vuosien 1292 ja 1296 välillä tai 17. kesäkuuta 1300 tai 1300-luvun alussa, mahdollisesti 1309. Tutkimuksessa on ollut aikaisemmin vallalla ajatus, että kirkko olisi rakennettu tiilestä jo 1200-luvun lopussa. Teoria on kuitenkin kyseenalaistettu. Knut Draken mukaan kirkon ydinosa on todennäköisesti rakennettu harmaakivestä 1300-luvun loppupuolella. Markus Hiekkanen pitää Draken perusteluita kivikirkon nuoremmasta iästä vankkoina ja on esittänyt varhaisimmille kiviosille vielä myöhäisempää ajoitusta 1400-luvun alkuun. Kirkko omistettiin Neitsyt Marialle ja Suomen ensimmäiselle piispalle Pyhälle Henrikille.\nVuonna 1318 novgorodilaisten kerrotaan polttaneen kirkon. Aikaisemmin vallinneen käsityksen mukaan hävitystä seurannut raken",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "en",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "en",
+                  "page_id": 2350361,
+                  "rev_id": 1302102613,
+                  "wikidata_id": "Q1187606",
+                  "title": "Turku Cathedral",
+                  "origin": "wikidata_counterpart",
+                  "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1302102613",
+                  "truncated": 0,
+                  "text": "# Turku Cathedral\nTurku Cathedral (Finnish: Turun tuomiokirkko, Swedish: Åbo domkyrka) is the only medieval basilica in Finland and the Mother Church of the Evangelical Lutheran Church of Finland. It is the central church of the Lutheran Archdiocese of Turku and the seat of the Lutheran Archbishop of Finland, Tapio Luoma. It is also regarded as one of the major records of Finnish architectural history.\nConsidered to be the most important religious building in Finland, the cathedral has borne witness to many important events in the nation's history and has become one of the city's most recognizable symbols. The cathedral is situated in the heart of Turku next to the Old Great Square, by the river Aura. Its presence extends beyond the local precinct by having the sound of its bells chiming at noon broadcast on national radio. It is also central to Finland's annual Christmas celebrations.\nThe cathedral was originally built out of wood in the late 13th century, and was dedicated as the main cathedral of Finland in 1300, the seat of the Catholic bishop of Turku. It was considerably expanded in the 14th and 15th centuries, mainly using stone as the construction material. The cathedral was badly damaged during the Great Fire of Turku in 1827, and was rebuilt to a great extent afterwards.\n\n## History\nAs the town of Turku began to emerge in the course of the 13th century as the most important trading centre in Finland, the Bishop's see of the Diocese of Finland was transferred from its previous location at Koroinen, some distance further up on the bank of Aura river, to the middle of the town. By the end of the 13th century, a new stone church had been completed on the site of the former wooden-built parish church on Unikankare Mound, and it was consecrated on 17 June 1300 by Bi",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            },
+            {
+              "lang": "sv",
+              "status": "present",
+              "sources": [
+                {
+                  "lang": "sv",
+                  "page_id": 9327,
+                  "rev_id": 57837532,
+                  "wikidata_id": "Q1187606",
+                  "title": "Åbo domkyrka",
+                  "origin": "vector_candidate",
+                  "revision_url": "https://sv.wikipedia.org/w/index.php?oldid=57837532",
+                  "truncated": 0,
+                  "text": "# Åbo domkyrka\n\nÅbo domkyrka är domkyrka i Åbo ärkestift inom den evangelisk-lutherska kyrkan i Finland. Kyrkan är helgad åt jungfru Maria och ligger på Unikankare (Sömnens kulle) vid stranden av Aura å i Åbo.\nKyrkan, som kom att ersätta det tidigare biskopssätet i Korois, är uppförd i slutet av 1200-talet och invigdes som biskopskyrka den 17 juni år 1300. Translationen av biskop Henriks reliker från Nousis kyrka ägde rum följande dag, den 18 juni år 1300. Kyrkan är utvidgad i flera etapper. Vid Åbo brand år 1827 skadades domkyrkan, och genomgick därefter omfattande reparationer, bland annat uppfördes en ny tornspira av Carl Ludvig Engel. Den senaste grundliga renoveringen genomfördes under åren 1976–1979.\nKyrkans nuvarande största längd är 89,1 meter, bredd omkring 40 meter och höjd 44,5 meter Tornets höjd över det framför liggande torgets nivå är 95,6 meter och över Aura å 104 meter. Dess tornspira uppfördes efter branden 1827 enligt C. L. Engels ritningar och om vilken Zacharias Topelius har skaldat: \"Då glimmar spetsen av kopparklädda tornet. Blåvita flammor, tindrande stjärnor lika, kring gyllene korset skina i nattens mörker, och tornets fjädrande svarta skaror flykta.\"\n\n## Kyrkobyggnaden\nDomkyrkan var ursprungligen byggd som treskeppig hallkyrka i övergångsstilens former med enkla detaljer. Skeppen åtskildes från varandra genom fem par fyrkantiga tegelpelare, och kyrkans höjd inuti var inte mer än hälften av den nuvarande.\n\n### 1300-talet\nRedan 1318 hemsökte ryssarna Åbo, härjade staden och brände kyrkan samt plundrade den på dess klenoder. Kyrkan stod så en tid öde och förfallen. Denna hallkyrka utvecklades sedan småningom under århundradenas lopp, troligen bland annat efter nordtyska mönster, tack vare allmän offervillighet. Den höjdes och förvandlades till en ",
+                  "start_char": 0,
+                  "end_char": 1800,
+                  "selection": "article_introduction"
+                }
+              ]
+            }
+          ],
+          "limitation": "Introductions shown verbatim. Presence is not claim support; absence is only absence from dataset S."
+        }
+      ]
+    }
+  ]
+}

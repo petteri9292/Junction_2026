@@ -6,6 +6,9 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
+*.egg-info/
+build/
+dist/
 .env
 .env.*
 !.env.example
@@ -26,3 +29,11 @@ private/
 *.mp3
 .DS_Store
 Thumbs.db
+
+# Private development history and pre-cleanup originals
+/_local_archive/
+
+# Runtime logs and downloaded model weights
+*.log
+*.safetensors
+*.gguf

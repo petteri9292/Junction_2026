@@ -1,0 +1,48 @@
+{
+  "status": "ready_left_warm",
+  "date": "2026-11-15",
+  "gpu_requested": "H200",
+  "cpu_physical": 8,
+  "memory_gib": 32,
+  "timeout_seconds": 21600,
+  "attempts": 1,
+  "reservation_usd": 32,
+  "combined_reservations_usd": 93.4725,
+  "model": "Qwen/Qwen3-4B-Instruct-2507-FP8",
+  "revision": "8591804019c8b22094c3b5b4454e0edc05dffc98",
+  "prompts_unchanged": true,
+  "same_vllm_lock": true,
+  "deadline_helsinki": "2026-11-15T13:18:19+02:00",
+  "accepts_until_helsinki": "2026-11-15T13:03:19+02:00",
+  "runs": [
+    {
+      "question": "talvisota",
+      "context": "",
+      "worker_seconds": 23.645257711,
+      "pipeline_seconds": 23.432288317999962,
+      "answer_language": "Finnish",
+      "quotations": 15,
+      "retrieved_articles": 60,
+      "document_inspector_checked": true,
+      "same_container": true
+    },
+    {
+      "question": "talvisota",
+      "context": "videopeli",
+      "worker_seconds": 14.575876964999964,
+      "pipeline_seconds": 14.39594736500004,
+      "answer_language": "Finnish",
+      "quotations": 11,
+      "retrieved_articles": 60,
+      "document_inspector_checked": true,
+      "same_container": true
+    }
+  ],
+  "gpu_observed": "NVIDIA H200, 143771 MiB",
+  "startup_seconds": 410.271125158,
+  "corpus_rows": 568416,
+  "local_url": "http://127.0.0.1:8041/",
+  "focused_tests_passed": 32,
+  "remote_source_hashes_match": true,
+  "raw_verification_runs_preserved": 2
+}

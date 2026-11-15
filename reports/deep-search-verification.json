@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-15",
+  "feature_default": "off",
+  "max_extra_queries": 1,
+  "review_stage": "Selected source evidence before drafting",
+  "live_runs": [
+    {
+      "question": "Milloin talvisota alkoi?",
+      "seconds": 16.408062379000512,
+      "status": "sufficient",
+      "extra_queries": 0,
+      "query": null,
+      "decision": {
+        "good_enough": true,
+        "reason": "Aineisto sisältää selvästi ja tarkasti tiedon talvisodan alkamisesta: se mainitsee, että talvisota alkoi 30. marraskuuta 1939. Tämä vastaa alkuperäistä kysymystä täysin. Kaikki muut tiedot (esim. sodan kesto, taistelujen vaiheet) ovat lisätyksi, mutta kysymys on täysin katettu.",
+        "follow_up_query": null
+      },
+      "new_articles": 0
+    },
+    {
+      "question": "Millä tavoin Suomen ulkomaankauppa muuttui talvisodan ja jatkosodan aikana?",
+      "seconds": 20.69514323200019,
+      "status": "sufficient",
+      "extra_queries": 0,
+      "query": null,
+      "decision": {
+        "good_enough": true,
+        "reason": "Aineisto sisältää tarkastelun Suomen ulkomaankaupan muutoksesta talvisodan ja jatkosodan aikana. Se kertoo, että talvisodan jälkeen Suomi pyrki kehittämään kauppaansa Ison-Britannian kanssa, mutta sotien kehitys, erityisesti Saksan hyökkäykset Tanskaan ja Norjaan sekä Ranskan miehittäminen, johtivat kauppasopimusten katkaisuun ja ulkomaankaupan muutoksiin. Aineisto kattaa keskeiset muutokset ja syvällisempien syyt, jotka johtivat ulkomaankaupan muutoksiin. Kysymys on siis riittävästi katettu.",
+        "follow_up_query": null
+      },
+      "new_articles": 0
+    },
+    {
+      "question": "Milloin talvisota alkoi, kuka sävelsi Finlandian ja minä vuonna Helsingin yliopisto perustettiin?",
+      "seconds": 30.362338241000543,
+      "status": "expanded",
+      "extra_queries": 1,
+      "query": "Milloin talvisota alkoi?",
+      "decision": {
+        "good_enough": false,
+        "reason": "Katkelmat sisältävät tietoa Helsingin yliopiston perustamisesta (1919) ja sen kehityksestä, mutta eivät anna tarkempaa tietoa talvisodan alkamisesta. Kysymyksessä on kaksi eri osaa: talvisodan alkamisvuosi ja Helsingin yliopiston perustamisvuosi. Katkelmat vastaavat vain Helsingin yliopiston perustamisvuoteen (1919), mutta eivät mainitse talvisotaa. Tärkeä osa kysymykseen — talvisodan alkamisvuosi — on aineiston perusteella avoimeksi.",
+        "follow_up_query": "Milloin talvisota alkoi?"
+      },
+      "new_articles": 58
+    }
+  ],
+  "baseline_off": {
+    "question": "Milloin talvisota alkoi?",
+    "seconds": 14.888552506999986,
+    "enabled": false,
+    "extra_queries": 0
+  },
+  "tests_passed": 259,
+  "rollback_flag_http_checked": true,
+  "same_h200_container": true,
+  "gpu_restarts": 0,
+  "new_gpu_jobs": 0,
+  "original_deadline_unchanged": true,
+  "normal_prompts_unchanged": true,
+  "limitations": [
+    "Reviewer self-assessment is not independent factual verification.",
+    "The multi-part reviewer did not explicitly assess all three question components.",
+    "No answer-quality improvement is established by these smoke checks.",
+    "The multi-part answer rejected the Finlandia component instead of answering it; the bounded search loop does not guarantee adequate coverage."
+  ],
+  "baseline_branch": "codex/qwen4b-comparison",
+  "baseline_commit": "2aca800",
+  "feature_branch": "codex/deepsearch-once",
+  "ui_toggle_and_default_off_checked": true,
+  "screenshots": [
+    "reports/deep-search-toggle.png",
+    "reports/deep-search-result.png"
+  ],
+  "old_deep_result_and_118_documents_readable": true,
+  "api_uses_compact_review_summary": true,
+  "vllm_pid": 45,
+  "vllm_created_at_unix": 1794719975.24
+}

@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-15",
+  "final_defaults": {
+    "score_cutoff": -3.0,
+    "relative_gap": null,
+    "retrieval_top_k": 60,
+    "max_nodes": 25,
+    "article_tokens": 6000
+  },
+  "citation_labels": [
+    "1.1p",
+    "1.2p",
+    "1.12p"
+  ],
+  "stable_source_numbers": true,
+  "paragraphs_keep_separate_references": true,
+  "initial_live_test": {
+    "settings": {
+      "score_cutoff": -3.0,
+      "relative_gap": null,
+      "retrieval_top_k": 30,
+      "max_nodes": 25,
+      "article_tokens": 6000
+    },
+    "retrieved_articles": 30,
+    "seconds": 13.164472853000007,
+    "citations": 11,
+    "status": "complete",
+    "review_status": "self_reviewed_unverified"
+  },
+  "final_60_article_default_verified_in_ui_and_request_normalization": true,
+  "python_checks_passed": 26,
+  "javascript_checks_passed": 6,
+  "saved_answer_and_document_links_preserved": true,
+  "same_h200_container": true,
+  "same_vllm_pid": 45,
+  "vllm_created_at_unix": 1794719975.24,
+  "gpu_restarts": 0,
+  "new_gpu_jobs": 0,
+  "unchanged_deadline_helsinki": "2026-11-15T13:18:19+02:00",
+  "screenshots": [
+    "reports/final-demo-defaults.png",
+    "reports/source-paragraph-labels.png"
+  ]
+}

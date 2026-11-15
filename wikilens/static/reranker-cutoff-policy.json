@@ -1,0 +1,22 @@
+{
+  "status": "heldout_check_failed_global_cutoff",
+  "dataset": "s-2026-10",
+  "min_score": null,
+  "relative_gap": null,
+  "max_nodes": 25,
+  "score_kind": "raw_relevance_logit",
+  "policy_id": "absolute:-2:cap25",
+  "frozen_at_utc": "2026-11-14T18:15:48.536686+00:00",
+  "frozen_policy_sha256": "eb8d1ee8f4c75b0506263fd08dc46127c41b74dad86e453b85cc167d0ca8fe90",
+  "development_config_sha256": "a402d5b11753c682bb82b267fbaec61704425b2b3b0ea93c732cdfdde3305eec",
+  "review_attribution": "Codex assistant score-blind original-passage relevance review; not human validation",
+  "scope": "Automatic hard floor disabled: development -2/cap25 preserved95 useful passages but heldout -2 returned no passages on all6 requests and missed9 useful partial-evidence passages. Scores are query-dependent. User may choose a floor explicitly; contextual selection remains enabled. No threshold retuning on heldout labels.",
+  "experimental_min_score": -2,
+  "heldout_analysis_sha256": "e35c90520f8ff802bd89146a67d3d3249fb4af0963c1f440265d4af75e762fa0",
+  "heldout_result": {
+    "queries": 6,
+    "empty_queries": 6,
+    "reviewed_partial_positive_passages_missed": 9
+  },
+  "default_updated_at_utc": "2026-11-14T18:37:08.722707+00:00"
+}

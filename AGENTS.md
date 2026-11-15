@@ -26,7 +26,9 @@
 
 - Use Python 3.12 and uv. The generic pre-event environment is outside this repo:
   /home/petterihallipelto/Documents/Codex/hackathon-tools/.venv/bin/python
-- After coding starts, record project dependencies in pyproject.toml and uv.lock.
+- Use this repository's .venv/bin/python for project notebooks and commands.
+  Run uv sync --locked to recreate it, and record project dependencies in
+  pyproject.toml and uv.lock.
   Keep notebooks runnable from a restarted kernel and document reproduction.
 - Choose validation splits before tuning. Use chronological or grouped splits
   where appropriate. Fit preprocessing only on training data.
@@ -39,8 +41,10 @@
 - GitHub is the source of truth for code and documentation. Preserve existing work.
 - Use short feature branches for implementation; keep main usable for the demo.
 - Use Hugging Face Jobs for heavier runs and permitted Hub storage for artifacts.
-- Petteri approved up to USD 10 total for preparation and the hackathon on
-  13 November 2026. Track cumulative costs, including readiness jobs. Specify
+- Petteri raised the combined Hugging Face and Modal compute ceiling to USD 100
+  on 15 November 2026 (superseding USD 50 on 14 November and the original USD 10 allowance). Modal promotional
+  credits are tracked separately as funding; check both ledgers and the combined
+  ledger before spending. Track cumulative costs, including readiness jobs. Specify
   a timeout and one attempt on every paid job. Ask before exceeding that cap.
 - Keep tokens, private contacts, restricted data, environments, and large model
   artifacts outside Git. Never print token contents or copy them into documents.

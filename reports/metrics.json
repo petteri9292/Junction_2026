@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-15",
+  "corpus": {
+    "dataset": "l-2026-10",
+    "articles": 568416,
+    "dimensions": 1024,
+    "source_sha256": "05d5520fc272b0f879bdf62ea67e8bf853c55ce5975eb5393f20c78c086158ec",
+    "verified": true,
+    "embedding_shards": 57,
+    "truncated_inputs": 2441
+  },
+  "model": {
+    "id": "Qwen/Qwen3-4B-Instruct-2507-FP8",
+    "revision": "8591804019c8b22094c3b5b4454e0edc05dffc98"
+  },
+  "warm_language_runs": [
+    {
+      "question": "Mikä oli talvisota?",
+      "detected_language": "fi",
+      "answer_language": "Finnish",
+      "seconds": 20.568392512999935,
+      "hyde_seconds": 0.9607844449999448,
+      "field_order": [
+        "hypothetical_passage",
+        "language"
+      ],
+      "embedding_is_passage_only": true,
+      "quotes_verified": 26
+    },
+    {
+      "question": "What was the Winter War?",
+      "detected_language": "en",
+      "answer_language": "English",
+      "seconds": 16.81768666400012,
+      "hyde_seconds": 0.8122810499999105,
+      "field_order": [
+        "hypothetical_passage",
+        "language"
+      ],
+      "embedding_is_passage_only": true,
+      "quotes_verified": 13
+    }
+  ],
+  "language_extra_llm_calls": 0,
+  "live_startup_seconds": 437.872763056,
+  "warm_disambiguation_runs": [
+    {
+      "question": "talvisota",
+      "context": "",
+      "seconds": 25.40832358299997,
+      "timings": {
+        "hyde_seconds": 1.5988596530000336,
+        "retrieval_and_embedding_seconds": 0.9902298069999915,
+        "chunk_seconds": 3.5076259319999963,
+        "article_reranking_seconds": 10.331723717999978,
+        "focus_filter_seconds": 0,
+        "generation_seconds": 3.2718940149999867,
+        "draft_review_seconds": 3.3015081059999716,
+        "split_and_need_seconds": 0.0002154419999556012,
+        "reference_lookup_seconds": 0.12833860299997468,
+        "attribution_seconds": 1.8761429809999868,
+        "citation_postprocessing_seconds": 0.00011215600000014092,
+        "total_seconds": 25.218747468999993
+      },
+      "quotes_verified": 15,
+      "status": "draft_unverified"
+    },
+    {
+      "question": "talvisota",
+      "context": "videopeli",
+      "seconds": 11.215198794999992,
+      "timings": {
+        "hyde_seconds": 0.779142841999942,
+        "retrieval_and_embedding_seconds": 0.1440935980000404,
+        "chunk_seconds": 2.7863919649998934,
+        "article_reranking_seconds": 2.240496975000042,
+        "focus_filter_seconds": 0.07336579299999357,
+        "generation_seconds": 2.046303529000056,
+        "draft_review_seconds": 2.065134530000023,
+        "split_and_need_seconds": 3.587100002278021e-05,
+        "reference_lookup_seconds": 0.06324424699994324,
+        "attribution_seconds": 0.7080145969999876,
+        "citation_postprocessing_seconds": 4.493199992339214e-05,
+        "total_seconds": 11.103935954000008
+      },
+      "quotes_verified": 11,
+      "status": "draft_unverified"
+    }
+  ],
+  "frozen_input_comparison": {
+    "baseline": "L40S / Transformers",
+    "comparison": "H100 80GB / vLLM",
+    "model_setup_seconds": 335.86252020700005,
+    "frozen_calls": [
+      {
+        "case": "no-context",
+        "stage": "draft",
+        "baseline_seconds": 70.05278288599999,
+        "vllm_seconds": 3.5437573500000212,
+        "baseline_output_tokens": 865,
+        "vllm_output_tokens": 798,
+        "output_equal": false,
+        "prompt_equal": true,
+        "baseline_prompt_tokens": 1971,
+        "vllm_prompt_tokens": 1971
+      },
+      {
+        "case": "no-context",
+        "stage": "review",
+        "baseline_seconds": 70.36454187299998,
+        "vllm_seconds": 3.133346185999983,
+        "baseline_output_tokens": 866,
+        "vllm_output_tokens": 866,
+        "output_equal": true,
+        "prompt_equal": true,
+        "baseline_prompt_tokens": 2644,
+        "vllm_prompt_tokens": 2644
+      },
+      {
+        "case": "video-games",
+        "stage": "draft",
+        "baseline_seconds": 42.53435611399999,
+        "vllm_seconds": 2.1376892850000218,
+        "baseline_output_tokens": 522,
+        "vllm_output_tokens": 600,
+        "output_equal": false,
+        "prompt_equal": true,
+        "baseline_prompt_tokens": 1500,
+        "vllm_prompt_tokens": 1500
+      },
+      {
+        "case": "video-games",
+        "stage": "review",
+        "baseline_seconds": 34.37994812200003,
+        "vllm_seconds": 1.3903960300000335,
+        "baseline_output_tokens": 386,
+        "vllm_output_tokens": 387,
+        "output_equal": false,
+        "prompt_equal": true,
+        "baseline_prompt_tokens": 1829,
+        "vllm_prompt_tokens": 1829
+      }
+    ],
+    "pipeline_runs": [
+      {
+        "case": "no-context",
+        "status": "draft_unverified",
+        "seconds": 8.773226739999984,
+        "timings": {
+          "generation_seconds": 2.6955327640000064,
+          "draft_review_seconds": 2.833354916000019,
+          "split_and_need_seconds": 0.00021345400000427617,
+          "reference_lookup_seconds": 1.8128950010000153,
+          "attribution_seconds": 1.421855767000011,
+          "citation_postprocessing_seconds": 7.586799995351612e-05,
+          "total_seconds": 8.773226739999984
+        },
+        "metrics": {
+          "sentences": 6,
+          "factual_sentences": 6,
+          "cited_sentences": 6,
+          "proposed_citations": 15,
+          "known_source_ids": 15,
+          "quotes_located": 15,
+          "citation_needed_sentences": 0,
+          "words": 212,
+          "unit_type": "paragraph",
+          "units": 6,
+          "cited_units": 6
+        }
+      },
+      {
+        "case": "video-games",
+        "status": "draft_unverified",
+        "seconds": 5.1422108499999695,
+        "timings": {
+          "generation_seconds": 2.0123289269999987,
+          "draft_review_seconds": 2.0299790370000323,
+          "split_and_need_seconds": 3.482200003190883e-05,
+          "reference_lookup_seconds": 0.5219356059999996,
+          "attribution_seconds": 0.5728449289999844,
+          "citation_postprocessing_seconds": 5.626900002653201e-05,
+          "total_seconds": 5.1422108499999695
+        },
+        "metrics": {
+          "sentences": 5,
+          "factual_sentences": 5,
+          "cited_sentences": 5,
+          "proposed_citations": 11,
+          "known_source_ids": 11,
+          "quotes_located": 11,
+          "citation_needed_sentences": 0,
+          "words": 165,
+          "unit_type": "paragraph",
+          "units": 5,
+          "cited_units": 5
+        }
+      }
+    ],
+    "scope": "Frozen prompts and source passages; retrieval and startup excluded. Hardware and engine change together, one observation per case, generated lengths may differ."
+  },
+  "admin_verification": {
+    "runs": [
+      {
+        "settings": {
+          "score_cutoff": -2.0,
+          "relative_gap": null,
+          "retrieval_top_k": 60,
+          "max_nodes": 25,
+          "article_tokens": 4000
+        },
+        "retrieved_articles": 60,
+        "passage_counts": {
+          "input": 965,
+          "kept": 13,
+          "rejected": 952,
+          "rejected_absolute": 952,
+          "rejected_relative": 0,
+          "rejected_both": 0
+        },
+        "selected_for_generation": 7,
+        "failure_preserved": false
+      },
+      {
+        "settings": {
+          "score_cutoff": 20.0,
+          "relative_gap": null,
+          "retrieval_top_k": 10,
+          "max_nodes": 25,
+          "article_tokens": 4000
+        },
+        "retrieved_articles": 10,
+        "passage_counts": {
+          "input": 138,
+          "kept": 0,
+          "rejected": 138,
+          "rejected_absolute": 138,
+          "rejected_relative": 0,
+          "rejected_both": 0
+        },
+        "selected_for_generation": 0,
+        "failure_preserved": true
+      }
+    ],
+    "tests_passed": 31,
+    "same_warm_container": true,
+    "default_settings_restored": true,
+    "screenshot": "reports/paper-admin-tools.png"
+  },
+  "limitations": [
+    "No statistical latency or answer-quality benchmark.",
+    "Exact quotation location is checked; semantic claim support is not independently verified.",
+    "The LLM reviews the article before citations, with no final fully cited article audit.",
+    "Unedited outputs contain observed language and factual errors."
+  ]
+}
