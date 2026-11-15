@@ -1,0 +1,539 @@
+{
+  "schema_version": 2,
+  "source_languages": [
+    "fi"
+  ],
+  "notice": "Recorded H100 outputs; playback performs no inference. Quotes have been located in sources; factual support is not independently verified. Wikipedia text: CC BY-SA 4.0; see revision links.",
+  "examples": [
+    {
+      "status": "recorded",
+      "title": "talvisota",
+      "question": "talvisota",
+      "theme": "",
+      "dataset_release": "l-2026-10",
+      "answer": [
+        {
+          "text": "Talvisota oli 30. marraskuuta 1939 – 13. maaliskuuta 1940 Suomen ja Neuvostoliiton välillä käyty sota. Neuvostoliitto aloitti soton hyökkäämällä ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen. Kansainvälisellä tasolla sota tuomitsi hyökkäyksen, ja Neuvostoliitto erotti jäsenyydestään 14. joulukuuta 1939.",
+          "section": "Talvisota",
+          "citations": [
+            "Q1",
+            "Q2",
+            "Q3"
+          ]
+        },
+        {
+          "text": "Sodan syynä oli pitkä kestävä neuvottelu, jossa Suomea painostettiin siirtämään itärajaa kauemmaksi Leningradin (nyk. Pietari) suurkaupungista. Tämä oli osa yleisempää yhteistyötä, joka oli kuitenkin ristiriidassa Neuvostoliiton ja Suomen välisessä hyökkäämättömyyssopimuksessa.",
+          "section": "Talvisota",
+          "citations": [
+            "Q4",
+            "Q5"
+          ]
+        },
+        {
+          "text": "Sota käynnistyi Mainilan laukauksilla, joita historioitsijat pitävät Neuvostoliiton lavastamana iskuna, jota käytettiin sotatoimien käynnistämisen oikeutuksena. Mainilan laukauksien seurauksena Neuvostoliitto purki Suomen ja Neuvostoliiton välisen hyökkäämättömyyssopimuksen yksipuolisesti ja lähetti Suomelle suhteiden kärjistymisestä nootin.",
+          "section": "Talvisota",
+          "citations": [
+            "Q6",
+            "Q7"
+          ]
+        },
+        {
+          "text": "Talvisota tunnetaan erityisen vaikeana talviolosuhteista – vuonna 1939–1940 oli vuosisadan kylmimpiä. Sodassa tapahtui puna-armeijan valtava määrä miestappioita, ja suomalaisten käytetty mottitaktiikka (esimerkiksi kääntöjä, joiden tarkoitus oli estää hyökkäyksen) sai suurempaa huomiota. Sodan tunnustettu \"talvisodan hengestä\" viittaa siihen, että sota vaikutti suomalaisiin ihmisryhmille erityisesti henkisesti ja yhteiskunnallisesti.",
+          "section": "Talvisota",
+          "citations": [
+            "Q8"
+          ]
+        },
+        {
+          "text": "Sodan jälkeen Suomi menetti Neuvostoliitolle noin kymmenesosan maa-alueistaan. Kaupunkien osuus maa-alueistaan muuttui: Helsingin asukasluku 31.12.1939 oli 315 727, Tampereen 78 012, Turun 75 578 ja Viipurin 74 403. Viipuri oli Suomen neljänneksi suurin kaupunki.",
+          "section": "Talvisota",
+          "citations": [
+            "Q9"
+          ]
+        },
+        {
+          "text": "Nimitys \"talvisota\" tuli käyttöön vasta jatkosodan aikana, muun muassa Mannerheimin päiväkäskyssä n:o 1 kesäkuussa 1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa *Suomen sota 1939–40* ja *Suomen ja Venäjän sota 1939–40*.",
+          "section": "Talvisota",
+          "citations": [
+            "Q10",
+            "Q11",
+            "Q12"
+          ]
+        },
+        {
+          "text": "Talvisota on myös tunnettu kansainvälisesti erityisesti termeistä *sisu* ja *Molotovin cocktail*, jotka tulevat sotaan liittyvistä toimista. Länsimaiden lehdistö seurasi talvisotaa tarkasti, koska toinen maailmansota oli alkanut kolme kuukautta ennen sotaa Saksan ja Neuvostoliiton miehitettyä Puolan.",
+          "section": "Talvisota",
+          "citations": [
+            "Q13",
+            "Q14",
+            "Q15"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "Q1",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Talvisota oli 30. marraskuuta 1939 – 13. maaliskuuta 1940 Suomen ja Neuvostoliiton välillä käyty sota.",
+          "source_id": "S1",
+          "page_id": 1256,
+          "original_passage": "# Talvisota\nTalvisota oli 30. marraskuuta 1939 – 13. maaliskuuta 1940 Suomen ja Neuvostoliiton välillä käyty sota. Neuvostoliitto aloitti talvisodan hyökkäämällä ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen. Kansainliitto tuomitsi hyökkäyksen ja erotti Neuvostoliiton jäsenyydestään 14. joulukuuta 1939. Talvisodan syttymistä edelsivät neuvottelut, joissa Suomea painostettiin siirtämään itärajaa kauemmaksi Leningradin (nyk. Pietari) suurkaupungista.\nToinen maailmansota oli alkanut kolme kuukautta aikaisemmin Saksan ja Neuvostoliiton miehitettyä Puolan. Koska länsirintamalla oli käynnissä vähätapahtumainen valesota, länsimaiden lehdistö seurasi talvisotaa tarkasti. Termeistä sisu ja Molotovin cocktail tuli kansainvälisesti tunnettuja. Nimitys talvisota tuli käyttöön vasta jatkosodan aikana, muun muassa Mannerheimin päiväkäskyssä n:o 1 kesäkuussa 1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja"
+        },
+        {
+          "id": "Q2",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Neuvostoliitto aloitti talvisodan hyökkäämällä ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen.",
+          "source_id": "S1",
+          "page_id": 1256,
+          "original_passage": "# Talvisota\nTalvisota oli 30. marraskuuta 1939 – 13. maaliskuuta 1940 Suomen ja Neuvostoliiton välillä käyty sota. Neuvostoliitto aloitti talvisodan hyökkäämällä ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen. Kansainliitto tuomitsi hyökkäyksen ja erotti Neuvostoliiton jäsenyydestään 14. joulukuuta 1939. Talvisodan syttymistä edelsivät neuvottelut, joissa Suomea painostettiin siirtämään itärajaa kauemmaksi Leningradin (nyk. Pietari) suurkaupungista.\nToinen maailmansota oli alkanut kolme kuukautta aikaisemmin Saksan ja Neuvostoliiton miehitettyä Puolan. Koska länsirintamalla oli käynnissä vähätapahtumainen valesota, länsimaiden lehdistö seurasi talvisotaa tarkasti. Termeistä sisu ja Molotovin cocktail tuli kansainvälisesti tunnettuja. Nimitys talvisota tuli käyttöön vasta jatkosodan aikana, muun muassa Mannerheimin päiväkäskyssä n:o 1 kesäkuussa 1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja"
+        },
+        {
+          "id": "Q3",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Kansainliitto tuomitsi hyökkäyksen ja erotti Neuvostoliiton jäsenyydestään 14. joulukuuta 1939.",
+          "source_id": "S1",
+          "page_id": 1256,
+          "original_passage": "# Talvisota\nTalvisota oli 30. marraskuuta 1939 – 13. maaliskuuta 1940 Suomen ja Neuvostoliiton välillä käyty sota. Neuvostoliitto aloitti talvisodan hyökkäämällä ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen. Kansainliitto tuomitsi hyökkäyksen ja erotti Neuvostoliiton jäsenyydestään 14. joulukuuta 1939. Talvisodan syttymistä edelsivät neuvottelut, joissa Suomea painostettiin siirtämään itärajaa kauemmaksi Leningradin (nyk. Pietari) suurkaupungista.\nToinen maailmansota oli alkanut kolme kuukautta aikaisemmin Saksan ja Neuvostoliiton miehitettyä Puolan. Koska länsirintamalla oli käynnissä vähätapahtumainen valesota, länsimaiden lehdistö seurasi talvisotaa tarkasti. Termeistä sisu ja Molotovin cocktail tuli kansainvälisesti tunnettuja. Nimitys talvisota tuli käyttöön vasta jatkosodan aikana, muun muassa Mannerheimin päiväkäskyssä n:o 1 kesäkuussa 1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja"
+        },
+        {
+          "id": "Q4",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Talvisodan syttymistä edelsivät neuvottelut, joissa Suomea painostettiin siirtämään itärajaa kauemmaksi Leningradin (nyk.",
+          "source_id": "S1",
+          "page_id": 1256,
+          "original_passage": "# Talvisota\nTalvisota oli 30. marraskuuta 1939 – 13. maaliskuuta 1940 Suomen ja Neuvostoliiton välillä käyty sota. Neuvostoliitto aloitti talvisodan hyökkäämällä ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen. Kansainliitto tuomitsi hyökkäyksen ja erotti Neuvostoliiton jäsenyydestään 14. joulukuuta 1939. Talvisodan syttymistä edelsivät neuvottelut, joissa Suomea painostettiin siirtämään itärajaa kauemmaksi Leningradin (nyk. Pietari) suurkaupungista.\nToinen maailmansota oli alkanut kolme kuukautta aikaisemmin Saksan ja Neuvostoliiton miehitettyä Puolan. Koska länsirintamalla oli käynnissä vähätapahtumainen valesota, länsimaiden lehdistö seurasi talvisotaa tarkasti. Termeistä sisu ja Molotovin cocktail tuli kansainvälisesti tunnettuja. Nimitys talvisota tuli käyttöön vasta jatkosodan aikana, muun muassa Mannerheimin päiväkäskyssä n:o 1 kesäkuussa 1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja"
+        },
+        {
+          "id": "Q5",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Pietari) suurkaupungista.",
+          "source_id": "S1",
+          "page_id": 1256,
+          "original_passage": "# Talvisota\nTalvisota oli 30. marraskuuta 1939 – 13. maaliskuuta 1940 Suomen ja Neuvostoliiton välillä käyty sota. Neuvostoliitto aloitti talvisodan hyökkäämällä ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen. Kansainliitto tuomitsi hyökkäyksen ja erotti Neuvostoliiton jäsenyydestään 14. joulukuuta 1939. Talvisodan syttymistä edelsivät neuvottelut, joissa Suomea painostettiin siirtämään itärajaa kauemmaksi Leningradin (nyk. Pietari) suurkaupungista.\nToinen maailmansota oli alkanut kolme kuukautta aikaisemmin Saksan ja Neuvostoliiton miehitettyä Puolan. Koska länsirintamalla oli käynnissä vähätapahtumainen valesota, länsimaiden lehdistö seurasi talvisotaa tarkasti. Termeistä sisu ja Molotovin cocktail tuli kansainvälisesti tunnettuja. Nimitys talvisota tuli käyttöön vasta jatkosodan aikana, muun muassa Mannerheimin päiväkäskyssä n:o 1 kesäkuussa 1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja"
+        },
+        {
+          "id": "Q6",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Sota käynnistyi Mainilan laukauksista, joita historioitsijat pitävät Neuvostoliiton lavastamana iskuna, jota käytettiin sotatoimien käynnistämisen oikeutuksena.",
+          "source_id": "S2",
+          "page_id": 1256,
+          "original_passage": "1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja Venäjän sota 1939–40. Sota käynnistyi Mainilan laukauksista, joita historioitsijat pitävät Neuvostoliiton lavastamana iskuna, jota käytettiin sotatoimien käynnistämisen oikeutuksena. Mainilan laukauksien seurauksena Neuvostoliitto purki Suomen ja Neuvostoliiton välisen hyökkäämättömyyssopimuksen yksipuolisesti ja lähetti Suomelle suhteiden kärjistymisestä nootin.\nSota on tunnettu erityisen vaikeista talviolosuhteista (talvi 1939–1940 oli vuosisadan kylmimpiä), puna-armeijan valtavista miestappioista, suomalaisten mottitaktiikasta sekä ”talvisodan hengestä”. Sodan seurauksena Suomi menetti Neuvostoliitolle noin kymmenesosan maa-alueistaan ja neljänneksi suurimman kaupunkinsa Viipurin (31.12.1939 Helsingin asukasluku oli 315 727, Tampereen 78 012, Turun 75 578 ja Viipurin 74 403).\n\n"
+        },
+        {
+          "id": "Q7",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Mainilan laukauksien seurauksena Neuvostoliitto purki Suomen ja Neuvostoliiton välisen hyökkäämättömyyssopimuksen yksipuolisesti ja lähetti Suomelle suhteiden kärjistymisestä nootin.",
+          "source_id": "S2",
+          "page_id": 1256,
+          "original_passage": "1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja Venäjän sota 1939–40. Sota käynnistyi Mainilan laukauksista, joita historioitsijat pitävät Neuvostoliiton lavastamana iskuna, jota käytettiin sotatoimien käynnistämisen oikeutuksena. Mainilan laukauksien seurauksena Neuvostoliitto purki Suomen ja Neuvostoliiton välisen hyökkäämättömyyssopimuksen yksipuolisesti ja lähetti Suomelle suhteiden kärjistymisestä nootin.\nSota on tunnettu erityisen vaikeista talviolosuhteista (talvi 1939–1940 oli vuosisadan kylmimpiä), puna-armeijan valtavista miestappioista, suomalaisten mottitaktiikasta sekä ”talvisodan hengestä”. Sodan seurauksena Suomi menetti Neuvostoliitolle noin kymmenesosan maa-alueistaan ja neljänneksi suurimman kaupunkinsa Viipurin (31.12.1939 Helsingin asukasluku oli 315 727, Tampereen 78 012, Turun 75 578 ja Viipurin 74 403).\n\n"
+        },
+        {
+          "id": "Q8",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Sota on tunnettu erityisen vaikeista talviolosuhteista (talvi 1939–1940 oli vuosisadan kylmimpiä), puna-armeijan valtavista miestappioista, suomalaisten mottitaktiikasta sekä ”talvisodan hengestä”.",
+          "source_id": "S2",
+          "page_id": 1256,
+          "original_passage": "1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja Venäjän sota 1939–40. Sota käynnistyi Mainilan laukauksista, joita historioitsijat pitävät Neuvostoliiton lavastamana iskuna, jota käytettiin sotatoimien käynnistämisen oikeutuksena. Mainilan laukauksien seurauksena Neuvostoliitto purki Suomen ja Neuvostoliiton välisen hyökkäämättömyyssopimuksen yksipuolisesti ja lähetti Suomelle suhteiden kärjistymisestä nootin.\nSota on tunnettu erityisen vaikeista talviolosuhteista (talvi 1939–1940 oli vuosisadan kylmimpiä), puna-armeijan valtavista miestappioista, suomalaisten mottitaktiikasta sekä ”talvisodan hengestä”. Sodan seurauksena Suomi menetti Neuvostoliitolle noin kymmenesosan maa-alueistaan ja neljänneksi suurimman kaupunkinsa Viipurin (31.12.1939 Helsingin asukasluku oli 315 727, Tampereen 78 012, Turun 75 578 ja Viipurin 74 403).\n\n"
+        },
+        {
+          "id": "Q9",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Sodan seurauksena Suomi menetti Neuvostoliitolle noin kymmenesosan maa-alueistaan ja neljänneksi suurimman kaupunkinsa Viipurin (31.12.1939 Helsingin asukasluku oli 315 727, Tampereen 78 012, Turun 75 578 ja Viipurin 74 403).",
+          "source_id": "S2",
+          "page_id": 1256,
+          "original_passage": "1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja Venäjän sota 1939–40. Sota käynnistyi Mainilan laukauksista, joita historioitsijat pitävät Neuvostoliiton lavastamana iskuna, jota käytettiin sotatoimien käynnistämisen oikeutuksena. Mainilan laukauksien seurauksena Neuvostoliitto purki Suomen ja Neuvostoliiton välisen hyökkäämättömyyssopimuksen yksipuolisesti ja lähetti Suomelle suhteiden kärjistymisestä nootin.\nSota on tunnettu erityisen vaikeista talviolosuhteista (talvi 1939–1940 oli vuosisadan kylmimpiä), puna-armeijan valtavista miestappioista, suomalaisten mottitaktiikasta sekä ”talvisodan hengestä”. Sodan seurauksena Suomi menetti Neuvostoliitolle noin kymmenesosan maa-alueistaan ja neljänneksi suurimman kaupunkinsa Viipurin (31.12.1939 Helsingin asukasluku oli 315 727, Tampereen 78 012, Turun 75 578 ja Viipurin 74 403).\n\n"
+        },
+        {
+          "id": "Q10",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Nimitys talvisota tuli käyttöön vasta jatkosodan aikana, muun muassa Mannerheimin päiväkäskyssä n:o 1 kesäkuussa 1941, mutta ei vakiintunut heti.",
+          "source_id": "S1",
+          "page_id": 1256,
+          "original_passage": "# Talvisota\nTalvisota oli 30. marraskuuta 1939 – 13. maaliskuuta 1940 Suomen ja Neuvostoliiton välillä käyty sota. Neuvostoliitto aloitti talvisodan hyökkäämällä ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen. Kansainliitto tuomitsi hyökkäyksen ja erotti Neuvostoliiton jäsenyydestään 14. joulukuuta 1939. Talvisodan syttymistä edelsivät neuvottelut, joissa Suomea painostettiin siirtämään itärajaa kauemmaksi Leningradin (nyk. Pietari) suurkaupungista.\nToinen maailmansota oli alkanut kolme kuukautta aikaisemmin Saksan ja Neuvostoliiton miehitettyä Puolan. Koska länsirintamalla oli käynnissä vähätapahtumainen valesota, länsimaiden lehdistö seurasi talvisotaa tarkasti. Termeistä sisu ja Molotovin cocktail tuli kansainvälisesti tunnettuja. Nimitys talvisota tuli käyttöön vasta jatkosodan aikana, muun muassa Mannerheimin päiväkäskyssä n:o 1 kesäkuussa 1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja"
+        },
+        {
+          "id": "Q11",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja",
+          "source_id": "S1",
+          "page_id": 1256,
+          "original_passage": "# Talvisota\nTalvisota oli 30. marraskuuta 1939 – 13. maaliskuuta 1940 Suomen ja Neuvostoliiton välillä käyty sota. Neuvostoliitto aloitti talvisodan hyökkäämällä ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen. Kansainliitto tuomitsi hyökkäyksen ja erotti Neuvostoliiton jäsenyydestään 14. joulukuuta 1939. Talvisodan syttymistä edelsivät neuvottelut, joissa Suomea painostettiin siirtämään itärajaa kauemmaksi Leningradin (nyk. Pietari) suurkaupungista.\nToinen maailmansota oli alkanut kolme kuukautta aikaisemmin Saksan ja Neuvostoliiton miehitettyä Puolan. Koska länsirintamalla oli käynnissä vähätapahtumainen valesota, länsimaiden lehdistö seurasi talvisotaa tarkasti. Termeistä sisu ja Molotovin cocktail tuli kansainvälisesti tunnettuja. Nimitys talvisota tuli käyttöön vasta jatkosodan aikana, muun muassa Mannerheimin päiväkäskyssä n:o 1 kesäkuussa 1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja"
+        },
+        {
+          "id": "Q12",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja Venäjän sota 1939–40.",
+          "source_id": "S2",
+          "page_id": 1256,
+          "original_passage": "1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja Venäjän sota 1939–40. Sota käynnistyi Mainilan laukauksista, joita historioitsijat pitävät Neuvostoliiton lavastamana iskuna, jota käytettiin sotatoimien käynnistämisen oikeutuksena. Mainilan laukauksien seurauksena Neuvostoliitto purki Suomen ja Neuvostoliiton välisen hyökkäämättömyyssopimuksen yksipuolisesti ja lähetti Suomelle suhteiden kärjistymisestä nootin.\nSota on tunnettu erityisen vaikeista talviolosuhteista (talvi 1939–1940 oli vuosisadan kylmimpiä), puna-armeijan valtavista miestappioista, suomalaisten mottitaktiikasta sekä ”talvisodan hengestä”. Sodan seurauksena Suomi menetti Neuvostoliitolle noin kymmenesosan maa-alueistaan ja neljänneksi suurimman kaupunkinsa Viipurin (31.12.1939 Helsingin asukasluku oli 315 727, Tampereen 78 012, Turun 75 578 ja Viipurin 74 403).\n\n"
+        },
+        {
+          "id": "Q13",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Termeistä sisu ja Molotovin cocktail tuli kansainvälisesti tunnettuja.",
+          "source_id": "S1",
+          "page_id": 1256,
+          "original_passage": "# Talvisota\nTalvisota oli 30. marraskuuta 1939 – 13. maaliskuuta 1940 Suomen ja Neuvostoliiton välillä käyty sota. Neuvostoliitto aloitti talvisodan hyökkäämällä ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen. Kansainliitto tuomitsi hyökkäyksen ja erotti Neuvostoliiton jäsenyydestään 14. joulukuuta 1939. Talvisodan syttymistä edelsivät neuvottelut, joissa Suomea painostettiin siirtämään itärajaa kauemmaksi Leningradin (nyk. Pietari) suurkaupungista.\nToinen maailmansota oli alkanut kolme kuukautta aikaisemmin Saksan ja Neuvostoliiton miehitettyä Puolan. Koska länsirintamalla oli käynnissä vähätapahtumainen valesota, länsimaiden lehdistö seurasi talvisotaa tarkasti. Termeistä sisu ja Molotovin cocktail tuli kansainvälisesti tunnettuja. Nimitys talvisota tuli käyttöön vasta jatkosodan aikana, muun muassa Mannerheimin päiväkäskyssä n:o 1 kesäkuussa 1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja"
+        },
+        {
+          "id": "Q14",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Koska länsirintamalla oli käynnissä vähätapahtumainen valesota, länsimaiden lehdistö seurasi talvisotaa tarkasti.",
+          "source_id": "S1",
+          "page_id": 1256,
+          "original_passage": "# Talvisota\nTalvisota oli 30. marraskuuta 1939 – 13. maaliskuuta 1940 Suomen ja Neuvostoliiton välillä käyty sota. Neuvostoliitto aloitti talvisodan hyökkäämällä ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen. Kansainliitto tuomitsi hyökkäyksen ja erotti Neuvostoliiton jäsenyydestään 14. joulukuuta 1939. Talvisodan syttymistä edelsivät neuvottelut, joissa Suomea painostettiin siirtämään itärajaa kauemmaksi Leningradin (nyk. Pietari) suurkaupungista.\nToinen maailmansota oli alkanut kolme kuukautta aikaisemmin Saksan ja Neuvostoliiton miehitettyä Puolan. Koska länsirintamalla oli käynnissä vähätapahtumainen valesota, länsimaiden lehdistö seurasi talvisotaa tarkasti. Termeistä sisu ja Molotovin cocktail tuli kansainvälisesti tunnettuja. Nimitys talvisota tuli käyttöön vasta jatkosodan aikana, muun muassa Mannerheimin päiväkäskyssä n:o 1 kesäkuussa 1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja"
+        },
+        {
+          "id": "Q15",
+          "title": "Talvisota",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+          "rev_id": 23500447,
+          "passage": "Toinen maailmansota oli alkanut kolme kuukautta aikaisemmin Saksan ja Neuvostoliiton miehitettyä Puolan.",
+          "source_id": "S1",
+          "page_id": 1256,
+          "original_passage": "# Talvisota\nTalvisota oli 30. marraskuuta 1939 – 13. maaliskuuta 1940 Suomen ja Neuvostoliiton välillä käyty sota. Neuvostoliitto aloitti talvisodan hyökkäämällä ilman sodanjulistusta, ja sota päättyi 105 päivää myöhemmin Moskovan rauhansopimukseen. Kansainliitto tuomitsi hyökkäyksen ja erotti Neuvostoliiton jäsenyydestään 14. joulukuuta 1939. Talvisodan syttymistä edelsivät neuvottelut, joissa Suomea painostettiin siirtämään itärajaa kauemmaksi Leningradin (nyk. Pietari) suurkaupungista.\nToinen maailmansota oli alkanut kolme kuukautta aikaisemmin Saksan ja Neuvostoliiton miehitettyä Puolan. Koska länsirintamalla oli käynnissä vähätapahtumainen valesota, länsimaiden lehdistö seurasi talvisotaa tarkasti. Termeistä sisu ja Molotovin cocktail tuli kansainvälisesti tunnettuja. Nimitys talvisota tuli käyttöön vasta jatkosodan aikana, muun muassa Mannerheimin päiväkäskyssä n:o 1 kesäkuussa 1941, mutta ei vakiintunut heti. Varhaisempia ja osin rinnakkaisia nimityksiä olivat muun muassa Suomen sota 1939–40 ja Suomen ja"
+        }
+      ],
+      "timings": {
+        "hyde_seconds": 1.5988596530000336,
+        "retrieval_and_embedding_seconds": 0.9902298069999915,
+        "chunk_seconds": 3.5076259319999963,
+        "article_reranking_seconds": 10.331723717999978,
+        "focus_filter_seconds": 0,
+        "generation_seconds": 3.2718940149999867,
+        "draft_review_seconds": 3.3015081059999716,
+        "split_and_need_seconds": 0.0002154419999556012,
+        "reference_lookup_seconds": 0.12833860299997468,
+        "attribution_seconds": 1.8761429809999868,
+        "citation_postprocessing_seconds": 0.00011215600000014092,
+        "total_seconds": 25.218747468999993
+      },
+      "review_status": "self_reviewed_unverified",
+      "support_verified": false,
+      "answer_language": "Finnish",
+      "language_detection": null,
+      "id": "talvisota-history",
+      "search_focus": "",
+      "captured_at": "2026-11-14",
+      "hypothetical_passage": "",
+      "verification": {
+        "pipeline_verified": true,
+        "claim_support_reviewed": false,
+        "literal_quotes_checked": true
+      },
+      "provenance": {
+        "gpu": "H100 80GB",
+        "backend": "vLLM",
+        "model": "Qwen/Qwen3-4B-Instruct-2507-FP8",
+        "model_revision": "8591804019c8b22094c3b5b4454e0edc05dffc98",
+        "note": "Earlier Finnish-prompt run, before automatic answer-language detection. Unedited model text may contain factual and language errors."
+      },
+      "citation_mappings": {
+        "Q1": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q2": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q3": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q4": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q5": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q6": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q7": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q8": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q9": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q10": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q11": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q12": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q13": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q14": "https://fi.wikipedia.org/w/index.php?oldid=23500447",
+        "Q15": "https://fi.wikipedia.org/w/index.php?oldid=23500447"
+      }
+    },
+    {
+      "status": "recorded",
+      "title": "talvisota",
+      "question": "talvisota",
+      "theme": "",
+      "dataset_release": "l-2026-10",
+      "answer": [
+        {
+          "text": "*Talvisota* on vuoropohjainen strategiapeli, joka kehitettiin Olli Kainulaisen alla ja julkaisi TrioSoft MSX-tyypin laskimille vuonna 1987. Peli on suoraan perustunut Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan, ja sen sisällössä on keskittyneen siihen, miten Suomi voittaa tai menettää sotilaallisen linjan Hamina–Lappeenranta–Savonlinjalla.",
+          "section": "Talvisota – videopeli",
+          "citations": [
+            "Q1",
+            "Q2"
+          ]
+        },
+        {
+          "text": "Pelissä tarkoituksena on torjua Neuvostoliiton hyökkäystä Hamina–Lappeenranta–Savonlinjalla. Pelaaja voittaa, jos linja pysyy hänen hallussaan 13. maaliskuuta 1940 asti. Peli on jaettu kahdeksi osa-alueeksi: *strategia* ja *uutiset*.",
+          "section": "Talvisota – videopeli",
+          "citations": [
+            "Q3",
+            "Q4",
+            "Q5"
+          ]
+        },
+        {
+          "text": "Strategiaosuudessa pelaaja näkee maailman ruutupohjaisessa näkymässä ja voi liikuttaa joukko-osastoja divisioonittain. Ensimmäisessä vaiheessa joukot liikutetaan, sitten hyökkäys tehdään, ja Neuvostoliiton sotilasvoimat tekevät omia siirtojaan. Tämä toistuu vuorollaan, kunnes molemmat osapuolet ovat pelannut vuoronsa.",
+          "section": "Talvisota – videopeli",
+          "citations": [
+            "Q6",
+            "Q7"
+          ]
+        },
+        {
+          "text": "Uutisosa alkaa, kun molemmat osapuolet ovat pelannut vuoronsa. Pelaaja on pakko arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla. Arvauksen tarkkuus määrää, kuinka paljon täydennysjoukkoja pelaaja saa – tarkempi arvaus tarkoittaa enemmän hyödyllistä materiaalia pelin aikana.",
+          "section": "Talvisota – videopeli",
+          "citations": [
+            "Q8",
+            "Q9"
+          ]
+        },
+        {
+          "text": "Peli oli myös tarkoitus julkaista Commodore 64:lle, mutta sen julkaisu ei olenistunut. Se on siis tunnettu pääasiassa MSX-palkin yhteydessä ja on yksi esimerkkeistä suomalaisista strategiapeliteistä, jotka perustuvat historiallisiin tapahtumiin.",
+          "section": "Talvisota – videopeli",
+          "citations": [
+            "Q10",
+            "Q11"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "id": "Q1",
+          "title": "Talvisota (videopeli)",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+          "rev_id": 22073785,
+          "passage": "Talvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987.",
+          "source_id": "S1",
+          "page_id": 1336037,
+          "original_passage": "# Talvisota (videopeli)\nTalvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987. Peli sijoittuu Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan.\nPelissä on tarkoituksena torjua Neuvostoliiton hyökkäys Hamina–Lappeenranta–Savonlinna-linjalla. Jos linja pysyy pelaajan hallussa 13. maaliskuuta 1940 asti, pelaaja voittaa. Pelissä on kaksi osuutta, strategia ja uutiset. Strategiaosuus on kuvattu ruutupohjaisessa näkymässä, jossa voi liikutella divisioonittain joukko-osastoja. Ensin joukkoja liikutellaan, sen jälkeen hyökätään, minkä jälkeen Neuvostoliitto tekee omat siirtonsa. Kun kumpikin osapuoli on pelannut vuoronsa, tulee uutisosa, jossa pelaajan pitää arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla. Mitä tarkempi arvaus, sitä enemmän pelaaja saa täydennysjoukkoja.\nPeli oli tarkoitus julkaista myös Commodore 64:lle.\n"
+        },
+        {
+          "id": "Q2",
+          "title": "Talvisota (videopeli)",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+          "rev_id": 22073785,
+          "passage": "Peli sijoittuu Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan.",
+          "source_id": "S1",
+          "page_id": 1336037,
+          "original_passage": "# Talvisota (videopeli)\nTalvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987. Peli sijoittuu Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan.\nPelissä on tarkoituksena torjua Neuvostoliiton hyökkäys Hamina–Lappeenranta–Savonlinna-linjalla. Jos linja pysyy pelaajan hallussa 13. maaliskuuta 1940 asti, pelaaja voittaa. Pelissä on kaksi osuutta, strategia ja uutiset. Strategiaosuus on kuvattu ruutupohjaisessa näkymässä, jossa voi liikutella divisioonittain joukko-osastoja. Ensin joukkoja liikutellaan, sen jälkeen hyökätään, minkä jälkeen Neuvostoliitto tekee omat siirtonsa. Kun kumpikin osapuoli on pelannut vuoronsa, tulee uutisosa, jossa pelaajan pitää arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla. Mitä tarkempi arvaus, sitä enemmän pelaaja saa täydennysjoukkoja.\nPeli oli tarkoitus julkaista myös Commodore 64:lle.\n"
+        },
+        {
+          "id": "Q3",
+          "title": "Talvisota (videopeli)",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+          "rev_id": 22073785,
+          "passage": "Pelissä on tarkoituksena torjua Neuvostoliiton hyökkäys Hamina–Lappeenranta–Savonlinna-linjalla.",
+          "source_id": "S1",
+          "page_id": 1336037,
+          "original_passage": "# Talvisota (videopeli)\nTalvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987. Peli sijoittuu Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan.\nPelissä on tarkoituksena torjua Neuvostoliiton hyökkäys Hamina–Lappeenranta–Savonlinna-linjalla. Jos linja pysyy pelaajan hallussa 13. maaliskuuta 1940 asti, pelaaja voittaa. Pelissä on kaksi osuutta, strategia ja uutiset. Strategiaosuus on kuvattu ruutupohjaisessa näkymässä, jossa voi liikutella divisioonittain joukko-osastoja. Ensin joukkoja liikutellaan, sen jälkeen hyökätään, minkä jälkeen Neuvostoliitto tekee omat siirtonsa. Kun kumpikin osapuoli on pelannut vuoronsa, tulee uutisosa, jossa pelaajan pitää arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla. Mitä tarkempi arvaus, sitä enemmän pelaaja saa täydennysjoukkoja.\nPeli oli tarkoitus julkaista myös Commodore 64:lle.\n"
+        },
+        {
+          "id": "Q4",
+          "title": "Talvisota (videopeli)",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+          "rev_id": 22073785,
+          "passage": "Jos linja pysyy pelaajan hallussa 13. maaliskuuta 1940 asti, pelaaja voittaa.",
+          "source_id": "S1",
+          "page_id": 1336037,
+          "original_passage": "# Talvisota (videopeli)\nTalvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987. Peli sijoittuu Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan.\nPelissä on tarkoituksena torjua Neuvostoliiton hyökkäys Hamina–Lappeenranta–Savonlinna-linjalla. Jos linja pysyy pelaajan hallussa 13. maaliskuuta 1940 asti, pelaaja voittaa. Pelissä on kaksi osuutta, strategia ja uutiset. Strategiaosuus on kuvattu ruutupohjaisessa näkymässä, jossa voi liikutella divisioonittain joukko-osastoja. Ensin joukkoja liikutellaan, sen jälkeen hyökätään, minkä jälkeen Neuvostoliitto tekee omat siirtonsa. Kun kumpikin osapuoli on pelannut vuoronsa, tulee uutisosa, jossa pelaajan pitää arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla. Mitä tarkempi arvaus, sitä enemmän pelaaja saa täydennysjoukkoja.\nPeli oli tarkoitus julkaista myös Commodore 64:lle.\n"
+        },
+        {
+          "id": "Q5",
+          "title": "Talvisota (videopeli)",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+          "rev_id": 22073785,
+          "passage": "Pelissä on kaksi osuutta, strategia ja uutiset.",
+          "source_id": "S1",
+          "page_id": 1336037,
+          "original_passage": "# Talvisota (videopeli)\nTalvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987. Peli sijoittuu Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan.\nPelissä on tarkoituksena torjua Neuvostoliiton hyökkäys Hamina–Lappeenranta–Savonlinna-linjalla. Jos linja pysyy pelaajan hallussa 13. maaliskuuta 1940 asti, pelaaja voittaa. Pelissä on kaksi osuutta, strategia ja uutiset. Strategiaosuus on kuvattu ruutupohjaisessa näkymässä, jossa voi liikutella divisioonittain joukko-osastoja. Ensin joukkoja liikutellaan, sen jälkeen hyökätään, minkä jälkeen Neuvostoliitto tekee omat siirtonsa. Kun kumpikin osapuoli on pelannut vuoronsa, tulee uutisosa, jossa pelaajan pitää arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla. Mitä tarkempi arvaus, sitä enemmän pelaaja saa täydennysjoukkoja.\nPeli oli tarkoitus julkaista myös Commodore 64:lle.\n"
+        },
+        {
+          "id": "Q6",
+          "title": "Talvisota (videopeli)",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+          "rev_id": 22073785,
+          "passage": "Strategiaosuus on kuvattu ruutupohjaisessa näkymässä, jossa voi liikutella divisioonittain joukko-osastoja.",
+          "source_id": "S1",
+          "page_id": 1336037,
+          "original_passage": "# Talvisota (videopeli)\nTalvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987. Peli sijoittuu Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan.\nPelissä on tarkoituksena torjua Neuvostoliiton hyökkäys Hamina–Lappeenranta–Savonlinna-linjalla. Jos linja pysyy pelaajan hallussa 13. maaliskuuta 1940 asti, pelaaja voittaa. Pelissä on kaksi osuutta, strategia ja uutiset. Strategiaosuus on kuvattu ruutupohjaisessa näkymässä, jossa voi liikutella divisioonittain joukko-osastoja. Ensin joukkoja liikutellaan, sen jälkeen hyökätään, minkä jälkeen Neuvostoliitto tekee omat siirtonsa. Kun kumpikin osapuoli on pelannut vuoronsa, tulee uutisosa, jossa pelaajan pitää arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla. Mitä tarkempi arvaus, sitä enemmän pelaaja saa täydennysjoukkoja.\nPeli oli tarkoitus julkaista myös Commodore 64:lle.\n"
+        },
+        {
+          "id": "Q7",
+          "title": "Talvisota (videopeli)",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+          "rev_id": 22073785,
+          "passage": "Ensin joukkoja liikutellaan, sen jälkeen hyökätään, minkä jälkeen Neuvostoliitto tekee omat siirtonsa.",
+          "source_id": "S1",
+          "page_id": 1336037,
+          "original_passage": "# Talvisota (videopeli)\nTalvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987. Peli sijoittuu Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan.\nPelissä on tarkoituksena torjua Neuvostoliiton hyökkäys Hamina–Lappeenranta–Savonlinna-linjalla. Jos linja pysyy pelaajan hallussa 13. maaliskuuta 1940 asti, pelaaja voittaa. Pelissä on kaksi osuutta, strategia ja uutiset. Strategiaosuus on kuvattu ruutupohjaisessa näkymässä, jossa voi liikutella divisioonittain joukko-osastoja. Ensin joukkoja liikutellaan, sen jälkeen hyökätään, minkä jälkeen Neuvostoliitto tekee omat siirtonsa. Kun kumpikin osapuoli on pelannut vuoronsa, tulee uutisosa, jossa pelaajan pitää arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla. Mitä tarkempi arvaus, sitä enemmän pelaaja saa täydennysjoukkoja.\nPeli oli tarkoitus julkaista myös Commodore 64:lle.\n"
+        },
+        {
+          "id": "Q8",
+          "title": "Talvisota (videopeli)",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+          "rev_id": 22073785,
+          "passage": "Kun kumpikin osapuoli on pelannut vuoronsa, tulee uutisosa, jossa pelaajan pitää arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla.",
+          "source_id": "S1",
+          "page_id": 1336037,
+          "original_passage": "# Talvisota (videopeli)\nTalvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987. Peli sijoittuu Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan.\nPelissä on tarkoituksena torjua Neuvostoliiton hyökkäys Hamina–Lappeenranta–Savonlinna-linjalla. Jos linja pysyy pelaajan hallussa 13. maaliskuuta 1940 asti, pelaaja voittaa. Pelissä on kaksi osuutta, strategia ja uutiset. Strategiaosuus on kuvattu ruutupohjaisessa näkymässä, jossa voi liikutella divisioonittain joukko-osastoja. Ensin joukkoja liikutellaan, sen jälkeen hyökätään, minkä jälkeen Neuvostoliitto tekee omat siirtonsa. Kun kumpikin osapuoli on pelannut vuoronsa, tulee uutisosa, jossa pelaajan pitää arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla. Mitä tarkempi arvaus, sitä enemmän pelaaja saa täydennysjoukkoja.\nPeli oli tarkoitus julkaista myös Commodore 64:lle.\n"
+        },
+        {
+          "id": "Q9",
+          "title": "Talvisota (videopeli)",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+          "rev_id": 22073785,
+          "passage": "Mitä tarkempi arvaus, sitä enemmän pelaaja saa täydennysjoukkoja.",
+          "source_id": "S1",
+          "page_id": 1336037,
+          "original_passage": "# Talvisota (videopeli)\nTalvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987. Peli sijoittuu Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan.\nPelissä on tarkoituksena torjua Neuvostoliiton hyökkäys Hamina–Lappeenranta–Savonlinna-linjalla. Jos linja pysyy pelaajan hallussa 13. maaliskuuta 1940 asti, pelaaja voittaa. Pelissä on kaksi osuutta, strategia ja uutiset. Strategiaosuus on kuvattu ruutupohjaisessa näkymässä, jossa voi liikutella divisioonittain joukko-osastoja. Ensin joukkoja liikutellaan, sen jälkeen hyökätään, minkä jälkeen Neuvostoliitto tekee omat siirtonsa. Kun kumpikin osapuoli on pelannut vuoronsa, tulee uutisosa, jossa pelaajan pitää arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla. Mitä tarkempi arvaus, sitä enemmän pelaaja saa täydennysjoukkoja.\nPeli oli tarkoitus julkaista myös Commodore 64:lle.\n"
+        },
+        {
+          "id": "Q10",
+          "title": "Talvisota (videopeli)",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+          "rev_id": 22073785,
+          "passage": "Talvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987.",
+          "source_id": "S1",
+          "page_id": 1336037,
+          "original_passage": "# Talvisota (videopeli)\nTalvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987. Peli sijoittuu Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan.\nPelissä on tarkoituksena torjua Neuvostoliiton hyökkäys Hamina–Lappeenranta–Savonlinna-linjalla. Jos linja pysyy pelaajan hallussa 13. maaliskuuta 1940 asti, pelaaja voittaa. Pelissä on kaksi osuutta, strategia ja uutiset. Strategiaosuus on kuvattu ruutupohjaisessa näkymässä, jossa voi liikutella divisioonittain joukko-osastoja. Ensin joukkoja liikutellaan, sen jälkeen hyökätään, minkä jälkeen Neuvostoliitto tekee omat siirtonsa. Kun kumpikin osapuoli on pelannut vuoronsa, tulee uutisosa, jossa pelaajan pitää arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla. Mitä tarkempi arvaus, sitä enemmän pelaaja saa täydennysjoukkoja.\nPeli oli tarkoitus julkaista myös Commodore 64:lle.\n"
+        },
+        {
+          "id": "Q11",
+          "title": "Talvisota (videopeli)",
+          "lang": "fi",
+          "language_label": "Finnish",
+          "revision_url": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+          "rev_id": 22073785,
+          "passage": "Peli oli tarkoitus julkaista myös Commodore 64:lle.",
+          "source_id": "S1",
+          "page_id": 1336037,
+          "original_passage": "# Talvisota (videopeli)\nTalvisota on Olli Kainulaisen kehittämä vuoropohjainen strategiapeli, jonka TrioSoft julkaisi MSX:lle vuonna 1987. Peli sijoittuu Suomen ja Neuvostoliiton välillä vuosina 1939–1940 käytyyn talvisotaan.\nPelissä on tarkoituksena torjua Neuvostoliiton hyökkäys Hamina–Lappeenranta–Savonlinna-linjalla. Jos linja pysyy pelaajan hallussa 13. maaliskuuta 1940 asti, pelaaja voittaa. Pelissä on kaksi osuutta, strategia ja uutiset. Strategiaosuus on kuvattu ruutupohjaisessa näkymässä, jossa voi liikutella divisioonittain joukko-osastoja. Ensin joukkoja liikutellaan, sen jälkeen hyökätään, minkä jälkeen Neuvostoliitto tekee omat siirtonsa. Kun kumpikin osapuoli on pelannut vuoronsa, tulee uutisosa, jossa pelaajan pitää arvioida uutisen vaikutus Suomen sotamenestykseen viisiportaisella asteikolla. Mitä tarkempi arvaus, sitä enemmän pelaaja saa täydennysjoukkoja.\nPeli oli tarkoitus julkaista myös Commodore 64:lle.\n"
+        }
+      ],
+      "timings": {
+        "hyde_seconds": 0.779142841999942,
+        "retrieval_and_embedding_seconds": 0.1440935980000404,
+        "chunk_seconds": 2.7863919649998934,
+        "article_reranking_seconds": 2.240496975000042,
+        "focus_filter_seconds": 0.07336579299999357,
+        "generation_seconds": 2.046303529000056,
+        "draft_review_seconds": 2.065134530000023,
+        "split_and_need_seconds": 3.587100002278021e-05,
+        "reference_lookup_seconds": 0.06324424699994324,
+        "attribution_seconds": 0.7080145969999876,
+        "citation_postprocessing_seconds": 4.493199992339214e-05,
+        "total_seconds": 11.103935954000008
+      },
+      "review_status": "self_reviewed_unverified",
+      "support_verified": false,
+      "answer_language": "Finnish",
+      "language_detection": null,
+      "id": "talvisota-game",
+      "search_focus": "videopeli",
+      "captured_at": "2026-11-14",
+      "hypothetical_passage": "",
+      "verification": {
+        "pipeline_verified": true,
+        "claim_support_reviewed": false,
+        "literal_quotes_checked": true
+      },
+      "provenance": {
+        "gpu": "H100 80GB",
+        "backend": "vLLM",
+        "model": "Qwen/Qwen3-4B-Instruct-2507-FP8",
+        "model_revision": "8591804019c8b22094c3b5b4454e0edc05dffc98",
+        "note": "Earlier Finnish-prompt run, before automatic answer-language detection. Unedited model text may contain factual and language errors."
+      },
+      "citation_mappings": {
+        "Q1": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+        "Q2": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+        "Q3": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+        "Q4": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+        "Q5": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+        "Q6": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+        "Q7": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+        "Q8": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+        "Q9": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+        "Q10": "https://fi.wikipedia.org/w/index.php?oldid=22073785",
+        "Q11": "https://fi.wikipedia.org/w/index.php?oldid=22073785"
+      }
+    }
+  ]
+}

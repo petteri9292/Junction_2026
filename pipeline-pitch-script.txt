@@ -1,0 +1,208 @@
+WIKILENS — MARIADB RAG PIPELINE PITCH
+
+The main story: a complete MariaDB retrieval-to-generation system over the
+provided full dataset, with evidence readers can inspect. Context is a useful
+example, not the product's whole identity.
+
+Target: 3 minutes 30 seconds, leaving about 90 seconds for questions. This is a
+rehearsal plan, not a statement of the event's exact round rules.
+
+FILES AND ORDER
+Slides: reports/wikilens-pipeline-pitch.pptx
+Application: http://127.0.0.1:8041/
+1. WikiLens: MariaDB RAG over 568,416 Finnish Wikipedia articles.
+2. Retrieval and generation: the main technical explanation.
+3. Live retrieval to a cited article: measured implementation and reader value.
+4–5. Saved talvisota/context excerpts: optional backup or Q&A only.
+
+VIEWER EXPERIENCE
+
+Face the laptop toward the reviewers. Keep the slides in presentation mode and
+the browser in a separate, ready window. Use Alt+Tab to switch once into the
+demo and once back to the slides. Explain what the viewer is seeing before
+pointing at technical details. Let the article and one source card occupy most
+of the browser window. Avoid long scrolling or asking people to read dense
+Finnish text from across the table.
+
+Open the PowerPoint locally for offline access. Check that the live session is
+ready before pitching; docs/recording-demo.md documents its bounded lifetime.
+The slide file does not depend on that session. No compute needs to start for
+the slides themselves.
+
+0:00–0:25 — SLIDE 1: THE READER AND THE PROJECT
+
+SAY:
+“Hi, I’m Petteri. WikiLens is my entry to MariaDB’s RAG track.
+
+It lets readers ask questions about Finnish Wikipedia and get an article with
+source passages they can inspect. I built the complete path from a question,
+through retrieval over 568,416 articles, to generation, review and citations.”
+
+ACTION: Advance to slide 2. Do not begin with the context comparison.
+
+0:25–1:35 — SLIDE 2: THE PIPELINE
+
+SAY:
+“First, Qwen creates a hypothetical search passage and detects the question’s
+language in one structured response. The passage guides search; it is never
+source evidence.
+
+BGE-M3 embeds that passage. MariaDB stores the article text, revision metadata
+and native vectors together. Its indexed vector search retrieves candidate
+articles through SQL.
+
+Next, I split the articles at their headings and use a cross-encoder to rerank
+the passages. That selects the evidence for the writing step.
+
+Qwen writes an article in the detected language from those passages. Another
+pass reviews the draft against the sources. Then the citation stage selects
+source spans, and Python copies and checks the exact quotations.
+
+The database, passage selection and writing steps all connect to the same
+inspectable source records.”
+
+ACTION: Point down the process as you speak. Give MariaDB's role a pause.
+Do not rush through model version strings or recite every label.
+
+1:35–2:50 — LIVE DEMO: A QUESTION BECOMES AN ARTICLE WITH EVIDENCE
+
+ACTION: Switch to the browser. Click New question to clear previous context.
+Enter “What was the Winter War?” and click Search.
+
+SAY WHILE IT RUNS:
+“This question is in English, while the collection is Finnish. The system
+selects evidence from the Finnish corpus and uses the detected language for
+both writing and review.”
+
+ACTION: When the answer appears, point to the article, then open one citation.
+Do not narrate that a result exists until it is actually visible.
+
+SAY:
+“Here is the generated article. Clicking a citation opens the selected original
+quotation and a link to the stored Wikipedia revision. The reader can move
+from the explanation back to its evidence.”
+
+ACTION: Hold the article and source together for several seconds. The important
+visual is this connection, not a tour of every button. Then return to slide 3.
+
+If a result does not appear quickly, do not troubleshoot during the whole slot.
+Say: “I have saved excerpts from earlier actual runs.” Use slide 4 as the
+fallback and explain the source link. Do not present the saved result as live.
+Slide 5 is available if someone asks about context handling.
+
+2:50–3:30 — SLIDE 3: SCALE, EXECUTION AND THE LIMITATION
+
+SAY:
+“The full collection contains 568,416 Finnish articles. In two live checks,
+an English question took about 17 seconds and a Finnish question about 21,
+including retrieval and excluding startup.
+
+The models and MariaDB stay loaded between requests on a single H100.
+My contribution is integrating retrieval, language routing and evidence
+inspection into a reader workflow.
+
+Generated drafts can still contain errors. Exact quotation checks establish
+provenance; they don’t prove every claim. Stronger claim-support evaluation
+is the next step.”
+
+ACTION: Stop talking. Leave slide 3 visible.
+ASK: “Would you like to inspect the pipeline or try another question?”
+
+3:30–5:00 — QUESTIONS AND OPTIONAL CONTEXT PROOF
+
+Context demonstration, only if useful or requested (about 15 seconds with
+saved slides, longer if running two live requests):
+“Context can also change which evidence the pipeline selects. These are saved
+excerpts from actual runs: talvisota without context concerns the historical
+war. Adding videopeli, meaning video game, selects the game.”
+Show slide 4, then slide 5, and return to slide 3. These excerpts predate the
+automatic-language update; identify them as earlier captures. If using the
+live browser, keep talvisota as the question and change only the context.
+
+Is this the RAG track or the time-travel track?
+“The RAG track. I preserve and link source revision metadata. I have not built
+system-versioned-table or point-in-time Wikipedia queries.”
+
+What is original about it?
+“I combined language detection into the existing structured HyDE call, carried
+context through evidence selection, and connected reviewed prose to exact
+source spans in a reading interface. I’m demonstrating the integrated reader
+workflow, not claiming to have invented RAG or trained a new foundation model.”
+
+Why MariaDB?
+“It stores the article text, revision metadata and native vectors together.
+SQL retrieves the vector candidates and the corresponding source records.”
+
+What did you build yourself?
+“I integrated the full-corpus retrieval pipeline, context handling, passage
+selection, language routing, generation, review, citation extraction and the
+reading interface. The underlying models are pretrained.”
+
+How does language detection work?
+“The existing HyDE call returns a Pydantic-constrained object: hypothetical
+passage first, then a nullable language code. Only the passage is embedded.
+The code controls generation and review. Unknown language falls back to Finnish.
+The retrieval passage stays Finnish because this corpus is Finnish.”
+
+Is there a final LLM fact-check after the citations are attached?
+“No. The draft review happens before citation attachment. Later model calls
+select quotation spans, and Python validates literal matches. That is not an
+independent check of factual support.”
+
+How fast is it?
+“In two live language-routing checks, the English question took 16.8 seconds and
+the Finnish question 20.6 seconds, including retrieval but excluding startup.
+Those are two measurements, not a general latency guarantee.”
+Source: reports/metrics.json. These are different questions
+from the earlier talvisota/context demonstration, so do not present the numbers
+as a measured head-to-head comparison of those two context settings.
+
+Why does this matter to a reader?
+“It combines a focused explanation with access to the source passages, so the
+reader can check the evidence without manually assembling every part of the
+answer across several Wikipedia pages.”
+
+What still needs work?
+“Finnish prose quality and claim-to-source support. The review pass does not
+reliably fix every error. I would evaluate those explicitly before calling the
+answers dependable.”
+
+IF YOU ONLY HAVE 30 SECONDS
+
+“WikiLens is a MariaDB RAG application over 568,416 Finnish Wikipedia articles.
+It retrieves and reranks evidence, writes and reviews an article in the reader’s
+language, then attaches inspectable source quotations. The main achievement is
+that complete pipeline working on the full dataset.”
+
+HOW THE PITCH ADDRESSES THE SUPPLIED CHALLENGE
+
+MariaDB use (20%): Explain the native indexed vector retrieval and how SQL
+connects vectors with the stored article text and revision metadata.
+Implementation (20%): Show the full Dataset L count and describe passage-level
+selection, the generation/review stages and the resident serving setup.
+Usefulness (20%): Show an English question yielding an article from Finnish
+sources, with direct access to the original evidence.
+Design/demo (20%): Let reviewers see one question, the returned article and
+one source card. Use large text and simple window switching.
+Originality (20%): Explain the combined workflow and specific integration work,
+without claiming that RAG, embeddings or vector search are new inventions.
+
+The challenge also describes SVT/time travel. This project chose the RAG track.
+Do not imply that stored source revision links implement temporal queries.
+Do not read the criteria list to reviewers; use it to prepare the story.
+
+PRONUNCIATION
+HyDE: hide. Qwen: kwen. BGE-M3: B G E, M three.
+MariaDB: mah-REE-ah, D B.
+Talvisota: TAL-vee-soh-tah. Videopeli: VEE-deh-oh-peh-lee.
+
+SOURCES AND CLAIM BOUNDARIES
+
+The challenge framing comes from the Wikipedia Through Time page supplied by
+the user on 15 November 2026. Only the challenge content is summarized here;
+private dashboard/account details are not included.
+Live timings: reports/metrics.json. They are two different
+questions, not a head-to-head language benchmark or a latency guarantee.
+Corpus: reports/metrics.json and docs/full-l-embeddings.md.
+Backup slides: data/demo-captures/fp8-review-fi-20261114T222639Z/.
+The old source deck is preserved as reports/wikilens-table-pitch.pptx.

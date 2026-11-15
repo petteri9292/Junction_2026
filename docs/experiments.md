@@ -1,26 +1,56 @@
-# Experiment log
+# Measurements and experiment notes
 
-No competition experiment has been implemented yet. Generic environment checks
-live outside this repository and are not project results.
+These are measured development observations, not a held-out answer-quality benchmark. Machine-readable values are in `reports/metrics.json`. Raw prompts, outputs, source passages, code hashes and operational logs remain preserved locally in ignored data and the pre-cleanup archive.
 
-## Before implementing a training run
+## Corpus
 
-Ask Petteri which TensorBoard variables and visualisations to include and wait
-for his answer. Record that selection here, including tags, units, logging axis,
-frequency, and validation frequency. Confirm any proposed reuse of prior choices.
+The completed Dataset L import contains 568,416 Finnish Wikipedia articles and 1024-dimensional BGE-M3 vectors. All 57 embedding shards were independently reopened and checked for alignment, hashes, norms and finite values. 2,441 inputs exceeded the 8192-token embedding limit and were marked truncated. Embedding GPU batches took 24.44 minutes across the completed checkpointed run; this excludes CPU preparation, orchestration and verification. This is pretrained inference, not training.
 
-## Run record
+## H100 and vLLM: frozen inputs
 
-- Run identifier and purpose:
-- Code commit and data revision:
-- Problem unit and target:
-- Train, validation, and test split:
-- Seed and model configuration:
-- Agreed TensorBoard selection and confirmation:
-- TensorBoard live URL and durable event-file location:
-- Baseline and primary evaluation metric:
-- Result and comparison:
-- Runtime, hardware, job ID, estimated cost, and cumulative approved spend:
-- Checkpoint or output location:
-- Failure cases and limitations:
-- Reproduction command and verification:
+The same pinned Qwen3-4B-Instruct-2507-FP8 checkpoint, exact prompts and saved passages were replayed. Both hardware and inference engine changed together.
+
+| Case and stage | L40S / Transformers | H100 / vLLM |
+| --- | ---: | ---: |
+| talvisota: draft | 70.053 s | 3.544 s |
+| talvisota: review | 70.365 s | 3.133 s |
+| talvisota + videopeli: draft | 42.534 s | 2.138 s |
+| talvisota + videopeli: review | 34.380 s | 1.390 s |
+
+The full fixed-evidence draft → review → citation path took 8.773 s and 5.142 s on H100. Those values exclude upstream HyDE/retrieval/reranking and model startup. Startup for this comparison was 335.863 s. Prompt equality was checked; generated outputs and lengths generally differ, so these are not isolated GPU speedups. One observation per request, no uncertainty estimate.
+
+## Fresh live retrieval
+
+One warm H100 session reused its resident models and complete MariaDB corpus across questions. Initial live setup took 437.873 s, excluded below.
+
+| Question | Context | Worker request time |
+| --- | --- | ---: |
+| talvisota | empty | 25.408 s |
+| talvisota | videopeli | 11.215 s |
+
+The corresponding pipeline-only totals are 25.219 s and 11.104 s. The public offline examples preserve these runs, their exact quotations and pipeline times. They predate automatic answer-language detection. Playback does not measure inference speed.
+
+## Structured HyDE and answer language
+
+The same warm H100 and vLLM process were reused after the controller update. The Pydantic response orders `hypothetical_passage` before nullable `language`; only the Finnish passage is embedded. Language detection adds no model call. Unknown language falls back to Finnish.
+
+| Question | Detected language | Worker request time | Located quotations |
+| --- | --- | ---: | ---: |
+| What was the Winter War? | en | 16.818 s | 13 |
+| Mikä oli talvisota? | fi | 20.568 s | 26 |
+
+For non-Finnish questions, passage reranking includes a bounded Finnish HyDE hint alongside the original question. This fixed one observed cutoff failure in English, but has not been evaluated as a general retrieval improvement. HyDE is never supporting evidence.
+
+## Admin inspector
+
+A live default-settings request retrieved 60 articles, scored 965 passages, retained 13 at the −2 cutoff and selected 7 for the generation context. A deliberately extreme cutoff of 20 with top-k 10 rejected all 138 candidate passages; the request failed clearly and its retrieved documents remained inspectable. The browser successfully opened a full retrieved article and a selected source-aligned passage. Defaults were restored afterward. No additional GPU allocation was created for these checks.
+
+## Quality limitations
+
+The model can produce incorrect Finnish and unsupported claims despite its review pass. Observed examples include a historical draft retained unchanged after review and an inference that a planned platform release failed, which the source passage did not establish. No generated prose was silently corrected for the public fallback. A literal quotation can be valid while failing to support the associated claim.
+
+The LLM reviews the draft before citation attachment. There is no final review of the fully cited article. Current measurements support a working pipeline and substantial observed inference speed improvement; they do not establish factual correctness, better answer quality or a latency service level.
+
+## Repository preparation
+
+The public source tree retains working pipeline variants, experiment runners, notebooks, tests, selected measurements and pitch materials. Development recovery scripts, exploratory UI layouts, superseded notebooks, verbose logs and historical reports were moved into `_local_archive/`, which Git ignores. Original versions of rewritten files are preserved there with a SHA-256 manifest. Existing ignored data, credentials, environments and compute ledgers remain in their working locations. See `docs/verification.md` for the final presentation checks.

@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-15",
+  "working_checkout": {
+    "passed": 244,
+    "failed": 0
+  },
+  "public_export": {
+    "passed": 242,
+    "skipped": 2,
+    "failed": 0,
+    "skip_reasons": [
+      "Optional original dataset not installed",
+      "Ignored real capture not present"
+    ],
+    "dependencies_reused": true,
+    "ignored_data_included": false
+  },
+  "checks": {
+    "root_lock": true,
+    "vllm_lock": true,
+    "python_compile": true,
+    "python_format": true,
+    "critical_python_lint": true,
+    "javascript_syntax": true,
+    "markdown_links": true,
+    "offline_browser_both_contexts": true,
+    "offline_citations": true,
+    "live_admin_default_and_empty_selection": true,
+    "same_modal_allocation_ready_after_cleanup": true,
+    "pdf_pages_visually_checked": 5,
+    "archive_original_files_checksum_verified": 359,
+    "credential_pattern_findings": 0,
+    "historical_credential_pattern_findings": 0
+  },
+  "limitations": [
+    "No new answer-quality evaluation was performed during cleanup.",
+    "Live service needs a prepared private corpus and authenticated bounded Modal session.",
+    "Warm session expires at 03:29:56 Europe/Helsinki on 15 November 2026."
+  ]
+}

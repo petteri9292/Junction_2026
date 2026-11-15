@@ -1,69 +1,34 @@
-# Submission worksheet
-
-Replace placeholders with the actual project and measured results during the event.
-Do not include private phone numbers or Discord contact details in this repository.
-
-## Project name
-
-To be chosen after challenge selection.
+# WikiLens — submission copy
 
 ## Punchline
 
-One sentence explaining the user benefit.
+From Wikipedia vectors to readable articles: a MariaDB retrieval–generation pipeline with inspectable source evidence.
 
 ## Description
 
-Problem, intended user, solution, demonstrated outcome, and limitations.
+WikiLens is a working retrieval-augmented generation system over the challenge's full Dataset L: 568,416 Finnish Wikipedia articles.
 
-## Challenge
+A question and optional context become a Pydantic-structured HyDE response containing a hypothetical search passage and detected answer language. BGE-M3 embeds only the search passage. MariaDB native vector search retrieves articles; heading-aware passage extraction and a multilingual cross-encoder then select the evidence for generation.
 
-Primary challenge and judging criteria. Record additional compatible challenges.
+Qwen3-4B-Instruct-2507-FP8 drafts an article from the selected passages. A second LLM call reviews the draft, followed by post-hoc citation selection and Python checks that each displayed quotation occurs in the stored source. Readers can inspect the quotations and open the original Wikipedia revision. The admin panel exposes retrieval controls and the actual retrieved documents, scores and selected passages.
 
-## Technologies used
+The live demo keeps MariaDB and the models resident on one Modal H100 using vLLM. Observed warm end-to-end requests took 16.8 seconds in English and 20.6 seconds in Finnish, excluding startup. These are individual measurements, not latency guarantees. A separate frozen-input comparison records the combined change from L40S/Transformers to H100/vLLM.
 
-Tools, models, data sources, and the parts actually used.
+Context is one practical demonstration: `talvisota` without context retrieves the historical Winter War, while context `videopeli` directs the pipeline toward the video game. The retrieval corpus remains Finnish even when the generated answer is English.
 
-## Video pitch
+The project includes reproducible source, locked environments, corpus verification, measured timings, tests, a presentation and recorded fallback runs. Literal quotation checks establish provenance, not semantic correctness. Generated prose can still contain factual and language errors, and there is no final LLM audit after citation attachment.
 
-Publicly accessible video URL. Aim for 115 seconds; verify uploaded duration is
-no more than 120 seconds, including all titles and ending frames.
+## Challenge alignment
 
-## Demo and source code
+MariaDB RAG track. MariaDB's native indexed vector search is a central pipeline component. The implementation demonstrates retrieval, generation, review and an inspectable viewer experience. The project does not claim system-versioned time travel, model training or independent factual verification.
 
-- Demo URL: to be added.
-- Source: https://github.com/petteri9292/Junction_2026
-- Reproduction instructions: to be written after implementation.
+## Presentation files
 
-## Source code publicity
+- `reports/wikilens-pipeline-pitch.pptx`
+- `reports/wikilens-pipeline-pitch.pdf`
+- `pipeline-pitch-script.txt`
+- `demo-brief.md` — target video length 115 seconds, maximum 120
 
-Repository is public. Confirm final source access, MIT licensing, and partner
-data/model terms before submission. Do not publish restricted datasets.
+## Entry status
 
-## Author credit
-
-Confirm whether to be credited and the intended author name in the submission form.
-
-## Pitch deck
-
-Final PDF path and upload status: to be added after the result is established.
-
-## Private contact fields
-
-Enter the reachable phone number and correct Discord username directly in the
-submission form. Keep a private local copy outside Git if useful.
-
-## Final checks
-
-- [ ] Every required field is complete.
-- [ ] Demo and source links work with the required access.
-- [ ] Video plays while signed out and is at most 120 seconds.
-- [ ] PDF opens and every slide is readable.
-- [ ] Contacts and author-credit preference are correct.
-- [ ] Entry is set to FINAL by Sunday 10:00 Helsinki time.
-
-## Pitch structure
-
-115-second video: problem and user 15s; data and approach 15s; demo 50s;
-measured result and limitations 25s; closing benefit 10s.
-
-Prepare a separate three-minute finalist stage pitch and three minutes of questions.
+This file contains submission copy and local deliverables. It does not establish that the event entry has been submitted, its links are publicly accessible, a video has been uploaded, or the entry is set to FINAL. Those actions must be verified on the event platform. The current demonstration endpoint is local; the labelled recorded fallback is included in the source repository.
